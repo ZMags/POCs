@@ -311,12 +311,14 @@ body
 .shopping-content a{
     float: left;
     font-size: 9px;
+    left: 17px;
     text-align: left;
     top: 6px;
 }
 .checkout-content a{
     float: left;
     font-size: 9px;
+    left: 25px;
     text-align: left;
     top: 6px;
 }
@@ -329,11 +331,9 @@ body
 }
 #addPedido a{
     font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
-    font-size: 13px;
-    left: 13px;
-
+    font-size: 11px;
+    left: 21px;
     position: relative;
-
     text-decoration: none;
 
 }
