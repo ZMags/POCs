@@ -120,6 +120,32 @@ function showlightbox2(){
      html_info2 += '</div>';
      jQuery.fancybox({content:html_info2})   ;
                 }
+function showLightBoxError(error){
+
+              var html_error = ' <!-- CONTENT LIGHT BOX--> ';
+                 html_error += ' <div>   ';
+                 html_error += ' <div id="info_product2">  ';
+                 html_error += ' <div id="content-lightbox2">  ';
+                 html_error += ' <div class="panel_message"> ';
+                 html_error += ' <div id="message_text"> ';
+                 html_error += ' <h2> '+error+' </h2>';
+                 html_error += ' </div>  ';
+                 html_error += ' <div id="content_buttons">  ';
+                 html_error += ' <div class="shopping-content">   ';
+                 html_error += ' <a id="continue_shopping" class="go_checkout" href="javascript:continue_shopping();"> ';
+                 html_error += ' CONTINUE SHOPPING  ';
+                 html_error += ' </a>   ';
+                 html_error += ' </div> ';
+                 html_error += ' </div>   ';
+                 html_error += '  <div class="clearAll"></div>   ';
+                 html_error += ' </div>';
+                 html_error += ' </div>';
+                 html_error += ' </div>';
+                 html_error += ' </div>';
+
+                  jQuery.fancybox({content:html_error})   ;
+
+}
 function getInfo(prodID,name,price,details){
 
      $("#title-prod").text(name);
@@ -164,21 +190,52 @@ function commentFacebook(){
                             );
                 }
 function clickCart(){
+                                  var ColorID = "78";
+                                  var ConfigID = "10";
+                                  var SearchString = "";
+                                  var SizeID ="";
+                                  var __ASYNCPOST = true;
+                                  var __EVENTARGUMENT = "14229";
+                                  var __EVENTTARGET = "UpdatePanel1";
+                                  var __EVENTVALIDATION = "/wEWCQLr29KRAwKg+MqeBgKqpa+4CwKk3arGBALVxZryBwL6z4OuDAK8spXWBgK/sYvoCQKZ6eHUDTSc3YH61ODPC6TDdjk5F0ezs/HU";
+                                  var __VIEWSTATE = "/wEPDwUKLTMxNjc3NTM3NQ9kFgJmD2QWAmYPZBYEZg9kFgRmDxUDKi9jc3MvSm9pbi5hc2h4P1NpdGVJRD0wMDQmYW1wO1N0eWxlSUQ9MTAwMQ8vY3NzL2llNmZpeC5jc3MOL2Nzcy9wcmludC5jc3NkAgUPZBYCZg8VAQBkAgIPFgIeBmFjdGlvbgU7L2RldGFpbHMvY2xvdGhpbmctaGVhZHdlYXIvcHJvZHVjdC8xNDIyOS9UcnVja3MgQ29sbGVjdGlvbi9kZPhv7mkFGIE1qM9BVXuJ/bPXwlYg";
+                                  var ctl00$ctl00$ScriptManager1 = "ctl00$ctl00$ScriptManager1|UpdatePanel1";
+                                  var ctl00$ctl00$hidColorID = "78";
+                                  var ctl00$ctl00$hidCombPrice = "89,00";
+                                  var ctl00$ctl00$hidConfigID = "10";
+                                  var ctl00$ctl00$hidDiscount = "";
+                                  var ctl00$ctl00$hidQty = "1";
+                                  var ctl00$ctl00$hidSizeID = "";
+                                  var ctl00$ctl00$hidStockCode = "";
+                                  var ctl00$ctl00$hidStockCodeQtyString = "";
+                                  var variant_qtyunit_0 = "1";
+                                  var variant_quantity_0 = "1";
 
-      if ((typeof (window.frames[0].ViewProductAddToBasketDimensions)!='undefined')){
-                  window.frames[0].ViewProductAddToBasketDimensions(0,'14229');
-             }
+                                    $.ajax({
+                                       type: "POST",
+                                       url: "ajax.php",
+                                       data: "ColorID="+ColorID+"&ConfigID="+ConfigID+"&SearchString="+SearchString+"&SizeID="+SizeID+"&__ASYNCPOST="+__ASYNCPOST+"&__EVENTARGUMENT="+__EVENTARGUMENT+"&__EVENTTARGET="+__EVENTTARGET+"&__EVENTVALIDATION="+__EVENTVALIDATION+"&__VIEWSTATE="+
+                                               __VIEWSTATE+"&ctl00$ctl00$ScriptManager1="+ctl00$ctl00$ScriptManager1+"&ctl00$ctl00$hidColorID="+ctl00$ctl00$hidColorID+"&ctl00$ctl00$hidCombPrice="+ctl00$ctl00$hidCombPrice+"&ctl00$ctl00$hidConfigID="+ctl00$ctl00$hidConfigID+
+                                               "&ctl00$ctl00$hidDiscount="+ctl00$ctl00$hidDiscount+"&ctl00$ctl00$hidQty="+ctl00$ctl00$hidQty+"&ctl00$ctl00$hidSizeID="+ctl00$ctl00$hidSizeID+"&ctl00$ctl00$hidStockCode="+ctl00$ctl00$hidStockCode+"&ctl00$ctl00$hidStockCodeQtyString="+ctl00$ctl00$hidStockCodeQtyString+
+                                                "&variant_qtyunit_0="+variant_qtyunit_0+"&variant_quantity_0="+variant_quantity_0,
+                                       success: function(msg){
+                                           msg= msg.replace('/*','').replace('*/','') ;
+                                           var obj = jQuery.parseJSON(msg);
+                                           var error = obj.errorMessage;
 
-      if(typeof (ViewProductAddToBasketDimensions) !="undefined"){
-             ViewProductAddToBasketDimensions(0,'14229');
-         }
+                                           if(error){
+                                            showLightBoxError(error);
+                                           }else{
+                                               showlightbox2();
+                                           }
+                                           }
+                                     });
 
-       showlightbox2();  //MESSAGE OF CHECKOUT OR CONTINUE SHOPPING
-            jQuery("#continue_shopping").click(function(){
-            $.fancybox.close();
-              });
 
 
         }
 
+ function continue_shopping(){
+       $.fancybox.close();
+ }
 
