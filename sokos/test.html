@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="es_ES" lang="es_ES">
+<head>
+
+	<title>Lightbox JS v2.0 | Test Page</title>
+</head>
+
+<body onload=''>
+
+    <div id ="catalogZoko">
+
+        <div id="container_viewer" style="width: 745px;height: 555px;"></div>
+
+            <script type="text/javascript" src="http://viewer.zmags.com/js/viewer.js"></script>
+            <script type="text/javascript" src="http://ps.zmags.com/poc/poc_sokos/files/pzmags25.js"> </script>
+            <script type="text/javascript">
+                var viewer = new ZMAGS.ui.Viewer();
+                   viewer.addEventListener(ZMAGS.ui.Viewer.CUSTOM_LINK_CLICK, "CustomLinkHandler", self);
+                   viewer.setPublicationID("856ea87c");
+                   viewer.setParentElementID('container_viewer');
+                   viewer.setWindowMode("opaque");
+                   viewer.show();
+            </script>
+    </div>
+
+
+
+
+</body>
+</html>
