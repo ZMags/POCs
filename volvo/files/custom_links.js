@@ -131,7 +131,7 @@ function showLightBoxError(error){
                  html_error += ' <h2> '+error+' </h2>';
                  html_error += ' </div>  ';
                  html_error += ' <div id="content_buttons">  ';
-                 html_error += ' <div class="shopping-content">   ';
+                 html_error += ' <div class="shopping-content error">   ';
                  html_error += ' <a id="continue_shopping" class="go_checkout" href="javascript:continue_shopping();"> ';
                  html_error += ' CONTINUE SHOPPING  ';
                  html_error += ' </a>   ';
