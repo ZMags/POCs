@@ -20,19 +20,28 @@ body
     /*font-size: 12px;
     color: #555;
     font-family: arial; */
+    background: none repeat scroll 0 0 #EAE6D9;
+    color: #333333;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    line-height: 15px;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 #main
 {
+    background: none repeat scroll 0 0 #EAE6D9;
     margin: 0 auto;
     width: 1298px;
 }
 /********header**********/
 .header
 {
-    background: url(..) repeat;
+    /*background: url(..) repeat;*/
+    background-color: #fff;   
     color: #fff;
-    margin-top:20px;
+    /*margin-top:20px;*/
 }
 
 /******body*****/
@@ -50,27 +59,27 @@ body
 #header{
    /*background: none repeat scroll 0 0 gray;*/
    /*border: 1px dashed;*/
-   /* height: 150px;  */
-   /* width: 100%;*/
+   /*height: 150px;*/
+   width: 100%;
 }
 
 #bar-left{
-   /* background: none repeat scroll 0 0 gray;
-    border: 1px dashed;
+    /*background: none repeat scroll 0 0 gray;*/
+    /*border: 1px dashed;*/
     float: left;
     height: 741px;
     position: relative;
-    width: 163px;*/
+    width: 244px;
 
 }
 
 #bar-right{
-  /*  background: none repeat scroll 0 0 gray;
-    border: 1px dashed;
+    /*background: none repeat scroll 0 0 gray;*/
+    /*border: 1px dashed;*/
     float: left;
     height: 741px;
     position: relative;
-    width: 163px; */
+    width: 244px;
 
 }
 #container{
@@ -79,7 +88,8 @@ body
     margin: 0 auto;
     position: relative;
     text-align: left;
-    width: 970px;
+    /*width: 970px;*/
+    width: 810px;
 }
 #content{
     height: auto;
@@ -89,10 +99,13 @@ body
     width: 1300px;
 }
 #footer{
-   /* background: none repeat scroll 0 0 gray;
-    border: 1px dashed;
-    height: 250px;
-    width: 100%; */
+    /*background: none repeat scroll 0 0 gray;
+    border: 1px dashed;*/
+    /*height: 250px;*/
+    width: 100%;
+}
+#footer table{
+    background-color: #fff;
 }
 #info_product .panel_right {
     float: left;
@@ -149,7 +162,8 @@ body
 #content-lightbox{
     height: 400px;
     width: auto;
-    background: url("../images/bg-lightbox-left.jpg") repeat-x scroll transparent;
+    /*background: url("../images/bg-lightbox-left.jpg") repeat-x scroll transparent;*/
+    background-color: #fff;
 }
 #content-lightbox2{
     height: auto;
@@ -158,9 +172,10 @@ body
 #title_product{
     border: 1px dashed;
     color: black;
-    font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
-    font-size: 24px;
-    /*font-weight: bold;  */
+    font-family: Verdana, Arial,'Helvetica Neue',Helvetica,sans-serif;
+    /*font-size: 24px;*/
+    font-size: 11px;
+    font-weight: bold;
 }
 #details{
     border: 1px dashed;
@@ -211,14 +226,25 @@ body
     text-align: center;
 }
 #addPedido{
-    background: url("../images/bot-add.png") no-repeat scroll 0 0 transparent;
-    float: left;
+    /*background: url("../images/bot-add.png") no-repeat scroll 0 0 transparent;*/
+    /*float: left;
     height: 25px;
     margin-left: 0;
     padding-left: 5px;
     position: relative;
     text-align: left;
-    width: 131px;
+    width: 131px;*/
+    background: none repeat scroll 0 0 #A39E43;
+    border: 1px outset #999999;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 15px;
+    text-align: center;
+    text-decoration: none;
+    width: 73px;
+    margin-left: 34px;
 }
 #add_to_cart{
     color:#ffffff;
@@ -284,14 +310,15 @@ body
 
 }
 #container{
-    height:433px!important;
+    /*height:433px!important;*/
 }
 #details {
-    background: url("../images/bg_addtocart_gradient.gif") repeat scroll 0 0 transparent;
+    /*background: url("../images/bg_addtocart_gradient.gif") repeat scroll 0 0 transparent;*/
     border: medium none !important;
     font-size: 11px;
     height: auto;
     width: 350px;
+    margin-top: 17px;
     margin-bottom: 17px;
 
 }
@@ -333,7 +360,7 @@ body
     font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
     font-size: 11px;
     left: 21px;
-    position: relative;
+    /*position: relative;*/
     text-decoration: none;
 
 }
@@ -347,4 +374,114 @@ body
 }
 .error a{
     left: 15px;
+}
+
+/* Celebrating Home */
+
+table.header {
+    padding: 10px 10px;
+}
+
+a.icon-fb {
+    background-image: url("../images/icon-fb-off.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+    float: right;
+    height: 32px;
+    padding: 5px 0 5px 5px;
+    width: 32px;
+}
+
+a.icon-fb:hover {
+    background-image: url("../images/icon-fb-on.gif");
+}
+
+a.icon-twtr {
+    background-image: url("../images/icon-twtr-off.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+    float: right;
+    height: 32px;
+    padding: 5px 0 5px 5px;
+    width: 33px;
+}
+
+a.icon-twtr:hover {
+    background-image: url("../images/icon-twtr-on.gif");
+}
+
+a.icon-yt {
+    background-image: url("../images/icon-yt-off.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+    float: right;
+    height: 32px;
+    padding: 5px 0 5px 5px;
+    width: 32px;
+}
+
+a.icon-yt:hover {
+    background-image: url("../images/icon-yt-on.gif");
+}
+
+.topleftnav {
+    color: #333333;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+}
+
+.topusernames {
+    color: #5B4423;
+    font-size: 12px;
+    text-align: left;
+}
+
+.buttonbgs2 {
+    background: none repeat scroll 0 0 #CC0000;
+    border: 1px outset #999999;
+    color: #E8E8E8;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0 5px;
+    text-align: center;
+    text-decoration: none;
+}
+
+a.topnav:link, a.topnav:active, a.topnav:visited {
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+a.footernav:link, a.footernav:active, a.footernav:visited {
+    color: #333333;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+a.topleftnav:link, a.topleftnav:active, a.topleftnav:visited {
+    color: #333333;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a#bbblink img:hover{
+    margin-left: -100px;
+}
+
+#qtyCart{
+    width: 25px;
+    float:left;
+    margin-right: 10px;
 }

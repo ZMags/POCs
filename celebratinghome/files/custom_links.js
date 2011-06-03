@@ -1,7 +1,7 @@
-loadZmagsCatalog();
+//loadZmagsCatalog();
 
 function viewProduct(prodID){
-   var html_info= '<div >';
+   var html_info= '<div>';
        html_info+= '  <a id="trigger_product_info" href="#info_product" class="hidden fancybox" ></a>';
        html_info+= ' <div id="info_product"> ';
        html_info+= '<div id="content-lightbox">';
@@ -11,9 +11,9 @@ function viewProduct(prodID){
        html_info+= '<!--imagen-->';
        html_info+= '<div class="max_img">';
        html_info+= '<!--****************ADD IMAGES HERE*********************-->';
-       html_info+= '<a href="http://ps.zmags.com/poc/volvo/images/producto/head-large.jpg" class = "cloud-zoom" id="zoom1"';
-       html_info+= 'rel="adjustX: 10, adjustY:-4">';
-       html_info+= '<img src="http://ps.zmags.com/poc/volvo/images/producto/head-large.jpg" alt="item" title="Cappuccino Youth Cap"/>';
+       html_info+= '<a href="images/producto/21122_500.jpg" class = "cloud-zoom" id="zoom1"';
+       html_info+= 'rel="adjustX: 10, adjustY:-4, zoomWidth:400">';
+       html_info+= '<img src="images/producto/21122_250.jpg" alt="item" title="SCENTS OF HOME&trade; - SOMERSET HOME FRAGRANCE WARMER"/>';
        html_info+= '</a>';
        html_info+= '<!--OTHER IMAGES-->';
        html_info+= '<ul class="other_images">';
@@ -36,24 +36,22 @@ function viewProduct(prodID){
        html_info+= '<!-- INFO PRODUCT  -->';
        html_info+= '<div  id="containerFichaData">';
        html_info+= '<div id="title_product">';
-       html_info+= '<span id="title-prod">Cappuccino Youth Cap </span><br/>';
-       html_info+= '<strong><span id="price-prod" >89</span><sup>00c</sup></strong><br/>';
+       html_info+= '<span id="title-prod">SCENTS OF HOME&trade; - SOMERSET HOME FRAGRANCE WARMER</span><br/>';
+       html_info+= '</div>';
+       html_info+= '<div id="details">';
+       html_info+= 'Butter cream stoneware fragrance warmer disperses fragrance throughout your home and recreates the glow and ambience of candlelight without flames. 5&frac12; x 5&frac12;"';
        html_info+= '</div>';
        html_info+= '<div id="referencia">';
-       html_info+= '<p>Article Number: <span id="ref-prod">  14229</span></p>';
+       html_info+= '<p>Item: <span id="ref-prod">  21122</span></p>';
+       html_info+= '<strong>$30.00</strong><br/>';
        html_info+= '</div><br/>';
-       html_info+= '<div id="details">';
-       html_info+= 'Designer baseball cap in jubilee brushed 100% cotton. Fashionable protection from the sun. Ages 7-14.';
-       html_info+= 'One size, velcro-adjustable at back.';
-       html_info+= '</div>';
        html_info+= '<!--  END INFO PRODUCT -->';
        html_info+= '<!-- BUTTON OF CONFIRMATION-->';
+       html_info+= '<input id="qtyCart" type="text" name="" value="" />';
        html_info+= '<div id="addPedido">';
-       html_info+= '<strong>';
        html_info+= '<a id="add_to_cart" href="javascript:clickCart();">';
        html_info+= 'ADD TO CART';
        html_info+= '</a>';
-       html_info+= '</strong>';
        html_info+= '</div>';
        html_info+= '<!-- END BUTTON CONFIRMATION-->';
        html_info+= '<div class="social top_space social_icons">';
@@ -88,6 +86,8 @@ function viewProduct(prodID){
                         cookie : true, // enable cookies to allow the server to access the session
                         xfbml  : true  // parse XFBML
                       });
+    
+    zoomCloud();
 
 }
 function showlightbox2(){
