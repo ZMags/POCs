@@ -126,7 +126,7 @@ function loadJsCss(path,files_js){
                         html_info += '<div  id="containerFichaData"> ';
                         html_info += '<div id="title_product">';
                         html_info += '<span id="title-prod">TITLE PRODUCT</span><br/>';
-                        html_info += '<strong><span id="price-prod" >PRICE</span><sup>0c</sup></strong><br/>';
+                        html_info += '<strong><span id="price-prod" >PRICE</span><sup></sup></strong><br/>';
                         html_info += '</div> ';
                         html_info += '<div id="referencia">';
                         html_info += '<p>Ref.: <span id="ref-prod">14875035</span></p>';
@@ -215,12 +215,12 @@ function loadJsCss(path,files_js){
                  html_info2 += '   </div>  ';
                  html_info2 += ' <div id="content_buttons">  ';
                  html_info2 += '   <div class="checkout-content">   ';
-                 html_info2 += '     <a id="go_checkout" class="go_checkout" target="_blank" onclick="" href="https://sokos.s-verkkokauppa.fi/webapp/wcs/stores/servlet/AjaxOrderItemDisplayView"> ';
+                 html_info2 += '     <a id="go_checkout" class="go_checkout" target="_self" onclick="" href="https://sokos.s-verkkokauppa.fi/webapp/wcs/stores/servlet/AjaxOrderItemDisplayView"> ';
                  html_info2 += '      GO TO CHECKOUT ';
                  html_info2 += '   </a>     ';
                  html_info2 += ' </div> ';
                  html_info2 += ' <div class="shopping-content">   ';
-                 html_info2 += ' <a id="continue_shopping" class="go_checkout" href="#"> ';
+                 html_info2 += ' <a id="continue_shopping" class="go_checkout" href="javascript:continue_shopping();"> ';
                  html_info2 += '      CONTINUE SHOPPING  ';
                  html_info2 += ' </a>   ';
                  html_info2 += '</div> ';
@@ -245,7 +245,7 @@ function loadJsCss(path,files_js){
                  html_error += ' </div>  ';
                  html_error += ' <div id="content_buttons">  ';
                  html_error += ' <div class="shopping-content">   ';
-                 html_error += ' <a id="continue_shopping" class="go_checkout" href="#"> ';
+                 html_error += ' <a id="continue_shopping" class="go_checkout" href="javascript:continue_shopping();"> ';
                  html_error += ' CONTINUE SHOPPING  ';
                  html_error += ' </a>   ';
                  html_error += ' </div> ';
@@ -325,9 +325,10 @@ function loadJsCss(path,files_js){
                                            }
                                            }
                                      });
-                                   jQuery("#continue_shopping").click(function(){
-                                         $.fancybox.close();
-                                    });
+
 
 
                         }
+                         function continue_shopping(){
+                               $.fancybox.close();
+                         }

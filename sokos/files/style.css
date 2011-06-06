@@ -125,13 +125,12 @@ body
     width: 292px;
 }
 #containerFicha {
-
     height: auto;
     margin: 55px auto 0;
     padding: 0 28px 28px;
     position: relative;
     text-align: left;
-    width: 286px;
+    width: 425px;
 }
 #info_product .panel_left .other_images {
     margin-top: 46px;
@@ -145,8 +144,8 @@ body
     border: 1px solid #DAD6D2;
 }
 #content-lightbox{
-    height: 400px;
-    width: auto;
+    height: auto;
+    width: 800px;;
 }
 #content-lightbox2{
     height: auto;
@@ -243,7 +242,7 @@ body
 .social_icons{
     overflow: hidden;
     position: relative;
-    width: 300px;
+    width: 390px;
 }
 .stButton .stLarge, .stButton .stLarge a{
     display: block !important;
@@ -264,6 +263,7 @@ body
     overflow: hidden;
 }
 .like{
+    width: 200px;
     margin-top:15px;
 }
 #name-prod{
@@ -288,7 +288,7 @@ body
     background:url(../images/bg_addtocart_gradient.gif);
     border: none!important;
     height: auto;
-    width: 479px;
+    width: 450px;
 
 }
 #title_product{
@@ -298,15 +298,14 @@ body
     color: red;
 }
 #info_product .panel_right {
-    margin-right: 10px!important;
     float: left;
     width: 460px!important;
 }
 #containerFichaData {
-    float: right;
+    float: left;
     position: relative;
     text-align: left;
-    width: 370px!important;
+    width: 400px !important;
 }
 .shopping-content a{
     color: white;
