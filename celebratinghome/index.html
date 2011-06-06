@@ -1,0 +1,721 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="#" />
+	<title></title>
+
+            <!--<link href="http://ps.zmags.com/poc/files_poc/css/reset.css" rel="stylesheet" type="text/css"/>-->
+			<!--<link href="http://ps.zmags.com/poc/files_poc/css/style.css" rel="stylesheet" type="text/css"/>-->
+            
+            <link href="files/reset.css" rel="stylesheet" type="text/css"/>
+			<link href="files/style.css" rel="stylesheet" type="text/css"/>
+
+             <!--CSS PAGE INCLUDE HERE -->
+
+            <!--END CSS PAGE INCLUDE HERE -->
+
+            <link href="http://ps.zmags.com/poc/files_poc/css/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" media="screen"/>
+            <link href="http://ps.zmags.com/poc/files_poc/css/cloud-zoom.css" rel="stylesheet" type="text/css"/>
+
+
+            <script src="http://ps.zmags.com/poc/files_poc/js/zmag/zmag_viewer.js" type="text/javascript"></script>
+            <!--<script src="http://ps.zmags.com/poc/files_poc/js/zmag/custom_links.js" type="text/javascript"></script>-->
+            <script src="files/custom_links.js" type="text/javascript"></script>
+
+            <script src="http://ps.zmags.com/poc/files_poc/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+            <script src="http://ps.zmags.com/poc/files_poc/js/jquery.fancybox-1.3.4.js" type="text/javascript"></script>
+            <script src="http://ps.zmags.com/poc/files_poc/js/cloud-zoom.1.0.2.js" type="text/javascript"></script>
+
+
+
+    <script type="text/javascript">
+
+                var viewer = new ZMAGS.ui.Viewer();
+                // Add custom link event handler
+                viewer.addEventListener(ZMAGS.ui.Viewer.CUSTOM_LINK_CLICK, "CustomLinkHandler", self);
+                viewer.setPublicationID("f04dd4ea");
+                viewer.setParentElementID("container");
+                viewer.show();
+
+                var prodID ;
+                var type;
+                var title;
+                var price;
+                var ref;
+                var hrefImg;
+
+            /***********************************************************/
+            function CustomLinkHandler(event) {
+                console.log(event);
+                for (linkvar in event.data) {
+                if (linkvar == "type") {
+                type = event.data[linkvar];
+                } else if (linkvar == "prodID"){
+
+                 prodID = event.data[linkvar];
+                } else if (linkvar == "title"){
+                        title = event.data[linkvar];
+                }else if(linkvar == "price"){
+                    price = event.data[linkvar];
+                }else if(linkvar == "ref"){
+                    ref = event.data[linkvar];
+                }
+                    if(linkvar == "hrefImg"){
+                    hrefImg = event.data[linkvar];
+                }
+                }
+
+                switch(type) {
+                case 'add': incluirEnCesta(prodID);
+
+                break;
+                case 'view':viewProduct(prodID);
+                break;
+
+                } }
+
+            function  incluirEnCesta(prodID){
+
+                jQuery('#pf_id').val(prodID);
+                showlightbox(prodID);
+
+                jQuery('#add_to_cart').click(function(){
+                     jQuery('#form-add_to_cart').submit();
+                        jQuery('#iframe-add').load(function(){
+                          showlightbox2();  //MESSAGE OF CHECKOUT OR CONTINUE SHOPPING
+                            jQuery("#continue_shopping").click(function(){
+                                 $.fancybox.close();
+                            });
+                         });
+
+                });
+            }
+            
+            function showlightbox(prodID){
+                $("#trigger_product_info").click() ;
+                $("#thumbs_products .panel_cloud_zoom").html("");
+                setTimeout(function(){ getInfo();  }, 500);
+            }
+
+            function showlightbox2(){
+                $("#trigger_product_info2").click() ;
+            }
+
+            function getInfo(){
+               $("#title-prod").text(title);
+               $("#price-prod").text(price);
+               $("#ref-prod").text(ref);
+               getImage();
+               zoomCloud();
+            }
+
+            function getImage(){
+
+                $("#thumbs_products .panel_cloud_zoom").html("<a href='http://ps.zmags.com/poc/margareta/images/producto/"+hrefImg+"-large.jpg' class = 'cloud-zoom' id='zoom1'"+
+                            "rel='adjustX: 10, adjustY:-4'>"+
+                            "<img src='http://ps.zmags.com/poc/margareta/images/producto/"+hrefImg+".jpg' alt='item' title='Optional title display'/>"+
+                            "</a>");
+                            //zoomCloud();
+            }
+
+           jQuery(document).ready(function($)
+     {
+
+         $("#show_comments").click(
+            function(){
+
+                if($(this).hasClass("show_comments"))
+                {
+                   $(this).children("img").attr("src","http://ps.zmags.com/poc/files_poc/images/facebook/btn_hidecomments.png");
+                   $(this).removeClass("show_comments");
+                   $(this).addClass("hide_comments");
+                }
+                else
+                {
+                    $(this).children("img").attr("src","http://ps.zmags.com/poc/files_poc/images/facebook/btn_comments.png");
+                    $(this).removeClass("hide_comments");
+                    $(this).addClass("show_comments");
+                }
+
+                $("#comments").slideToggle("slow");
+                $("#thumbs_products").slideToggle("thumbs_products");
+
+        }
+    );
+         $(".fancybox").click(function(e)
+         {
+             e.stopPropagation();
+         }).fancybox({
+            'centerOnScroll': true
+         });
+     });
+
+        </script>
+
+
+</head>
+
+<body>
+    <div id="main">
+        <!-- header section -->
+        <div id="header">
+            <!--****************ADD CODE HEADER HERE*********************-->
+                                   
+            <table class="header" align="center" cellpadding="10" cellspacing="0" width="810">
+            <tbody><tr>
+            	<td align="left" width="220"><a href="http://www.celebratinghome.com/pwphome.ashx"><img src="images/New_Company_Logo_inline.jpg" border="0"></a></td>
+            	<td class="topleftnav" align="right" width="590">
+            	<div style="width:370px; float:left;">
+            
+            <div id="ctl00_PWPTopBar1_dv_FindDesigner" class="topusernames" style="text-align: center;">
+                Find My
+                <a onclick="DisPlayDivNocuID('ctl00_PWPTopBar1_divProductSearch');setValue('ctl00_PWPTopBar1_hd_ControlDisplay','true');return false;" id="ctl00_PWPTopBar1_lb_GoLocator" class="topusernames" href="javascript:__doPostBack('ctl00$PWPTopBar1$lb_GoLocator','')">Designer or Party Code</a>
+            </div>
+            </div>
+            <div id="ctl00_PWPTopBar1_divProductSearch" style="display: none; position: absolute;
+                height: 600px; overflow-y: scroll; width: 730px; background: white; border: 1px solid #666666;">
+                <table width="710">
+                    <tbody><tr>
+                        <td align="right">
+                            <a href="http://www.celebratinghome.com/EN/Part/Order/#" id="ctl00_PWPTopBar1_hfCloseMyPart" onclick="CloseDiv('ctl00_PWPTopBar1_divProductSearch');setValue('ctl00_PWPTopBar1_hd_ControlDisplay','');return false">
+                                <img src="PWPHome.ashx_files/close.jpg" title="Close" border="0">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="95%">
+                <tbody><tr>
+                    <td colspan="2" style="border-bottom: 2px solid rgb(122, 163, 93);" height="30">
+                        <div id="u0_rtf">
+                            <span class="topusername"><strong>Find My Independent Designer</strong> </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" height="53">
+                        If you are interested in Celebrating Home opportunities or 
+            placing an order and know your Independent Designer, please select from 
+            the options below to search for them. If you would like Celebrating Home
+             to find a Designer in your area, please <a href="http://www.celebratinghome.com/ContactMe.ashx">Click Here.
+                    </a></td>
+                </tr>
+                <tr>
+                    <td style="border-right: 2px solid rgb(151, 162, 8);" valign="top" width="51%">
+                        <table border="0" cellpadding="0" cellspacing="0" width="95%">
+                            <tbody><tr>
+                                <td colspan="2" class="topusername" style="border-bottom: 2px solid rgb(45, 45, 45); text-align: center;" align="center" height="30">
+                                    <strong>Search By Web Address</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="15">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30" width="54%">
+                                    www.celebratinghome.com/sites
+                                </td>
+                                <td width="46%">
+                                    <input name="ctl00$PWPTopBar1$FindDesigner1$txt_Url" id="ctl00_PWPTopBar1_FindDesigner1_txt_Url" style="width: 113px;" type="text">
+                            </td></tr>
+                            <tr>
+                                <td height="30">
+                                </td>
+                                <td>
+                                    <a id="ctl00_PWPTopBar1_FindDesigner1_lb_SearchByUrl" class="buttonbg" href="javascript:__doPostBack('ctl00$PWPTopBar1$FindDesigner1$lb_SearchByUrl','')">Search</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="topusername" style="border-bottom: 2px solid rgb(45, 45, 45); text-align: center;" align="center" height="30">
+                                    <strong>Search By Designer Web ID</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="15">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30">
+                                    My Designer's Web ID Is:
+                                </td>
+                                <td>
+                                    <input name="ctl00$PWPTopBar1$FindDesigner1$txt_Id" id="ctl00_PWPTopBar1_FindDesigner1_txt_Id" style="width: 113px;" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30">
+                                </td>
+                                <td>
+                                    <a id="ctl00_PWPTopBar1_FindDesigner1_lb_SearchById" class="buttonbg" href="javascript:__doPostBack('ctl00$PWPTopBar1$FindDesigner1$lb_SearchById','')">Search</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="topusername" style="border-bottom: 2px solid rgb(45, 45, 45); text-align: center;" align="center" height="30">
+                                    <strong>Search By Party ID</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="15">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30">
+                                    My Party ID Is:
+                                </td>
+                                <td>
+                                    <input name="ctl00$PWPTopBar1$FindDesigner1$txt_PartyId" id="ctl00_PWPTopBar1_FindDesigner1_txt_PartyId" style="width: 113px;" type="text">
+                                    <br>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30">
+                                </td>
+                                <td>
+                                    <a id="ctl00_PWPTopBar1_FindDesigner1_lb_PartyId" class="buttonbg" href="javascript:__doPostBack('ctl00$PWPTopBar1$FindDesigner1$lb_PartyId','')">Search</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="20">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                    <td valign="top" width="49%">
+                        <table align="right" border="0" cellpadding="0" cellspacing="0" width="95%">
+                            <tbody><tr>
+                                <td colspan="2" class="topusername" style="border-bottom: 2px solid rgb(45, 45, 45); text-align: center;" align="center" height="30">
+                                    <strong>Search By Name</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="15">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30" width="60%">
+                                    Designer's First Name: <span class="red">*</span>
+                                </td>
+                                <td width="40%">
+                                    <input name="ctl00$PWPTopBar1$FindDesigner1$txt_firstname" id="ctl00_PWPTopBar1_FindDesigner1_txt_firstname" style="width: 113px;" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30">
+                                    Designer's Last Name: <span class="red">*</span>
+                                </td>
+                                <td>
+                                    <input name="ctl00$PWPTopBar1$FindDesigner1$txt_LastName" id="ctl00_PWPTopBar1_FindDesigner1_txt_LastName" style="width: 113px;" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30">
+                                    Designer's State: <span class="red">*</span>
+                                </td>
+                                <td>
+                                    <select name="ctl00$PWPTopBar1$FindDesigner1$ddl_State" id="ctl00_PWPTopBar1_FindDesigner1_ddl_State" style="z-index: 10">
+            	<option selected="selected" value="AL">Alabama</option>
+            	<option value="AK">Alaska</option>
+            	<option value="AZ">Arizona</option>
+            	<option value="AR">Arkansas</option>
+            	<option value="CA">California</option>
+            	<option value="CO">Colorado</option>
+            	<option value="CT">Connecticut</option>
+            	<option value="DE">Delaware</option>
+            	<option value="DC">District of Columbia</option>
+            	<option value="FL">Florida</option>
+            	<option value="GA">Georgia</option>
+            	<option value="HI">Hawaii</option>
+            	<option value="ID">Idaho</option>
+            	<option value="IL">Illinois</option>
+            	<option value="IN">Indiana</option>
+            	<option value="IA">Iowa</option>
+            	<option value="KS">Kansas</option>
+            	<option value="KY">Kentucky</option>
+            	<option value="LA">Louisiana</option>
+            	<option value="ME">Maine</option>
+            	<option value="MD">Maryland</option>
+            	<option value="MA">Massachusetts</option>
+            	<option value="MI">Michigan</option>
+            	<option value="MN">Minnesota</option>
+            	<option value="MS">Mississippi</option>
+            	<option value="MO">Missouri</option>
+            	<option value="MT">Montana</option>
+            	<option value="NE">Nebraska</option>
+            	<option value="NV">Nevada</option>
+            	<option value="NH">New Hampshire</option>
+            	<option value="NJ">New Jersey</option>
+            	<option value="NM">New Mexico</option>
+            	<option value="NY">New York</option>
+            	<option value="NC">North Carolina</option>
+            	<option value="ND">North Dakota</option>
+            	<option value="OH">Ohio</option>
+            	<option value="OK">Oklahoma</option>
+            	<option value="OR">Oregon</option>
+            	<option value="PA">Pennsylvania</option>
+            	<option value="PR">Puerto Rico</option>
+            	<option value="RI">Rhode Island</option>
+            	<option value="SC">South Carolina</option>
+            	<option value="SD">South Dakota</option>
+            	<option value="TN">Tennessee</option>
+            	<option value="TX">Texas</option>
+            	<option value="UT">Utah</option>
+            	<option value="VT">Vermont</option>
+            	<option value="VA">Virginia</option>
+            	<option value="WA">Washington</option>
+            	<option value="WV">West Virginia</option>
+            	<option value="WI">Wisconsin</option>
+            	<option value="WY">Wyoming</option>
+            
+            </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30">
+                                    City: (Optional)
+                                </td>
+                                <td>
+                                    <input name="ctl00$PWPTopBar1$FindDesigner1$txt_City" id="ctl00_PWPTopBar1_FindDesigner1_txt_City" style="width: 113px;" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30">
+                                    Zip Code: (Optional)
+                                </td>
+                                <td>
+                                    <input name="ctl00$PWPTopBar1$FindDesigner1$txt_Zip" maxlength="5" id="ctl00_PWPTopBar1_FindDesigner1_txt_Zip" style="width: 113px;" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30">
+                                    <span class="red">*</span> Is Required Fields.
+                                </td>
+                                <td>
+                                    <a id="ctl00_PWPTopBar1_FindDesigner1_lb_SearchByName" class="buttonbg" href="javascript:__doPostBack('ctl00$PWPTopBar1$FindDesigner1$lb_SearchByName','')">Search</a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+            <br />
+            <br />
+            
+            
+                        </td>
+                    </tr>
+                </tbody></table>
+                <input name="ctl00$PWPTopBar1$hd_ControlDisplay" id="ctl00_PWPTopBar1_hd_ControlDisplay" type="hidden">
+            </div>
+             <a id="ctl00_ChangeLanguage1_lb_change" class="buttonbgs2" href="javascript:__doPostBack('ctl00$ChangeLanguage1$lb_change','')">
+            <b>espa&ntilde;ol</b>
+            </a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.celebratinghome.com/designerlogin.ashx" class="topleftnav">Login</a><br>
+            	<a href="http://www.youtube.com/celebratinghome" target="_blank" class="icon-yt"></a> <a href="http://twitter.com/celebratinghome" target="_blank" class="icon-twtr"></a> <a href="http://www.facebook.com/CelebratingHome" target="_blank" class="icon-fb"></a></td>
+            </tr>
+            </tbody>
+            </table>
+            
+            <table align="center" bgcolor="#9fa615" cellpadding="0" cellspacing="0" height="25" width="810">
+                <tbody><tr>
+                	<td align="center"><span id="top_nav1"><a href="http://www.celebratinghome.com/1_0_comp_profile.ashx" class="topnav">Company Profile</a></span></td>
+                	<td bgcolor="#FFFFFF" width="1"></td>
+                	<td align="center"><span id="top_nav2"><a href="http://www.celebratinghome.com/2_1_opportunity.ashx" class="topnav">Opportunity</a></span></td>
+                	<td bgcolor="#FFFFFF" width="1"></td>
+                	<td align="center"><span id="top_nav3"><a href="http://www.celebratinghome.com/3_0_host_party.ashx" class="topnav">Host a Party</a></span></td>
+                	<td bgcolor="#FFFFFF" width="1"></td>
+                	<td align="center"><span id="top_nav4"><a href="http://www.celebratinghome.com/productcategorylist.ashx" class="topnav">Shop</a></span></td>
+                	<td bgcolor="#FFFFFF" width="1"></td>
+                	<td align="center"><span id="top_nav5"><a href="http://www.celebratinghome.com/5_0_fundraising.ashx" class="topnav">Fundraising</a></span></td>
+                	<td bgcolor="#FFFFFF" width="1"></td>
+                	<td align="center"><span id="top_nav6"><a href="http://www.celebratinghome.com/1_5_comp_profile.ashx" class="topnav">Press Room</a></span></td>
+                	<td bgcolor="#FFFFFF" width="1"></td>
+                	<td align="center"><span id="top_nav7"><a href="http://www.celebratinghome.com/PWPSearchProduct.ashx" class="topnav">Search</a></span></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!--****************END CODE HEADER HERE*********************-->
+        </div>
+        <!-- end header section -->
+        
+        <!-- body section -->
+        <div id="body">
+
+                  <div id="content">
+
+                        <!-- bar left  -->
+                        <div id="bar-left">
+            <!--****************ADD CODE BAR LEFT HERE*********************-->
+                                      
+
+            <!--****************END CODE BAR  LEFT HERE*********************-->
+                        </div>
+
+                        <!-- fin container  -->
+                        <div id="container">
+
+
+
+                        </div>
+
+                        <!-- fin container  -->
+
+                        <!-- bar right  -->
+                        <div id="bar-right">
+
+            <!--****************ADD CODE BAR RIGHT HERE*********************-->
+
+                                       
+            <!--****************END CODE RIGHT HERE*********************-->
+
+                        </div>
+
+                  </div>
+
+        </div>      
+        <!-- end body section -->  
+        
+        <!-- footer section -->
+        <div id="footer">
+            <!--****************ADD CODE FOOTER HERE*********************-->
+            
+            <table style="border: 1px solid rgb(153, 153, 153); background-image: url('images/corp_footer.gif'); background-repeat: repeat-x; padding-left: 5px; padding-right: 5px" align="center" border="0" cellpadding="4" cellspacing="0" height="25" width="810">
+                <tbody>
+                <tr>
+                	<td nowrap="nowrap"><a href="http://www.celebratinghome.com/0_2_footer.ashx" class="footernav">Customer Service</a> | <a href="http://www.celebratinghome.com/0_1_footer.ashx" class="footernav">Contact Us</a> | <a href="http://www.celebratinghome.com/0_3_footer.ashx" class="footernav">Terms &amp; Conditions</a> | <a href="http://www.celebratinghome.com/designerlogin.ashx" class="footernav">Designer Login</a></td>
+                	<td align="right" nowrap="nowrap"><span style="font-size: 10px; color: #FFFFFF;">
+                <span style="color:#FFFFFF; font-size:6px;">
+                Machine Name: Z-H9W1
+                </span></span> <span class="footer">&copy; 2011 Celebrating Home</span></td>
+                </tr>
+                </tbody>
+            </table>
+            <table align="center" cellpadding="0" cellspacing="0" width="810">
+                <tbody>
+                <tr>
+                	<td align="left" width="50%"><a href="http://www.dsa.org/" target="_blank"><img src="images/icon-dsa2.gif" style="margin: 10px;" alt="dsa"></a></td>
+                	<td style="padding-right: 10px;" align="right" width="50%"><a id="bbblink" class="sehzbus" href="http://www.bbb.org/east-texas/business-reviews/party-plans-in-home/celebrating-home-in-marshall-tx-22001214#bbblogo" title="Celebrating Home, Party Plans - In-Home, Marshall, TX" style="padding: 0px; margin: 0pt;"><img style="padding: 0px; border: medium none;" id="bbblinkimg" src="images/seal-for-22001214.png" alt="Celebrating Home, Party Plans - In-Home, Marshall, TX" height="38" width="200"></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-easttexas.bbb.org' + unescape('%2Flogo%2Fcelebrating-home-22001214.js') + "' type='text/javascript'%3E%3C/script%3E"));</script><script src="PWPHome.ashx_files/celebrating-home-22001214.js" type="text/javascript"></script></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!--****************END CODE FOOTER HERE*********************-->
+        </div>      
+        <!-- end footer section -->
+        
+    </div>
+
+    <!--LIGHT BOX -->
+
+    <!-- CONTENT LIGHT BOX-->
+    <div style="display:none">
+         <a id="trigger_product_info" href="#info_product" class="hidden fancybox" ></a>
+        <div id="info_product">
+
+        <script type="text/javascript">
+
+        jQuery(function($)
+        {
+            $("#info_product .fancybox").fancybox();
+            $('#info_product .cloud-zoom').CloudZoom();
+            $('#info_product .cloud-zoom-gallery').CloudZoom();
+        }) ;
+
+
+
+
+    </script>
+
+
+        <div id="content-lightbox">
+             <!--PANEL LEFT-->
+        <div class="panel_left">
+
+                <div id="thumbs_products">
+                       <!--imagen-->
+                    <div class="max_img">
+            <!--****************ADD IMAGES HERE*********************-->
+
+                        <a href='http://ps.zmags.com/poc/files_poc/images/producto-3.jpg' class = 'cloud-zoom' id='zoom1'
+                            rel="adjustX: 10, adjustY:-4">
+                            <img src="http://ps.zmags.com/poc/files_poc/images/producto-3.jpg" alt='item' title="Optional title display"/>
+                        </a>
+                        <!--OTHER IMAGES-->
+                        <ul class="other_images">
+
+                                <li>
+                                    <a href='http://ps.zmags.com/poc/files_poc/images/C38940002_185_main_large2.png' class='cloud-zoom-gallery' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: 'http://ps.zmags.com/poc/files_poc/images/C38940002_185_main_large2.png' ">
+                                        <img  title="Phone title" src="http://ps.zmags.com/poc/files_poc/images/C38940002_185_main_thumb.jpg" alt = "Thumbnail 1"/>
+                                    </a>
+                                </li>
+
+                        </ul>
+                      <!--END OTHER IMAGES -->
+            <!--****************END IMAGES HERE*********************-->
+
+                    </div>
+
+                </div>
+                            <!--*******************facebook comments********************************-->
+                <div class="facebook_comment">
+                        <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=111957155553112&amp;xfbml=1"></script>
+                        <fb:comments href="http://ps.zmags.com/poc/margareta/" numposts="3" width="340" publish_feed="true" id="comments"></fb:comments>
+                </div>
+           <!--************************end facebook comments*****************************************-->
+        </div>
+        <!--END PANEL LEFT-->
+
+        <!--PANEL RIGHT-->
+        <div class="panel_right">
+
+             <div id="containerFicha">
+
+               <!-- INFO PRODUCT  -->
+                <div  id="containerFichaData">
+
+                      <div id="title_product">
+
+                                <span id="title-prod">TITLE PRODUCT</span><br/>
+
+                                <span ><strong id="name-prod">NAME PRODUCT</strong></span><br/><br/>
+
+                                <strong><span id="price-prod" >PRICE</span><sup>0c</sup></strong><br/>
+
+                      </div>
+
+                      <div id="referencia">
+                                <p>Ref.: <span id="ref-prod">14875035</span></p>
+                      </div><br/>
+
+                      <div id="details">
+                          DETAILS
+                      </div>
+                <!--  END INFO PRODUCT -->
+
+                <!-- BUTTON OF CONFIRMATION-->
+
+                      <div id="addPedido">
+                        <strong>
+                            <a id="add_to_cart" href="#">
+                                ADD TO CART
+                            </a>
+                        </strong>
+                    </div>
+                <!-- END BUTTON CONFIRMATION-->
+                      <div class="social top_space social_icons">
+
+                <!--FACEBOOK CONTENT -->
+                    <div class="like">
+                            <script src="http://connect.facebook.net/en_US/all.js"></script>
+                            <iframe class="like_button" src="http://www.facebook.com/plugins/like.php?href=alex.christopherbunk.com&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:264px;  *width:240px\9; height:35px;" allowTransparency="true"></iframe>
+                            <a href="javascript:void(0)" id="show_comments" class="show_comments"><img src="http://ps.zmags.com/poc/files_poc/images/facebook/btn_comments.png" width="100px" /></a>
+                        </div>
+                        <div class="icos">
+                            <span class="st_facebook_large"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span class="stLarge" style="background-image: url(&quot;http://w.sharethis.com/images/facebook_32.png&quot;);"><a href="http://www.addthis.com/bookmark.php?v=250&winname=addthis&pub=inwearstore&source=tbx-250&lng=es-ES&s=facebook&url=http%3A%2F%2Falex.christopherbunk.com/%3Fsku%3DC38563003&title=Mohaie%20Dress%20-%20InWear&ate=AT-inwearstore/-/-/4da393065b4d4e3e/1&uid=4da393069c09c221&sms_ss=1&at_xt=1&CXNID=2000001.5215456080540439074NXC&tt=0">&nbsp;</a></span></span></span>
+                            <span class="st_email_large"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span class="stLarge" style="background-image: url(&quot;http://w.sharethis.com/images/email_32.png&quot;);"></span></span></span>
+                            <span class="st_twitter_large"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span class="stLarge" style="background-image: url(&quot;http://w.sharethis.com/images/twitter_32.png&quot;);"></span></span></span>
+                            <img id="printIcon" alt="" src="http://ps.zmags.com/poc/files_poc/images/facebook/social_print.png">
+                            <span class="st_sharethis_large"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span class="stLarge" style="background-image: url(&quot;http://w.sharethis.com/images/sharethis_32.png&quot;);"></span></span></span>
+                        </div>
+                        <!--<script type="text/javascript">var switchTo5x=true;</script>
+                        <script src="js/buttons.js" type="text/javascript"></script>
+                        <script type="text/javascript">stLight.options({publisher:'d593dd72-f28c-4fb2-b134-555f19d0db57'});</script>-->
+                    </div>
+                 <!--END FACEBOOK CONTENT -->
+
+                </div>
+
+                <div class="clearAll"></div><!-- FIX Firefox  -->
+
+             </div>
+
+        </div>
+        <!--END PANEL RIGHT-->
+    </div>
+
+        </div>
+
+    </div>
+    <!-- END LIGHT BOX -->
+
+    <div style="display:none">
+
+        <form id="form-add_to_cart" target="form_variable" action="http://tiendaonline.leroymerlin.es/shop-site/AddToCartNoForward.do" method="get">
+
+                          <input id="prodId" name="prodId" type="hidden" value="12164" />
+                          <input type="submit" value="cargar" />
+        </form>
+
+        <iframe id="iframe-add" name="form_variable" >
+
+        </iframe>
+
+    </div>
+
+    <!--LIGHT BOX 2 -->
+
+    <!-- CONTENT LIGHT BOX-->
+    <div style="display:none">
+         <a id="trigger_product_info2" href="#info_product2" class="hidden fancybox"></a>
+    <div id="info_product2">
+
+    <script type="text/javascript">
+
+        jQuery(function($)
+        {
+            $("#info_product2 .fancybox").fancybox();
+            $('#info_product2 .cloud-zoom').CloudZoom();
+            $('#info_product2 .cloud-zoom-gallery').CloudZoom();
+        }) ;
+
+
+
+
+    </script>
+
+
+        <div id="content-lightbox2">
+
+        <!--PANEL MESSAGE-->
+        <div class="panel_message">
+              <div id="message_text">
+                  You added (1) products to your cart.
+              </div>
+             <!-- BUTTON OF CONFIRMATION-->
+
+           <div id="content_buttons">
+
+                     <div class="checkout-content">
+                        <a id="go_checkout" class="go_checkout" target="_blank" onclick="" href="https://tiendaonline.leroymerlin.es/shop-site/ShowCartItems.do">
+                             GO TO CHECKOUT
+                        </a>
+                    </div>
+                    <div class="shopping-content">
+                        <a id="continue_shopping" class="go_checkout" href="#">
+                             CONTINUE SHOPPING
+                        </a>
+                    </div>
+           </div>
+             <!-- END BUTTON CONFIRMATION-->
+
+           <div class="clearAll"></div><!-- FIX Firefox  -->
+
+        </div>
+
+        </div>
+        <!--END PANEL RIGHT-->
+    </div>
+    <!-- CONTENT LIGHT BOX-->
+</div>
+    <!-- END LIGHT BOX -->
+
+</body>
+</html>
