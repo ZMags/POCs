@@ -43,7 +43,8 @@ function viewProduct(prodID){
        html_info+= '<p>Article Number: <span id="ref-prod">  14229</span></p>';
        html_info+= '</div><br/>';
        html_info+= '<div id="details">';
-       html_info+= 'Designer baseball cap in jubilee brushed 100% cotton. Fashionable protection from the sun. Ages 7-14.';
+       html_info+= 'Designer baseball cap in jubilee brushed 100% cotton.<br/> ';
+       html_info+= 'Fashionable protection from the sun. Ages 7-14.<br/>';
        html_info+= 'One size, velcro-adjustable at back.';
        html_info+= '</div>';
        html_info+= '<!--  END INFO PRODUCT -->';
@@ -213,7 +214,7 @@ function clickCart(){
 
                                     $.ajax({
                                        type: "POST",
-                                       url: "ajax.php",
+                                       url: "http://www.volvomerchandise.com/details/clothing-headwear/product/14229/Trucks%20Collection/",
                                        data: "ColorID="+ColorID+"&ConfigID="+ConfigID+"&SearchString="+SearchString+"&SizeID="+SizeID+"&__ASYNCPOST="+__ASYNCPOST+"&__EVENTARGUMENT="+__EVENTARGUMENT+"&__EVENTTARGET="+__EVENTTARGET+"&__EVENTVALIDATION="+__EVENTVALIDATION+"&__VIEWSTATE="+
                                                __VIEWSTATE+"&ctl00$ctl00$ScriptManager1="+ctl00$ctl00$ScriptManager1+"&ctl00$ctl00$hidColorID="+ctl00$ctl00$hidColorID+"&ctl00$ctl00$hidCombPrice="+ctl00$ctl00$hidCombPrice+"&ctl00$ctl00$hidConfigID="+ctl00$ctl00$hidConfigID+
                                                "&ctl00$ctl00$hidDiscount="+ctl00$ctl00$hidDiscount+"&ctl00$ctl00$hidQty="+ctl00$ctl00$hidQty+"&ctl00$ctl00$hidSizeID="+ctl00$ctl00$hidSizeID+"&ctl00$ctl00$hidStockCode="+ctl00$ctl00$hidStockCode+"&ctl00$ctl00$hidStockCodeQtyString="+ctl00$ctl00$hidStockCodeQtyString+
