@@ -1,0 +1,54 @@
+
+
+------------------
+Project: ExamplePoc
+Log Type: Error
+Message: This is an another crazy error message.
+
+
+------------------
+Project: ExamplePoc
+Log Type: Error
+Message: This is an another crazy error message.
+
+
+------------------
+Project: ExamplePoc
+Log Type: Error
+Message: This is an another crazy error message.
+
+
+------------------
+Project: ExamplePoc
+Log Type: Error
+Message: This is an another crazy error message.
+
+
+------------------
+Project: ExamplePoc
+Log Type: Error
+Message: This is an another crazy error message.
+
+
+------------------
+Project: ExamplePoc
+Log Type: Error
+Message: This is an another crazy error message.
+
+
+------------------
+Project: ExamplePoc
+Log Type: Error
+Message: This is an another crazy error message.
+
+
+------------------
+Project: ExamplePoc
+Log Type: Error
+Message: This is an another crazy error message.
+
+
+------------------
+Project: ExamplePoc
+Log Type: Error
+Message: This is an another crazy error message.

@@ -98,7 +98,7 @@ CommerceProPS.prototype.launchCartConfirmBox = function() {
 function POCLogger(poc_id)
 {
 	this.poc_id = poc_id;
-	this.logger_url = "../serverside/logger.php";
+	this.logger_url = "http://50.16.105.65/poc/corepoc/serverside/logger.php";
 }
 
 /*
