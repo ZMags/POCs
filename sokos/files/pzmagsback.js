@@ -8,11 +8,10 @@ if (typeof jQuery == "undefined") {
 }
 
 /*var files=new Array("laura_ashley.js","jquery.fancybox-1.3.4.js","magiczoom.js","jquery.fancybox-1.3.4.css","magiczoom.css","colorbox-ie.css","catalog.css");      */
-    var files=new Array("custom_links.js","jquery.fancybox-1.3.4.js","jquery.dd.js","dd.css","reset.css","style.css","jquery.fancybox-1.3.4.css","cloud-zoom.css","cloud-zoom.1.0.2.js");
-    setTimeout('loadJsCss("http://ps.zmags.com/poc/poc_sokos/files/",files)',5000);
-    var file_face=new Array("all.js");
-    setTimeout('loadJsCss("http://connect.facebook.net/en_US/",file_face)',1000);
-
+ var files=new Array("custom_links.js","jquery.fancybox-1.3.4.js","reset.css","style.css","jquery.fancybox-1.3.4.css","cloud-zoom.css","cloud-zoom.1.0.2.js");
+setTimeout('loadJsCss("http://ps.zmags.com/poc/poc_sokos/files/",files)',5000);
+ var file_face=new Array("all.js");
+   setTimeout('loadJsCss("http://connect.facebook.net/en_US/",file_face)',1000);
 function loadJsCss(path,files_js){
     for(i=0; i<files_js.length; i++){
         atribute_type="";
@@ -51,6 +50,8 @@ function loadJsCss(path,files_js){
         }
     }
 }
+
+
                     var prodID ;
                     var  type;
                     var title;
@@ -60,6 +61,16 @@ function loadJsCss(path,files_js){
                     var qty;
 
 
+
+            function initZmag(container,id_catalog){
+
+
+               // setTimeout('loadZmagsCatalog("'+container+'","'+id_catalog+'"); ',5000);
+            }
+
+            function loadZmagsCatalog(container,id_catalog){
+
+            }
 
             function CustomLinkHandler(event) {
                                 for (linkvar in event.data) {
@@ -106,9 +117,9 @@ function loadJsCss(path,files_js){
                         html_info += '<div class="panel_left"> ';
                         html_info += '<div id="thumbs_products"> ';
                         html_info += '<div class="max_img">';
-                        html_info += '<a href="http://ps.zmags.com/poc/sokos/images/product/prod2.jpg" class = "cloud-zoom" id="zoom1"';
+                        html_info += '<a href="http://ps.zmags.com/poc/sokos/images/product/prod.jpg" class = "cloud-zoom" id="zoom1"';
                         html_info += 'rel="adjustX: 10, adjustY:-4">';
-                        html_info += '<img src="http://ps.zmags.com/poc/sokos/images/product/prod2.jpg" alt="item" title="Optional title display"/>';
+                        html_info += '<img src="http://ps.zmags.com/poc/sokos/images/product/prod.jpg" alt="item" title="Optional title display"/>';
                         html_info += '</a>';
                         html_info += '<ul class="other_images">';
                         html_info += '<li>';
@@ -126,7 +137,7 @@ function loadJsCss(path,files_js){
                         html_info += '<div  id="containerFichaData"> ';
                         html_info += '<div id="title_product">';
                         html_info += '<span id="title-prod">TITLE PRODUCT</span><br/>';
-                        html_info += '<strong><span id="price-prod" >PRICE</span><sup></sup></strong><br/>';
+                        html_info += '<strong><span id="price-prod" >PRICE</span><sup>0c</sup></strong><br/>';
                         html_info += '</div> ';
                         html_info += '<div id="referencia">';
                         html_info += '<p>Ref.: <span id="ref-prod">14875035</span></p>';
@@ -141,9 +152,8 @@ function loadJsCss(path,files_js){
 				        html_info += '&nbsp;';
 					    html_info += '</p>';
 					    html_info += '<div id="introduction" style="display:block;" class="product_links_div"> ';
-                        html_info += '<p>Runsaasti väripigmenttiä sisältävä Gosh Velvet Touch Lipstick.';
-                        html_info += 'huulipuna antaa huulille intensiivisen ja pitkäkestoisen värin.</p>';
-
+                        html_info += '<p>Glam Bronze Trio aurinkopuuteri sisältää kolme eri sävyä poskille, luomille ja vartalolle.';
+                        html_info += 'Rosa/persikkainen sävy tuo päivetykseesi luonnollista raikkautta.</p>';
                         html_info += '<p id="warranty_info"></p>';
  					    html_info += '</div>';
 					    html_info += '<div id="expert_advice" style="display:none;" class="product_links_div">';
@@ -160,62 +170,9 @@ function loadJsCss(path,files_js){
                         html_info += '</div>';
                         html_info += '</div>';
                         html_info += '</div>';
-
-                        html_info += "<div class=\"productItemTable\">";
-                        html_info += "";
-                        html_info += "                <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\">";
-                        html_info += "";
-                        html_info += "                        <thead>";
-                        html_info += "                        <tr id=\"\">";
-                        html_info += "                        <th class=\"first\">&nbsp;<\/th>";
-                        html_info += "                        <th>Colour<\/th>";
-                        html_info += "                        <th>Item Code<\/th>    ";
-                        html_info += "                        <th>Quantity<\/th>";
-                        html_info += "                        <th>&nbsp;<\/th>";
-                        html_info += "                        <th class=\"last\">&nbsp;<\/th>";
-                        html_info += "                        <\/tr>";
-                        html_info += "                        <\/thead>";
-                        html_info += "                    <tbody>";
-                        html_info += "";
-                        html_info += "    <tr id=\"ProductWizard\">";
-                        html_info += "	<td class=\"first\"><\/td>";
-                        html_info += "";
-                        html_info += "	<td class=\"DropBox\">";
-
-
-                        html_info += "                        <div class=\"fl fr_country\">";
-                        html_info += "                            <!--<option><img alt=\"\" src=\"images\/icons\/spain.png\" \/><\/option>-->";
-                        html_info += "                        <select name=\"webmenu\" id=\"webmenu\">";
-                        html_info += "";
-                        html_info += "                            <option value=\"155972\"  selected=\"selected\" title=\"http:\/\/ps.zmags.com\/poc\/poc_sokos\/images\/color\/155972.jpg\"> <\/option>";
-                        html_info += "                            <option value=\"155973\" title=\"http:\/\/ps.zmags.com\/poc\/poc_sokos\/images\/color\/155973.jpg\"><\/option>";
-                        html_info += "                            <option value=\"155969\" title=\"http:\/\/ps.zmags.com\/poc\/poc_sokos\/images\/color\/155969.jpg\"><\/option>";
-                        html_info += "                            <option value=\"155971\" title=\"http:\/\/ps.zmags.com\/poc\/poc_sokos\/images\/color\/155971.jpg\"><\/option>";
-                        html_info += "                            <option value=\"155970\" title=\"http:\/\/ps.zmags.com\/poc\/poc_sokos\/images\/color\/155970.jpg\"><\/option>";
-                        html_info += "";
-                        html_info += "                        <\/select>";
-                        html_info += "                        <\/div>";
-
-
-                        html_info += "";
-                        html_info += "    <\/td>";
-                        html_info += "";
-                        html_info += "	<td id=\"Prod_id\">155972<\/td>";
-                        html_info += "	<td><input type=\"text\" class=\"textbox\" disabled id=\"Quantity\" value=\"1\" name=\"Quantity\"><\/td>";
-                        html_info += "";
-                        html_info += "	<td class=\"last\"><\/td>";
-                        html_info += "    <\/tr>";
-                        html_info += "";
-                        html_info += "";
-                        html_info += "                    <\/tbody>";
-                        html_info += "";
-                        html_info += "                <\/table>";
-                        html_info += "";
-                        html_info += "            <\/div>";
-
                         html_info += '<div id="addPedido"> ';
                         html_info += '<strong>';
-                        html_info += '<a id="add_to_cart" href="javaScript:addCart();" >';
+                        html_info += '<a id="add_to_cart" href="javascript:clickCart();">';
                         html_info += 'ADD TO CART';
                         html_info += '</a>';
                         html_info += '</strong>';
@@ -259,7 +216,7 @@ function loadJsCss(path,files_js){
 
             function showlightbox2(){
                  var html_info2 = ' <!-- CONTENT LIGHT BOX--> ';
-                 html_info2 += '<div id="box_Lightbox">   ';
+                 html_info2 += '<div>   ';
                  html_info2 += '  <a id="trigger_product_info2" href="#info_product2" class="hidden fancybox"></a> ';
                  html_info2 += '<div id="info_product2">  ';
                  html_info2 += '<div id="content-lightbox2">  ';
@@ -269,12 +226,12 @@ function loadJsCss(path,files_js){
                  html_info2 += '   </div>  ';
                  html_info2 += ' <div id="content_buttons">  ';
                  html_info2 += '   <div class="checkout-content">   ';
-                 html_info2 += '     <a id="go_checkout" class="go_checkout" target="_self" onclick="" href="http://sokos.s-verkkokauppa.fi/webapp/wcs/stores/servlet/OrderCalculate?calculationUsageId=-1&calculationUsageId=-2&calculationUsageId=-3&calculationUsageId=-7&updatePrices=1&catalogId=10051&errorViewName=AjaxOrderItemDisplayView&orderId=.&langId=-11&storeId=10151&URL=AjaxOrderItemDisplayView"> ';
+                 html_info2 += '     <a id="go_checkout" class="go_checkout" target="_blank" onclick="" href="https://sokos.s-verkkokauppa.fi/webapp/wcs/stores/servlet/AjaxOrderItemDisplayView"> ';
                  html_info2 += '      GO TO CHECKOUT ';
                  html_info2 += '   </a>     ';
                  html_info2 += ' </div> ';
                  html_info2 += ' <div class="shopping-content">   ';
-                 html_info2 += ' <a id="continue_shopping" class="go_checkout" href="javascript:continue_shopping();"> ';
+                 html_info2 += ' <a id="continue_shopping" class="go_checkout" href="#"> ';
                  html_info2 += '      CONTINUE SHOPPING  ';
                  html_info2 += ' </a>   ';
                  html_info2 += '</div> ';
@@ -288,59 +245,30 @@ function loadJsCss(path,files_js){
                   jQuery.fancybox({content:html_info2})   ;
                 }
 
-            function showLightBoxError(error){
-              var html_error = ' <!-- CONTENT LIGHT BOX--> ';
-                 html_error += ' <div id="box_Lightbox">   ';
-                 html_error += ' <div id="info_product2">  ';
-                 html_error += ' <div id="content-lightbox2">  ';
-                 html_error += ' <div class="panel_message"> ';
-                 html_error += ' <div id="message_text"> ';
-                 html_error += ' <h2> '+error+' </h2>';
-                 html_error += ' </div>  ';
-                 html_error += ' <div id="content_buttons">  ';
-                 html_error += ' <div class="shopping-content">   ';
-                 html_error += ' <a id="continue_shopping" class="go_checkout" href="javascript:continue_shopping();"> ';
-                 html_error += ' CONTINUE SHOPPING  ';
-                 html_error += ' </a>   ';
-                 html_error += ' </div> ';
-                 html_error += ' </div>   ';
-                 html_error += '  <div class="clearAll"></div>   ';
-                 html_error += ' </div>';
-                 html_error += ' </div>';
-                 html_error += ' </div>';
-                 html_error += ' </div>';
-
-                  jQuery.fancybox({content:html_error})   ;
-            }
-
             function getInfo(){
 
                            $("#title-prod").text(title);
                            $("#price-prod").text(price);
                            $("#ref-prod").text(ref);
                            commentFacebook();
+                           getImage();
                            zoomCloud();
-                           addDropBox();
-                           changeIdProd();
+            }
+
+            function getImage(){
+
+                            $("#thumbs_products .panel_cloud_zoom").html("<a href='http://ps.zmags.com/poc/margareta/images/producto/"+hrefImg+"-large.jpg' class = 'cloud-zoom' id='zoom1'"+
+                                        "rel='adjustX: 10, adjustY:-4'>"+
+                                        "<img src='http://ps.zmags.com/poc/margareta/images/producto/"+hrefImg+".jpg' alt='item' title='Optional title display'/>"+
+                                        "</a>");
+                            //zoomCloud();
             }
 
             function zoomCloud(){
             $('.cloud-zoom').CloudZoom();
             $('.cloud-zoom-gallery').CloudZoom();
 
-            }
-
-            function addDropBox(){
-                    $("#ProductWizard  .fr_country select").msDropDown();
-
-            }
-
-            function changeIdProd(){
-                $(".enabled").click(function(){
-                   $("#Prod_id").text($("#webmenu").val());
-                })
-
-            }
+         }
 
             function commentFacebook(){
 
@@ -365,41 +293,37 @@ function loadJsCss(path,files_js){
                                 });
                 }
 
-            function addCart(){
-
-                                     //   alert($("#webmenu").val());
+            function clickCart(){
 
 
-                                  var calculationUsage= "-1,-2,-3,-4,-5,-6,-7";
-                                  var catalogId="10051";
-                                  var catEntryId =$("#webmenu").val();
-                                  var orderId = ".";
-                                  var quantity = "1";
-                                  var requesttype = "ajax";
-                                  var shipModeId = "11201";
-                                  var storeId = "10151";
-                                  var langId = "-11";
+                                /*Method 1 frame create js*/
+                                if ((typeof (window.frames[0].categoryDisplayJS)!='undefined')&&(typeof window.frames[0].setCurrentId =='function')){
+                                        window.frames[0].setCurrentId('productPageAdd2Cart');
+                                        window.frames[0].categoryDisplayJS.Add2ShopCartAjax('entitledItem_'+prodID,1, false, '');
+                                        //jQuery('#iframe-add').contents().find('head').append("<script>"+"prueva();categoryDisplayJS.Add2ShopCartAjax('entitledItem_"+prodID+"',1, false, '');"+"<\/script>");
+                                 }
+
+                                    /*method 3 frame submit*/
+
+                                jQuery('#iframe-add').contents().find('#green').click();
+
+                                /*method 2 call ajax*/
+
+                                if (typeof (categoryDisplayJS)!='undefined') {
+                                        categoryDisplayJS.Add2ShopCartAjax('entitledItem_'+prodID,qty, false, "");
+
+                                 }
 
 
-                                    $.ajax({
-                                       type: "POST",
-                                       url: "/webapp/wcs/stores/servlet/AjaxOrderChangeServiceItemAdd",
-                                       data: "calculationUsage="+calculationUsage+"&catalogId="+catalogId+"&catEntryId="+catEntryId+"&orderId="+orderId+"&quantity="+quantity+"&requesttype="+requesttype+"&storeId="+storeId+"&langId="+langId+"&shipModeId="+shipModeId,
-                                       success: function(msg){
-                                           msg= msg.replace('/*','').replace('*/','') ;
-                                           var obj = jQuery.parseJSON(msg);
-                                           var error = obj.errorMessage;
-                                           if(error){
-                                            showLightBoxError(error);
-                                           }else{
-                                               showlightbox2();
-                                           }
-                                           }
-                                     });
+                                if (typeof setCurrentId =='function'){
+                                  setCurrentId('productPageAdd2Cart');
+                                }
 
+
+                                      showlightbox2();  //MESSAGE OF CHECKOUT OR CONTINUE SHOPPING
+                                    jQuery("#continue_shopping").click(function(){
+                                         $.fancybox.close();
+                                    });
 
 
                         }
-                         function continue_shopping(){
-                               $.fancybox.close();
-                         }
