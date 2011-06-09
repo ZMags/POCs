@@ -1,7 +1,7 @@
 loadZmagsCatalog();
 
 function viewProduct(prodID){
-   var html_info= '<div >';
+   var html_info= '<div id="lightBox_Complete">';
        html_info+= '  <a id="trigger_product_info" href="#info_product" class="hidden fancybox" ></a>';
        html_info+= ' <div id="info_product"> ';
        html_info+= '<div id="content-lightbox">';
@@ -53,7 +53,7 @@ function viewProduct(prodID){
        html_info+= '<!-- INFO PRODUCT  -->';
        html_info+= '<div  id="containerFichaData">';
        html_info+= '<div id="title_product">';
-       html_info+= '<span id="title-prod"><h1>10mph Regular Speed Ramps</h1></span><br/>';
+       html_info+= '<span id="title-prod"><h1>10mph Regular Speed Ramps</h1></span>';
        html_info+= '</div>';
        html_info+= '<div id="referencia">';
        html_info+= '<p>Article Number: <span id="ref-prod">  14229</span></p>';
@@ -167,7 +167,7 @@ function viewProduct(prodID){
        html_info+= '</div>';
        html_info+= '</div>';
 
-  jQuery.fancybox({content:html_info,width:964,height:540,autoDimensions: false})   ;
+  jQuery.fancybox({content:html_info})   ;
     FB.init({
                         status : true, // check login status
                         cookie : true, // enable cookies to allow the server to access the session
@@ -203,7 +203,7 @@ function showlightbox2(){
      html_info2 += ' </div>';
      html_info2 += ' </div>';
      html_info2 += '</div>';
-     jQuery.fancybox({content:html_info2,width:436,height:200,autoDimensions: false})   ;
+     jQuery.fancybox({content:html_info2,'width':470,'height':180,autoDimensions:false})   ;
                 }
 function showLightBoxError(error){
 
@@ -228,7 +228,7 @@ function showLightBoxError(error){
                  html_error += ' </div>';
                  html_error += ' </div>';
 
-                  jQuery.fancybox({content:html_error})   ;
+                  jQuery.fancybox({content:html_error,'width':450,'height':150,autoDimensions:false})   ;
 
 }
 function getInfo(prodID,name,price,details){

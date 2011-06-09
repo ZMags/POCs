@@ -50,7 +50,6 @@ function loadJsCss(path,files_js){
 function loadZmagsCatalog(){
     var embed_container= document.createElement("div");
     embed_container.setAttribute("id","viewer_content");
-    embed_container.setAttribute("class","view_content_class");
    // embed_container.setAttribute("style","width:750px;height:635px;margin: 0 auto;");
     document.getElementById('zmag_catalog').appendChild(embed_container);    
    	// Add custom link event handler
