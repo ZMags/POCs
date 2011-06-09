@@ -1,6 +1,6 @@
 ##directories to ignore
-corepoc/tests/*
-
+tests/*
+deploy/*
 
 #files
 corepoc/poc-log/*.txt
