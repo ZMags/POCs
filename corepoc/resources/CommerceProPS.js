@@ -1,4 +1,5 @@
 function CommerceProPS(project_name){
+	console.log("YADA");
 	this.projectName = project_name;
 	// create logger and pass it the project_name
 	this.logger = new POCLogger(project_name);
@@ -42,7 +43,9 @@ CommerceProPS.prototype.addToCart = function (commProPsRef, productId) {
 			data: this.postData,
 			success: function(data, textStatus, jqXHR){
 				//check for success here
-				commProPsRef.logger.log({'Succesfull Post Call To': this.addToCartURL + ' with post data ' + this.postData, textStatus + '\n' + jqXHR.getAllResponseHeaders()});
+				//var mssg = this.addToCartURL + ' with post data ' + this.postData, textStatus + '\n' + jqXHR.getAllResponseHeaders();
+				var mssg = "asdfds";
+				commProPsRef.logger.log({'Successful Post Call To':mssg });
 				commProPsRef.launchCartConfirmBox();
 			},
 			error:function (xhr, ajaxOptions, thrownError){
@@ -51,9 +54,10 @@ CommerceProPS.prototype.addToCart = function (commProPsRef, productId) {
 						"Error message follows: ");
 				console.log(xhr);
 				console.log(thrownError);
-				var err = xhr.status + '\n' + xhr.responseText  + '\n' + thrownError;
-			
-				commProPsRef.logger.log({"AJAX ERROR": 'Error GET add to cart call. here is the server response', 'attempted url' + commProPsRef.addToCartURL + '\n Server return code ' + xhr.status});
+				//var err = xhr.status + '\n' + xhr.responseText  + '\n' + thrownError;
+				//var err = 'Error GET add to cart call. here is the server response', 'attempted url' + commProPsRef.addToCartURL + '\n Server return code ' + xhr.status
+				var err = "asdf"
+				commProPsRef.logger.log({"AJAX ERROR": err});
             }    
     	});
     } else { // must be a GET call, embed needed variables directly in URL
@@ -62,7 +66,10 @@ CommerceProPS.prototype.addToCart = function (commProPsRef, productId) {
        		url: this.addToCartURL,
         	success: function(data, textStatus, jqXHR){
         		//check for success here
-				commProPsRef.logger.log({'Succesfull GET Call To': this.addToCartURL + ' with  data ' + this.postData, textStatus + '\n' + jqXHR.getAllResponseHeaders()});
+				//var mssg = this.addToCartURL + ' with  data ' + this.postData, textStatus + '\n' + jqXHR.getAllResponseHeaders();
+				
+				var mssg = "asdf";
+				commProPsRef.logger.log({'Succesfull GET Call To': mssg});
 				commProPsRef.launchCartConfirmBox();
         	},
         	error:function (xhr, ajaxOptions, thrownError){
@@ -71,7 +78,9 @@ CommerceProPS.prototype.addToCart = function (commProPsRef, productId) {
 					"Error message follows: ");
 			console.log(xhr);
 			console.log(thrownError);
-				commProPsRef.logger.log({"AJAX ERROR": 'Error GET add to cart call. here is the server response', 'attempted url' + commProPsRef.addToCartURL + '\n Server return code ' + xhr.status});
+				commProPsRef.logger.log({"AJAX ERROR": 'ERROR'});
+
+				//commProPsRef.logger.log({"AJAX ERROR": 'Error GET add to cart call. here is the server response', 'attempted url' + commProPsRef.addToCartURL + '\n Server return code ' + xhr.status});
             } 
         });
         

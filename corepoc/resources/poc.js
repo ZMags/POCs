@@ -62,6 +62,7 @@ var zmagCPO;
 //1. Check if jquery exists.
 if(window.jQuery === undefined){
 	
+	
 	// dont have it so load it.
 	document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js">\x3C/script>');
 	
@@ -70,7 +71,7 @@ if(window.jQuery === undefined){
 }else{
 	//jquery exists, do your thang!
 
-	initCommerceAssets(jsIncludeFiles, cssIncludeFiles)
+	initCommerceAssets(jsIncludeFiles, cssIncludeFiles);
 }
 
 
@@ -86,7 +87,6 @@ function checkIfJqueryIsLoaded(){
 }
 function initCommerceAssets( jsFilesZmags, cssFilesZmags ){
 	
-
 	//load css
 
 	for (var i=0; i < cssFilesZmags.length; i++) {
@@ -121,7 +121,7 @@ function initCommerceAssets( jsFilesZmags, cssFilesZmags ){
 
 	//load up commerceprojs
 	var commerceprojs = document.createElement("script");
-	commerceprojs.setAttribute("src", "http://50.16.105.65/poc/resources/CommerceProPS.js");
+	commerceprojs.setAttribute("src", CORE_SOURCE + "corepoc/resources/CommerceProPS.js");
 	commerceprojs.setAttribute("type", "text/javascript");
 
 	commerceprojs.onload = initCommerceObject;
@@ -146,12 +146,18 @@ function initZmag(){
 //initialize CommerceProPS object
 
 function initCommerceObject(){
+
+
+/*
 	zmagCPO = new CommerceProPS(pocProjectName);
 	zmagCPO.addToCartURL = addToCartURL;
 	zmagCPO.productDetailHTML = prodDetailHTML;
 	zmagCPO.addToCartConfirmHTML = addToCartConfirmHTML;
 	zmagCPO.postData = postDataString;
-	zmagCPO.addToCartID = addToCartButtonID;
+	zmagCPO.addToCartID = addToCartButtonID;*/
+
+
+
 	//zmagCPO.setProjectName(pocProjectName);
 }				
 
