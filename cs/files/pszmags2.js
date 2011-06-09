@@ -10,7 +10,7 @@ if (typeof jQuery == "undefined") {
 
 /*var files=new Array("laura_ashley.js","jquery.fancybox-1.3.4.js","magiczoom.js","jquery.fancybox-1.3.4.css","magiczoom.css","colorbox-ie.css","catalog.css");      */
  var files=new Array("custom_links.js","jquery.fancybox-1.3.4.js","reset.css","style.css","jquery.fancybox-1.3.4.css","cloud-zoom.css","cloud-zoom.1.0.2.js");
-setTimeout('loadJsCss("http://ps.zmags.com/poc/volvo/files/",files)',5000);
+setTimeout('loadJsCss("http://ps.zmags.com/poc/cs/files/",files)',5000);
 var file_face=new Array("all.js");
    setTimeout('loadJsCss("http://connect.facebook.net/en_US/",file_face)',1000);
 function loadJsCss(path,files_js){
@@ -50,7 +50,8 @@ function loadJsCss(path,files_js){
 function loadZmagsCatalog(){
     var embed_container= document.createElement("div");
     embed_container.setAttribute("id","viewer_content");
-    embed_container.setAttribute("style","width:840px;height:750px");
+    embed_container.setAttribute("class","view_content_class");
+   // embed_container.setAttribute("style","width:750px;height:635px;margin:0 auto;");
     document.getElementById('zmag_catalog').appendChild(embed_container);    
    	// Add custom link event handler
     viewer.addEventListener(ZMAGS.ui.Viewer.CUSTOM_LINK_CLICK, "CustomLinkHandler", self);
@@ -93,6 +94,8 @@ function CustomLinkHandler(event) {
          getInfo(prodID,name,price,details);
         // getImage();
          zoomCloud();
+         playVideo();
+         showImage()
 
 	  }
 }
