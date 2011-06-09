@@ -140,13 +140,13 @@ function initZmag(){
 //initialize CommerceProPS object
 
 function initCommerceObject(){
-	zmagCPO = new CommerceProPS();
-	zmagCPO.setAddToCartURL(addToCartURL);
-	zmagCPO.setProductDetailHTML(prodDetailHTML);
-	zmagCPO.setCartConfirmHTML(addToCartConfirmHTML);
-	zmagCPO.setPostDataString(postDataString);
-	zmagCPO.setAddToCartID(addToCartButtonID);
-	zmagCPO.setProjectName(pocProjectName);
+	zmagCPO = new CommerceProPS(pocProjectName);
+	zmagCPO.addToCartURL = addToCartURL;
+	zmagCPO.productDetailHTML = prodDetailHTML;
+	zmagCPO.addToCartConfirmHTML = addToCartConfirmHTML;
+	zmagCPO.postData = postDataString;
+	zmagCPO.addToCartID = addToCartButtonID;
+	//zmagCPO.setProjectName(pocProjectName);
 }				
 
 

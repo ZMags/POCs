@@ -1,0 +1,6 @@
+##directories to ignore
+corepoc/tests/*
+
+
+#files
+corepoc/serverside/*.txt

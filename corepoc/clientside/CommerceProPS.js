@@ -1,4 +1,7 @@
-function CommerceProPS(){
+function CommerceProPS(project_name){
+	this.projectName = project_name;
+	// create logger and pass it the project_name
+	this.logger = new POCLogger(project_name);
 
 	this.addToCartURL = "";
 	this.productDetailHTML = "";
@@ -6,87 +9,41 @@ function CommerceProPS(){
 	this.viewCartURL = "";
 	this.postData = "";
 	this.addToCartID = "";
-	this.projectName = "";
-	
-	//object methods
-	this.setAddToCartURL = setAddToCartURL;
-	this.setProductDetailHTML = setProductDetailHTML;
-	this.setCartConfirmHTML = setCartConfirmHTML;
-	this.setViewCartURL = setViewCartURL;
-	this.setPostDataString = setPostDataString;
-	this.launchProdDetailBox = launchProdDetailBox;
-	this.launchCartConfirmBox = launchCartConfirmBox;
-	this.addToCart = addToCart;
-	this.reportError = reportError;
-	this.setAddToCartID = setAddToCartID;
-	this.setProjectName = setProjectName;	
 }
 
-function setProjectName ( name ) {
-	this.projectName = name;
-	projectName = name;
-}
 
-function setAddToCartID( id ){
-	this.addToCartID = id;
-	addToCartID = id;
-}
-
-function setAddToCartURL ( url ){
-	this.addToCartURL = url;
-	addToCartURL = url;
-}
-
-function setProductDetailHTML ( html ){
-	this.productDetailHTML = html;
-	productDetailHTML = html;
-}
-
-function setCartConfirmHTML ( html ) {
-
-	this.addToCartConfirmHTML = html;
-	addToCartConfirmHTML = html;
-
-}
-
-function setViewCartURL ( url ) {
-
-	this.viewCartURL = url;
-	viewCartURL = url;
-
-}
-
-function setPostDataString ( postString ) {
-
-	this.postData = postString;
-	postData = postString;
-	
-}
-
-function launchProdDetailBox (){
+CommerceProPS.prototype.launchProdDetailBox  = function() {
 
 	jQuery.fancybox({content:this.productDetailHTML}); 
 
 	//search for id to attach click event too
 	$addToCartButton = jQuery('body').find('#addToCartBtn');
+	
+	// we are storing a ref to the CommerecProPS object to grab variables or methods out of later
+	$addToCartButton.comProObj = this;
+	
 	$addToCartButton.bind("click", function() {
-		addToCart(this.productID);
+		
+		this.comProObj.addToCart(this.comProObj, this.productID);
 	});
 
 }
 
-function addToCart ( productID ) {
+CommerceProPS.prototype.addToCart = function (commProPsRef, productId) {
+
+	//  bit hacky but this gives us a ref to our CommerceProPS
+	var commProPsRef = this;
 
 	//if there are any characters in post data string, must be a POST call
 	if (this.postData != ""){
 		jQuery.ajax({
 			type: "POST",
-			url: addToCartURL,
+			url: this.addToCartURL,
 			data: this.postData,
 			success: function(data, textStatus, jqXHR){
 				//check for success here
-				reportError( projectName, 'low', 'ajax', 'succesfull POSt call to ' + this.addToCartURL + ' with post data ' + this.postData, textStatus + '\n' + jqXHR.getAllResponseHeaders());
-				launchCartConfirmBox();
+				commProPsRef.logger.log({'Succesfull Post Call To': this.addToCartURL + ' with post data ' + this.postData, textStatus + '\n' + jqXHR.getAllResponseHeaders()});
+				commProPsRef.launchCartConfirmBox();
 			},
 			error:function (xhr, ajaxOptions, thrownError){
 				console.log("Error in CommerceProPS addToCart function. Errored out on " +
@@ -95,7 +52,8 @@ function addToCart ( productID ) {
 				console.log(xhr);
 				console.log(thrownError);
 				var err = xhr.status + '\n' + xhr.responseText  + '\n' + thrownError;
-				reportError( projectName, 'mediam', 'ajax', 'error GET add to cart call. here is the server response', 'attemted url' + this.addToCartURL + '\n Server return code ' + xhr.status);
+			
+				commProPsRef.logger.log({"AJAX ERROR": 'Error GET add to cart call. here is the server response', 'attempted url' + commProPsRef.addToCartURL + '\n Server return code ' + xhr.status});
             }    
     	});
     } else { // must be a GET call, embed needed variables directly in URL
@@ -104,8 +62,8 @@ function addToCart ( productID ) {
        		url: this.addToCartURL,
         	success: function(data, textStatus, jqXHR){
         		//check for success here
-			reportError( projectName, 'low', 'ajax', 'succesfull POSt call to ' + this.addToCartURL + ' with post data ' + this.postData, textStatus + '\n' + jqXHR.getAllResponseHeaders());
-        		launchCartConfirmBox();
+				commProPsRef.logger.log({'Succesfull GET Call To': this.addToCartURL + ' with  data ' + this.postData, textStatus + '\n' + jqXHR.getAllResponseHeaders()});
+				commProPsRef.launchCartConfirmBox();
         	},
         	error:function (xhr, ajaxOptions, thrownError){
 			console.log("Error in CommerceProPS addToCart function. Errored out on " +
@@ -113,7 +71,7 @@ function addToCart ( productID ) {
 					"Error message follows: ");
 			console.log(xhr);
 			console.log(thrownError);
-			reportError( projectName, 'mediam', 'ajax', 'error GET add to cart call. here is the server response', 'attemted url' + this.addToCartURL + '\n Server return code ' + xhr.status);
+				commProPsRef.logger.log({"AJAX ERROR": 'Error GET add to cart call. here is the server response', 'attempted url' + commProPsRef.addToCartURL + '\n Server return code ' + xhr.status});
             } 
         });
         
@@ -121,45 +79,55 @@ function addToCart ( productID ) {
     
 }
 
-function launchCartConfirmBox() {
+CommerceProPS.prototype.launchCartConfirmBox = function() {
 
 	//console.log('launching confirm box with html \n' + this.addToCartConfirmHTML );
 	jQuery.fancybox({content:this.addToCartConfirmHTML}); 
 
 }
 
-function reportError( project, priority, type, note, errorMessage ){
-	var postString = "";
-	if ( project != null ) {
-		this.postString += "project=" + projectName + "&";	
-	}
-	if ( priority != null ) {
-		this.postString += "priority=" + priority + "&";	
-	}
-	if ( type != null ) {
-		this.postString += "type=" + type + "&";	
-	}
-	if ( note != null ) {
-		this.postString += "note=" + note + "&";	
-	}
-	if ( errorMessage != null ) {
-		this.postString += "errorMessage=" + errorMessage + "&";
-	}
 
-	if ( postString.charAt(postString.length - 1) == "&"){
-		this.postString.substring(0, postString.length-2);	
-	}
+//----------------- LOGGING ------------------------/////
 
-    	jQuery.ajax({
-    		type: "POST",
-			data: this.postString,
-			url: "http://ps.zmags.com/poc/error/report.php",
-        	success: function(msg){
-			console.log("Error reported successfully to PS error log.");
-        	},
-        	error:function (xhr, ajaxOptions, thrownError){
-				console.log("Could not connect to PS error log.");
-			} 
-	});
+/*
+	Logger interfaces with logger.php
+	jQuery is required.
+*/
 
+
+function POCLogger(poc_id)
+{
+	this.poc_id = poc_id;
+	this.logger_url = "../serverside/logger.php";
 }
+
+/*
+	log_obj ex:
+	{"TransactionName":"value", "Other Value":"value"}
+*/
+POCLogger.prototype.log = function(log_obj)
+{
+	
+	var data = {};
+	// we always want to save this
+	data['poc_id'] = this.poc_id;
+	data['log'] = log_obj;
+	
+
+	
+	// use jquery to JSONIFY the whole object;
+	
+	var prep_json = JSON.stringify(data);
+	console.log(prep_json);
+	$.post(  
+            this.logger_url,  
+            {data:prep_json},  
+            function(response){  
+                console.log("") 
+            },
+            "json"  
+        );  
+	
+}
+
+
