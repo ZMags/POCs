@@ -3,4 +3,4 @@ corepoc/tests/*
 
 
 #files
-corepoc/serverside/*.txt
+corepoc/poc-log/*.txt
