@@ -1,26 +1,28 @@
 //edit this variables as needed
 
+/*
 //for zmag load
 var zmagPubID = '';
 var zmagParentElement = '';
-var pocProjectName = '';
+var pocProjectName = '';*/
+
 
 
 //vars being sent from catalog..
+/*
 var prodID;
 var type;
 var title;
 var price;
-var qty;
+var qty;*/
 
 
-//for zCom POC EXAMPLE: zComResourcePath = 'http://ps.zmags.com/poc/kirnazabete/supportFiles/'
-var zComResourcePath = 'http://ps.zmags.com/poc/kirnazabete/supportFiles/';
 
-
+/*
 //full path to client's add to cart script (including parameters if using GET) 
 //EXAMPLE: addToCartURL = http://dev.kirnazabete.com/checkout/cart/add/uenc/aHR0cDovL2Rldi5raXJuYXphYmV0ZS5jb20vY2xvdGhlcy9jb2F0cy9zcGFydGEtY29hdA,,/product/12742/
-var addToCartURL = '';
+var addToCartURL = '';*/
+
 
 
 /*
@@ -32,22 +34,26 @@ var addToCartURL = '';
 	var addToCartConfirmHTML = '<div>CONFIRMATION MESSAGE HERE</div>';
 */
 
+/*
 var postDataString = ''; 
 var prodDetailHTML = '';
 var addToCartButtonID = 'addToCartBtn';
-var addToCartConfirmHTML = '';
+var addToCartConfirmHTML = '';*/
+
 
 
 /*
-	List files to include for lightboxes, CSS, etc. these must be all be in the same zcomresource directory. 
-	Ex: var includePathZmags = "http://ps.zmags.com/poc/kirnazabete/supportFiles/"
+	
 */
-var includePathZmags = '';
+
+/*
+var includePathZmags = 'http://50.16.105.65/poc/deploy/AngelCo/';
 var jsIncludeFiles =[
 			"jquery.fancybox-1.3.4.js"];
 var cssIncludeFiles = [
 			"jquery.fancybox-1.3.4.css"
-			]
+			]*/
+
 
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -159,6 +165,7 @@ function closeProductWindow(){
 }
 
 function CustomLinkHandler(event) {
+/*
 	for (linkvar in event.data) {
 		if (linkvar == "type") {
 			type = event.data[linkvar];
@@ -180,5 +187,9 @@ function CustomLinkHandler(event) {
 	switch(type) {
 		case 'add':zmagCPO.launchProdDetailBox();
 		break;
-	}
+	}*/
+
+	
+	zmagCPO.launchProdDetailBox();
+	
 }
