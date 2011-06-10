@@ -1,7 +1,7 @@
 loadZmagsCatalog();
 
 function viewProduct(prodID){
-   var html_info= '<div >';
+   var html_info= '<div id="lightBox_Complete">';
        html_info+= '  <a id="trigger_product_info" href="#info_product" class="hidden fancybox" ></a>';
        html_info+= ' <div id="info_product"> ';
        html_info+= '<div id="content-lightbox">';
@@ -9,6 +9,8 @@ function viewProduct(prodID){
        html_info+= '<div class="panel_left">';
        html_info+= '<div id="thumbs_products">';
        html_info+= '<!--imagen-->';
+       html_info+= '<div class="max_video">';
+       html_info+= '</div>';
        html_info+= '<div class="max_img">';
        html_info+= '<!--****************ADD IMAGES HERE*********************-->';
        html_info+= '<a href="http://ps.zmags.com/poc/cs/images/producto/prod-1.jpg" class = "cloud-zoom" id="zoom1"';
@@ -25,6 +27,11 @@ function viewProduct(prodID){
        html_info+= '<li>';
        html_info+= '<a href="http://ps.zmags.com/poc/cs/images/producto/prod-2.jpg" class="cloud-zoom-gallery" title="Thumbnail 1" rel="useZoom: \'zoom1\', smallImage: \'http://ps.zmags.com/poc/cs/images/producto/prod-2.jpg\' ">';
        html_info+= '<img  title="Regular Speed Ramps" src="http://ps.zmags.com/poc/cs/images/producto/prod-2-small.jpg" alt = "Thumbnail 1"/>';
+       html_info+= '</a>';
+       html_info+= '</li>';
+       html_info+= '<li>';
+       html_info+= '<a href="#" class="play-button" title="Thumbnail 1" rel="useZoom: \'zoom1\', smallImage: \'http://ps.zmags.com/poc/cs/images/icon-play.png\' ">';
+       html_info+= '<img  title="Regular Speed Ramps" src="http://ps.zmags.com/poc/cs/images/icon-play.png" alt = "Thumbnail 1"/>';
        html_info+= '</a>';
        html_info+= '</li>';
        html_info+= '</ul>';
@@ -46,19 +53,86 @@ function viewProduct(prodID){
        html_info+= '<!-- INFO PRODUCT  -->';
        html_info+= '<div  id="containerFichaData">';
        html_info+= '<div id="title_product">';
-       html_info+= '<span id="title-prod">10mph Regular Speed Ramps</span><br/>';
-       html_info+= '<strong><span id="price-prod" >89</span><sup></sup></strong><br/>';
+       html_info+= '<span id="title-prod"><h1>10mph Regular Speed Ramps</h1></span>';
        html_info+= '</div>';
        html_info+= '<div id="referencia">';
        html_info+= '<p>Article Number: <span id="ref-prod">  14229</span></p>';
-       html_info+= '</div><br/>';
+       html_info+= '</div>';
+
+       html_info+= '<div id="description">';
        html_info+= '<div id="details">';
-       html_info+= 'Designer baseball cap in jubilee brushed 100% cotton.<br/> ';
-       html_info+= 'Fashionable protection from the sun. Ages 7-14.<br/>';
-       html_info+= 'One size, velcro-adjustable at back.';
+       html_info+= '<ul>';
+       html_info+= '<li>Dictates a 10mph control rating</li>' ;
+       html_info+= '<li>Any length of ramp can be formed by simply<br>';
+       html_info+= 'adding together the tough  yellow and black sections</li>';
+       html_info+= '<li>Ramp section 500L x 50H x 350W, 8.0kg</li>';
+       html_info+= '<li>Tapered end sections 175L x 50H x 350W, 1.9kg</li>';
+       html_info+= '<li>High visibility yellow and black ramps</li>';
+       html_info+= '<li>Tapered ends neatly complete a run</li>';
+       html_info+= '<li>Cats eyes for night time safety</li>';
+       html_info+= '</ul>';
        html_info+= '</div>';
        html_info+= '<!--  END INFO PRODUCT -->';
        html_info+= '<!-- BUTTON OF CONFIRMATION-->';
+
+       html_info += "<div class=\"productItemTable\">";
+       html_info += "";
+       html_info += "                <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\">";
+       html_info += "";
+       html_info += "                        <thead>";
+       html_info += "";
+       html_info += "                        <tr id=\"\">";
+       html_info += "                        <th class=\"first\">&nbsp;<\/th>";
+       html_info += "                        <th>Description<\/th>";
+       html_info += "                        <th>Colour<\/th>";
+       html_info += "                        <th>Fixings<\/th>";
+       html_info += "                        <th>Item Code<\/th>";
+       html_info += "                        <th>Price<\/th>";
+       html_info += "                        <th>Quantity<\/th>";
+       html_info += "                        <th>&nbsp;<\/th>";
+       html_info += "                        <th class=\"last\">&nbsp;<\/th>";
+       html_info += "                        <\/tr>";
+       html_info += "";
+       html_info += "";
+       html_info += "                        <\/thead>";
+       html_info += "";
+       html_info += "                    <tbody>";
+       html_info += "";
+       html_info += "    <tr id=\"ProductWizard\">";
+       html_info += "	<td class=\"first\"><\/td>";
+       html_info += "	<td><select id=\"Filter1\"  name=\"Filter1\">";
+       html_info += "		<option value=\"-\">Please select<\/option>";
+       html_info += "		<option value=\"Ramp Section\">Ramp Section<\/option>";
+       html_info += "		<option value=\"Tapered End\" selected=\"selected\">Tapered End<\/option>";
+       html_info += "";
+       html_info += "	<\/select><\/td>";
+       html_info += "	<td><select id=\"Filter2\"  name=\"Filter2\">";
+       html_info += "		<option value=\"-\">Please select<\/option>";
+       html_info += "		<option value=\"Yellow\" selected=\"selected\">Yellow<\/option>";
+       html_info += "		<option value=\"Black\">Black<\/option>";
+       html_info += "";
+       html_info += "	<\/select><\/td>";
+       html_info += "	<td><select id=\"Option1\" name=\"Option1\">";
+       html_info += "		<option value=\"-\">Please select<\/option>";
+       html_info += "		<option value=\"Concrete\">Concrete<\/option>";
+       html_info += "		<option value=\"Tarmac\">Tarmac<\/option>";
+       html_info += "";
+       html_info += "	<\/select><\/td>";
+       html_info += "	<td>CSR3Y<\/td>";
+       html_info += "	<td> <span id='price-prod'><\/span> <\/td>";
+       html_info += "	<td><input type=\"text\" class=\"textbox\" id=\"Quantity\" value=\"1\" name=\"Quantity\"><\/td>";
+       html_info += "";
+       html_info += "	<td class=\"last\"><\/td>";
+       html_info += "    <\/tr>";
+       html_info += "";
+       html_info += "";
+       html_info += "                    <\/tbody>";
+       html_info += "";
+       html_info += "                <\/table>";
+       html_info += "";
+       html_info += "            <\/div>";
+
+       html_info+= '</div>';
        html_info+= '<div id="addPedido">';
        html_info+= '<strong>';
        html_info+= '<a id="add_to_cart" href="javascript:clickCart();">';
@@ -104,7 +178,7 @@ function viewProduct(prodID){
 function showlightbox2(){
 
      var html_info2 = ' <!-- CONTENT LIGHT BOX--> ';
-     html_info2 += '<div>   ';
+     html_info2 += '<div id="box_Lightbox">   ';
      html_info2 += '  <a id="trigger_product_info2" href="#info_product2" class="hidden fancybox"></a> ';
      html_info2 += '<div id="info_product2">  ';
      html_info2 += '<div id="content-lightbox2">  ';
@@ -129,12 +203,12 @@ function showlightbox2(){
      html_info2 += ' </div>';
      html_info2 += ' </div>';
      html_info2 += '</div>';
-     jQuery.fancybox({content:html_info2})   ;
+     jQuery.fancybox({content:html_info2,'width':470,'height':180,autoDimensions:false})   ;
                 }
 function showLightBoxError(error){
 
               var html_error = ' <!-- CONTENT LIGHT BOX--> ';
-                 html_error += ' <div>   ';
+                 html_error += ' <div id="box_Lightbox">   ';
                  html_error += ' <div id="info_product2">  ';
                  html_error += ' <div id="content-lightbox2">  ';
                  html_error += ' <div class="panel_message"> ';
@@ -154,14 +228,14 @@ function showLightBoxError(error){
                  html_error += ' </div>';
                  html_error += ' </div>';
 
-                  jQuery.fancybox({content:html_error})   ;
+                  jQuery.fancybox({content:html_error,'width':450,'height':150,autoDimensions:false})   ;
 
 }
 function getInfo(prodID,name,price,details){
 
      $("#title-prod").text(name);
      $("#price-prod").text(price);
-     $("#details").text(details);
+     //$("#details").text(details);
 
             }
 function zoomCloud(){
@@ -176,6 +250,21 @@ function getImage(){
             "</a>");
 
             }
+function playVideo(){
+       $(".play-button").click(function(){
+       $("#wrap").hide();
+       $(".max_video").html('<object height="245" width="270" type="application/x-shockwave-flash" data="http://www.youtube.com/v/6WMfcnTUcco?fs=1&amp;hl=en_GB&amp;autoplay=1"><param value="http://www.youtube.com/v/6WMfcnTUcco?fs=1&amp;hl=en_GB&amp;autoplay=1" name="movie"><param value="true" name="allowFullScreen"><param value="always" name="allowscriptaccess"><param value="transparent" name="wmode"><param value="playerMode=embedded" name="FlashVars"></object>').show();
+
+       });
+}
+
+function showImage(){
+    $(".cloud-zoom-gallery").click(function(){
+        $("#wrap").show();
+        $(".max_video").hide();
+    });
+}
+
 function commentFacebook(){
 
                                  $("#show_comments").click(
@@ -201,6 +290,9 @@ function commentFacebook(){
                             );
                 }
 function clickCart(){
+
+
+
                                   var ColorID = "78";
                                   var ConfigID = "10";
                                   var SearchString = "";
