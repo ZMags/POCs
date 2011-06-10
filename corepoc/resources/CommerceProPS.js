@@ -21,7 +21,11 @@ CommerceProPS.prototype.launchProdDetailBox  = function() {
 
 	
 	// we are storing a ref to the CommerecProPS object to grab variables or methods out of later
-	this.addToCartButton = jQuery('body').find('#addToCartBtn').data("comProObj", this);
+	this.addToCartButton = jQuery('body').find('#addToCartBtn');
+	
+	var storedcomProObj = this;
+	
+	//jQuery.data(this.addToCartButton,"comProObj", storedcomProObj);
 	
 	// this might not work if we use <button>
 	this.addToCartButton.attr('href', this.addToCartURL);
@@ -31,8 +35,7 @@ CommerceProPS.prototype.launchProdDetailBox  = function() {
 	
 	this.addToCartButton.click( function(e) {
 		e.preventDefault();
-		var comProObj = $(this).data("comProObj");
-		comProObj.addToCart("1", comProObj.addToCartURL,comProObj.postData);
+		storedcomProObj.addToCart("1",	storedcomProObj.addToCartURL,storedcomProObj.postData);
 	});
 
 	
@@ -40,11 +43,10 @@ CommerceProPS.prototype.launchProdDetailBox  = function() {
 
 CommerceProPS.prototype.addToCart = function (productId, url, post_data) {
 
-
+	var self = this;
 	//if there are any characters in post data string, must be a POST call
 	if (this.postData != ""){
 		
-	
 		jQuery.ajax({
 			type: "POST",
 			url: url,
@@ -53,9 +55,10 @@ CommerceProPS.prototype.addToCart = function (productId, url, post_data) {
 
 				//check for success here
 				//var mssg = this.addToCartURL + ' with post data ' + this.postData, textStatus + '\n' + jqXHR.getAllResponseHeaders();
-				var mssg = "asdfds";
+				var mssg = "POST_SUCESSFULL";
+				console.log(mssg);
 				//commProPsRef.logger.log({'Successful Post Call To':mssg });
-				commProPsRef.launchCartConfirmBox();
+				self.launchCartConfirmBox();
 			},
 			error:function (xhr, ajaxOptions, thrownError){
 				
@@ -63,7 +66,7 @@ CommerceProPS.prototype.addToCart = function (productId, url, post_data) {
 				//		"a POST call addToCartURL. Are we sure we have properly formatted POST data? Correct URL?" + 
 				//		"Error message follows: ");		
 				var err = xhr.status + '\n' + xhr.responseText  + '\n' + thrownError;
-				console.log("ERROR:" + err);
+				console.log("ERROR IN ADD TO CART:" + err);
 				//var err = 'Error GET add to cart call. here is the server response', 'attempted url' + commProPsRef.addToCartURL + '\n Server return code ' + xhr.status
 			
 				//commProPsRef.logger.log({"AJAX ERROR": err});
