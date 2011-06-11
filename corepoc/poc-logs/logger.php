@@ -7,43 +7,31 @@
 	4. Events ( open lightbox, close, etc.)
 	
 */
-header('Access-Control-Allow-Origin: *');
-
-//ini_set('display_errors', 1);
+header("content-type: application/json");
 
 
-
+ini_set('error_reporting', E_ALL);
 
 // check for a post
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+$label ='';
+$mssg ='';
+$callback ='';
 
-
-	// fixed some magic-quotes wierdness
-	if(get_magic_quotes_gpc()){
-	  $d = stripslashes($_POST['data']);
-	}else{
-	  $d = $_POST['data'];
-	}
-	$d = json_decode($d,true);
+if ($_GET['callback']){
+//if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	$poc_id =$_GET['poc_id'];
+	$label =urldecode($_GET['label']);
+	$mssg =urldecode($_GET['mssg']);
+	$callback = $_GET['callback'];
 	
-	
-	$poc_id = $d['poc_id'];
-	
-	// add poc_id to logText
 	$logText = "\n\n------------------\n";
+	$logText .="TIME: " + date('r');
 	$logText .= "Project: " . $poc_id . "\n";
 	
-	
-	// now just iterate throught the log value object and write those bits.
-	foreach($d['log'] as $key => $value) {
-		
-    	$logText .= $key . ": " .$value;
-		$logText .= "\n";
-	}
-	
+	$logText .= $label . ": " .$mssg;
+	$logText .= "\n";
 	
 	writeToLog($poc_id,$logText);
-	
 }
 
 
@@ -72,7 +60,58 @@ function writeToLog($log_id, $logText){
 		
 	}
 	
+	$rtnjsonobj = array();
+ 	$rtnjsonobj['log'] = "---------";
+    $rtnjsonobj['mssg'] = "Wrote to log.";
+       
+    echo $callback . '('. json_encode($rtnjsonobj) . ')';  
+ 	//echo json_encode($rtnjsonobj);  	
 	
 }
+
+/// dont know why baked in json_encode isnt working so...
+//http://phildawson.tumblr.com/post/69138822/json-encode-doesnt-work-running-php-5-2-0-and-in-a
+function json_encode($a=false)
+  {
+    if (is_null($a)) return 'null';
+    if ($a === false) return 'false';
+    if ($a === true) return 'true';
+    if (is_scalar($a))
+    {
+      if (is_float($a))
+      {
+        // Always use "." for floats.
+        return floatval(str_replace(",", ".", strval($a)));
+      }
+
+      if (is_string($a))
+      {
+        static $jsonReplaces = array(array("\\", "/", "\n", "\t", "\r", "\b", "\f", '"'), array('\\\\', '\\/', '\\n', '\\t', '\\r', '\\b', '\\f', '\"'));
+        return '"' . str_replace($jsonReplaces[0], $jsonReplaces[1], $a) . '"';
+      }
+      else
+        return $a;
+    }
+    $isList = true;
+    for ($i = 0, reset($a); $i < count($a); $i++, next($a))
+    {
+      if (key($a) !== $i)
+      {
+        $isList = false;
+        break;
+      }
+    }
+    $result = array();
+    if ($isList)
+    {
+      foreach ($a as $v) $result[] = json_encode($v);
+      return '[' . join(',', $result) . ']';
+    }
+    else
+    {
+      foreach ($a as $k => $v) $result[] = json_encode($k).':'.json_encode($v);
+      return '{' . join(',', $result) . '}';
+    }
+  }
 
 ?>
