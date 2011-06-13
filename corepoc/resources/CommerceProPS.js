@@ -22,9 +22,7 @@ CommerceProPS.prototype.launchProdDetailBox  = function() {
 	this.addToCartButton = jQuery('body').find('#addToCartBtn');
 	
 	var storedcomProObj = this;
-	
-	//jQuery.data(this.addToCartButton,"comProObj", storedcomProObj);
-	
+		
 	// this might not work if we use <button>
 	this.addToCartButton.attr('href', this.addToCartURL);
 
@@ -39,9 +37,6 @@ CommerceProPS.prototype.launchProdDetailBox  = function() {
 
 CommerceProPS.prototype.addToCart = function (productId, url, post_data) {
 	var self = this;
-	//self.logger.log("LOGGER MESSAGE", "HELLO GET AGAIN!");
-
-	
 
 	//if there are any characters in post data string, must be a POST call
 	if (this.postData != ""){
@@ -55,17 +50,17 @@ CommerceProPS.prototype.addToCart = function (productId, url, post_data) {
 				//check for success here
 				//var mssg = this.addToCartURL + ' with post data ' + this.postData, textStatus + '\n' + jqXHR.getAllResponseHeaders();
 				var mssg = "POST_SUCESSFULL";
-				console.log(mssg);
+				//console.log(mssg);
 				self.logger.log('Successful Post Call To',mssg );
 				self.launchCartConfirmBox();
 			},
 			error:function (xhr, ajaxOptions, thrownError){
 				
-				//console.log("Error in CommerceProPS addToCart function. Errored out on " +
+				////console.log("Error in CommerceProPS addToCart function. Errored out on " +
 				//		"a POST call addToCartURL. Are we sure we have properly formatted POST data? Correct URL?" + 
 				//		"Error message follows: ");		
 				var err = xhr.status + '\n' + xhr.responseText  + '\n' + thrownError;
-				console.log("ERROR IN ADD TO CART:" + err);			
+				//console.log("ERROR IN ADD TO CART:" + err);			
 				self.logger.log("AJAX ERROR", err);
             }    
     	});
@@ -78,17 +73,17 @@ CommerceProPS.prototype.addToCart = function (productId, url, post_data) {
 				//var mssg = this.addToCartURL + ' with  data ' + this.postData, textStatus + '\n' + jqXHR.getAllResponseHeaders();
 				
 				var mssg = "GET REQUEST SUCESSFUL";
-				self.logger.log('Succesfull GET Call To', mssg);
+				self.logger.log('Successful GET Call To', mssg);
 				self.launchCartConfirmBox();
         	},
 
         	error:function (xhr, ajaxOptions, thrownError){
 	
-			console.log("Error in CommerceProPS addToCart function. Errored out on " +
-					"a GET call addToCartURL. Are we sure we have the proper URL and parameters?" +
-					"Error message follows: ");
-			console.log(xhr);
-			console.log(thrownError);
+			////console.log("Error in CommerceProPS addToCart function. Errored out on " +
+			//		"a GET call addToCartURL. Are we sure we have the proper URL and parameters?" +
+			//		"Error message follows: ");
+			////console.log(xhr);
+			////console.log(thrownError);
 				
 				//var mssg = "Error GET add to cart call. here is the server response attempted url" + commProPsRef.addToCartURL + '\n Server return code ' + xhr.status;
 				self.logger.log("AJAX ERROR", mssg);
@@ -103,7 +98,7 @@ CommerceProPS.prototype.addToCart = function (productId, url, post_data) {
 
 CommerceProPS.prototype.launchCartConfirmBox = function() {
 
-	//console.log('launching confirm box with html \n' + this.addToCartConfirmHTML );
+	////console.log('launching confirm box with html \n' + this.addToCartConfirmHTML );
 	jQuery.fancybox({content:this.addToCartConfirmHTML}); 
 
 }
@@ -150,7 +145,7 @@ POCLogger.prototype.log = function(label, mssg)
 function jsonpcallback(rtndata) { 
 
 		// Get the id from the returned JSON string and use it to reference the target jQuery object.
-		console.log(rtndata.mssg)
+		//console.log(rtndata.mssg)
 }
 	
 

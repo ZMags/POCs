@@ -1,10 +1,6 @@
 <?php
 /*
-	Logs the following interactions to a text file:
-	1. What ajax call
-	2. What response.
-	3. Errors.
-	4. Events ( open lightbox, close, etc.)
+	Writes to a text file :D
 	
 */
 header("content-type: application/json");
