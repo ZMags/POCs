@@ -1,6 +1,6 @@
 <?php
 
-set_time_limit(5400);
+set_time_limit(7200);
 require_once("config/config.php");
 
 /*
@@ -234,8 +234,8 @@ require_once("config/config.php");
                 $this->soap_session,
                 'catalog_category.assignProduct',
                 array(
-                    $category_id,
-                    $sku
+                    trim($category_id),
+                    trim($product_id)
                 )
             );
         
@@ -288,5 +288,23 @@ require_once("config/config.php");
             )
         );
     }
+    
+    public function getProductInfo($product_sku)
+    {
+        try{
+            $info = $this->proxy->call(
+                $this->soap_session,
+                'catalog_product.info',
+                array(
+                    (string)$product_sku
+                )
+            );
+            return $info;
+        }
+        catch(Exception $fault) 
+        {
+            return $fault->getMessage();
+        }
+    } 
     
  }
