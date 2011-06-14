@@ -296,8 +296,9 @@ require_once("config/config.php");
                 $this->soap_session,
                 'catalog_product.info',
                 array(
-                    (string)$product_sku
+                    $product_sku
                 )
+                
             );
             return $info;
         }
@@ -305,6 +306,8 @@ require_once("config/config.php");
         {
             return $fault->getMessage();
         }
-    } 
+        
+        
+    }
     
  }
