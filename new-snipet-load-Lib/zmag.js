@@ -82,7 +82,7 @@
         setTimeout('viewer.gotoPage(pageNumber)', '700' );
     };
 
- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ //////////////////////////////////////////////Load Library////////////////////////////////////////////////////////////////////
 
 
 
@@ -94,88 +94,92 @@
     document.getElementsByTagName('head')[0].appendChild(jsQ);
 
 }
+ /*************************************Load CSS******************************************************************************/
+         var files_Css=new Array("reset.css","style.css","jquery.fancybox-1.3.4.css","cloud-zoom.css");
+        loadJsCss("http://ps.zmags.com/poc/test-snipet/zmags1/files/",files_Css);
 
- var files_Css=new Array("reset.css","style.css","jquery.fancybox-1.3.4.css","cloud-zoom.css");
-loadJsCss("http://ps.zmags.com/poc/test-snipet/zmags1/files/",files_Css);
-  /****************************************************************************************/
-   var navegador = navigator.appName;
-  var js;
-  var files=new Array( 'http://ps.zmags.com/poc/test-snipet/zmags1/files/jquery.js','http://ps.zmags.com/poc/test-snipet/zmags1/files/jquery.fancybox-1.3.4.js','http://ps.zmags.com/poc/test-snipet/zmags1/files/cloud-zoom.1.0.2.js'
-  ,'http://ps.zmags.com/poc/test-snipet/zmags1/files/custom_links.js','http://connect.facebook.net/en_US/all.js');
-  if (navegador == "Microsoft Internet Explorer"){
+  /**************************************************************************************************************************/
 
-           include_js(files,0);
+  /***************************************************Load JS*******************************************************************/
+          var navegador = navigator.appName;
+          var js;
+          var files=new Array( 'http://ps.zmags.com/poc/test-snipet/zmags1/files/jquery.js','http://ps.zmags.com/poc/test-snipet/zmags1/files/jquery.fancybox-1.3.4.js','http://ps.zmags.com/poc/test-snipet/zmags1/files/cloud-zoom.1.0.2.js'
+          ,'http://ps.zmags.com/poc/test-snipet/zmags1/files/custom_links.js','http://connect.facebook.net/en_US/all.js');
 
-  }else{
-            load_jsF(files,0);
-  }
+          if (navegador == "Microsoft Internet Explorer"){
 
+                   include_js(files,0);
 
-  function include_js(file,i) {
-      var stat = false;
-      var html_doc = document.getElementsByTagName('head').item(0);
-      js = document.createElement('script');
-      js.setAttribute('type', 'text/javascript');
-      js.setAttribute('src', file[i]);
-      html_doc.appendChild(js);
-
-      // alert state change
-      js.onreadystatechange = function () {//IE
-         //console.log(js.readyState);
-          if (js.readyState == 'loaded') {
-              // safe to call a function
-              // found in the new script
-             //console.log('termino explorer');
-
-             include_js(file,i+1);
-             //console.log(stat);
-             stat = true;
-
+          }else{
+                    load_jsF(files,0);
           }
 
-      }
-      return stat;
-  }
 
+                  function include_js(file,i) {
+                      var stat = false;
+                      var html_doc = document.getElementsByTagName('head').item(0);
+                      js = document.createElement('script');
+                      js.setAttribute('type', 'text/javascript');
+                      js.setAttribute('src', file[i]);
+                      html_doc.appendChild(js);
 
-  function load_jsF(file,i){
-      var stat = false;
-          var html_doc = document.getElementsByTagName('head').item(0);
-      js = document.createElement('script');
-      js.setAttribute('type', 'text/javascript');
-      js.setAttribute('src', file[i]);
-      html_doc.appendChild(js);
-         //var navegador = navigator.appName;
+                      // alert state change
+                      js.onreadystatechange = function () {//IE
+                         //console.log(js.readyState);
+                          if (js.readyState == 'loaded') {
+                              // safe to call a function
+                              // found in the new script
+                             //console.log('termino explorer');
 
-      // alert state change
-          js.onload = function () {    //most browsers
+                             include_js(file,i+1);
+                             //console.log(stat);
+                             stat = true;
 
-          if (js.addEventListener) {
-            js.addEventListener("DOMContentLoaded", init, false);
-              console.log('termino no explorer');
-              load_jsF(files,i+1);
-              console.log(file[i]);
-              stat = true;
+                          }
+
                       }
-
-      }
-    return stat;
-  }
-  function init() {
-
-    // quit if this function has already been called
-    if (arguments.callee.done) return;
-
-    // flag this function so we don't do the same thing twice
-    arguments.callee.done = true;
-
-    // do stuff
-  }
+                      return stat;
+                  }
 
 
+                  function load_jsF(file,i){
+                      var stat = false;
+                          var html_doc = document.getElementsByTagName('head').item(0);
+                      js = document.createElement('script');
+                      js.setAttribute('type', 'text/javascript');
+                      js.setAttribute('src', file[i]);
+                      html_doc.appendChild(js);
+                         //var navegador = navigator.appName;
+
+                      // alert state change
+                          js.onload = function () {    //most browsers
+
+                          if (js.addEventListener) {
+                            js.addEventListener("DOMContentLoaded", init, false);
+                              console.log('termino no explorer');
+                              load_jsF(files,i+1);
+                              console.log(file[i]);
+                              stat = true;
+                                      }
+
+                      }
+                    return stat;
+                  }
+                  function init() {
+
+                    // quit if this function has already been called
+                    if (arguments.callee.done) return;
+
+                    // flag this function so we don't do the same thing twice
+                    arguments.callee.done = true;
+
+                    // do stuff
+                  }
 
 
-  /******************************************************************************************/
+
+
+  /*****************************************Funtion CSS Load*************************************************/
 function loadJsCss(path,files_js){
     for(i=0; i<files_js.length; i++){
         atribute_type="";
@@ -209,6 +213,8 @@ function loadJsCss(path,files_js){
         }
     }
 }
+
+ /*************************************************Events Zmags************************************************************/
  function CustomLinkHandler(event) {
 
 	  //Loop through custom link variables
