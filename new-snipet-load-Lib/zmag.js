@@ -1,4 +1,12 @@
- /**
+    var embed_container= document.createElement("div");
+    embed_container.setAttribute("id","viewer_content");
+    embed_container.setAttribute("class","viewer_content");
+   // embed_container.setAttribute("style","width:750px;height:635px;margin:0 auto;");
+    document.getElementById('content_view').appendChild(embed_container);
+
+
+   // alert(document.getElementById('content2').attr(''));
+/**
      * Default ID of publication to see.
      * @final
      */
@@ -82,25 +90,18 @@
         setTimeout('viewer.gotoPage(pageNumber)', '700' );
     };
 
- //////////////////////////////////////////////Load Library////////////////////////////////////////////////////////////////////
+ //////////////////////////////////////////////Load Library///////////////////////////////////////////////////////////////////////
 
 
 
- if (typeof jQuery == "undefined") {
-    var jsQ = document.createElement("script");
-    jsQ.setAttribute("src","http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js");
-    jsQ.setAttribute("type","text/javascript");
-    //document.head.appendChild(js);
-    document.getElementsByTagName('head')[0].appendChild(jsQ);
 
-}
- /*************************************Load CSS******************************************************************************/
+  /*************************************Load CSS*********************************************************************************/
          var files_Css=new Array("reset.css","style.css","jquery.fancybox-1.3.4.css","cloud-zoom.css");
         loadJsCss("http://ps.zmags.com/poc/test-snipet/zmags1/files/",files_Css);
 
-  /**************************************************************************************************************************/
+  /******************************************************************************************************************************/
 
-  /***************************************************Load JS*******************************************************************/
+  /***************************************************Load JS********************************************************************/
           var navegador = navigator.appName;
           var js;
           var files=new Array( 'http://ps.zmags.com/poc/test-snipet/zmags1/files/jquery.js','http://ps.zmags.com/poc/test-snipet/zmags1/files/jquery.fancybox-1.3.4.js','http://ps.zmags.com/poc/test-snipet/zmags1/files/cloud-zoom.1.0.2.js'
