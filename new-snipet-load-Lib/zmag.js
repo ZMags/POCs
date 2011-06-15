@@ -130,10 +130,10 @@ var file_face=new Array("all.js");
           if (js.readyState == 'loaded') {
               // safe to call a function
               // found in the new script
-             console.log('termino explorer');
+             //console.log('termino explorer');
 
              include_js(file,i+1);
-             console.log(stat);
+             //console.log(stat);
              stat = true;
 
           }
