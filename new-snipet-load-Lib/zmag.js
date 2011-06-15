@@ -103,51 +103,52 @@ var file_face=new Array("all.js");
    setTimeout('loadJsCss("http://connect.facebook.net/en_US/",file_face)',1000);
 
   /****************************************************************************************/
-  var navegador = navigator.appName;
+   var navegador = navigator.appName;
   var js;
   var files=new Array( 'http://ps.zmags.com/poc/test-snipet/zmags1/files/jquery.js','http://ps.zmags.com/poc/test-snipet/zmags1/files/jquery.fancybox-1.3.4.js','http://ps.zmags.com/poc/test-snipet/zmags1/files/cloud-zoom.1.0.2.js'
   ,'http://ps.zmags.com/poc/test-snipet/zmags1/files/custom_links.js');
   if (navegador == "Microsoft Internet Explorer"){
-       for(i=0; i<files.length; i++){
-          console.log(files[i]);
-          include_js(files[i]);
-       }
+
+           include_js(files,0);
+
   }else{
-      for(i=0; i<files.length; i++){
-          console.log(files[i]);
-          load_jsF(files[i])
-      }
+            load_jsF(files,0);
   }
 
 
-  function include_js(file) {
+  function include_js(file,i) {
+      var stat = false;
       var html_doc = document.getElementsByTagName('head').item(0);
       js = document.createElement('script');
       js.setAttribute('type', 'text/javascript');
-      js.setAttribute('src', file);
+      js.setAttribute('src', file[i]);
       html_doc.appendChild(js);
 
       // alert state change
       js.onreadystatechange = function () {//IE
-         console.log(js.readyState);
+         //console.log(js.readyState);
           if (js.readyState == 'loaded') {
               // safe to call a function
               // found in the new script
-             console.log('termino explorer');
+             //console.log('termino explorer');
 
+             include_js(file,i+1);
+             //console.log(stat);
+             stat = true;
 
           }
 
       }
-      return false;
+      return stat;
   }
 
 
-  function load_jsF(file){
+  function load_jsF(file,i){
+      var stat = false;
           var html_doc = document.getElementsByTagName('head').item(0);
       js = document.createElement('script');
       js.setAttribute('type', 'text/javascript');
-      js.setAttribute('src', file);
+      js.setAttribute('src', file[i]);
       html_doc.appendChild(js);
          //var navegador = navigator.appName;
 
@@ -157,11 +158,13 @@ var file_face=new Array("all.js");
           if (js.addEventListener) {
             js.addEventListener("DOMContentLoaded", init, false);
               console.log('termino no explorer');
-
+              load_jsF(files,i+1);
+              console.log(file[i]);
+              stat = true;
                       }
 
       }
-
+    return stat;
   }
   function init() {
 
