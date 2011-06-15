@@ -95,18 +95,13 @@
 
 }
 
-
-/*var files=new Array("laura_ashley.js","jquery.fancybox-1.3.4.js","magiczoom.js","jquery.fancybox-1.3.4.css","magiczoom.css","colorbox-ie.css","catalog.css");      */
  var files_Css=new Array("reset.css","style.css","jquery.fancybox-1.3.4.css","cloud-zoom.css");
 loadJsCss("http://ps.zmags.com/poc/test-snipet/zmags1/files/",files_Css);
-var file_face=new Array("all.js");
-   setTimeout('loadJsCss("http://connect.facebook.net/en_US/",file_face)',1000);
-
   /****************************************************************************************/
    var navegador = navigator.appName;
   var js;
   var files=new Array( 'http://ps.zmags.com/poc/test-snipet/zmags1/files/jquery.js','http://ps.zmags.com/poc/test-snipet/zmags1/files/jquery.fancybox-1.3.4.js','http://ps.zmags.com/poc/test-snipet/zmags1/files/cloud-zoom.1.0.2.js'
-  ,'http://ps.zmags.com/poc/test-snipet/zmags1/files/custom_links.js');
+  ,'http://ps.zmags.com/poc/test-snipet/zmags1/files/custom_links.js','http://connect.facebook.net/en_US/all.js');
   if (navegador == "Microsoft Internet Explorer"){
 
            include_js(files,0);
