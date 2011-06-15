@@ -1,18 +1,40 @@
+
+
+
+....
+
+<body>
+
+    <div id="myViewerContent" style="width:800px; height:600px;"></div>
+    <noscript>
+        Sorry, you don't have javascript enabled
+    </noscript>
+
+
+
+</body>
+
+....
+
+
 <script src="http://viewer.zmags.com/js/viewer.js" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
-<div id="myViewerContent" style="width:800px; height:600px;"></div>
+
+
 <script>
-var viewer = new ZMAGS.ui.Viewer();
-viewer.setPublicationID("853eee6b");
-viewer.setParentElementID("myViewerContent");
-viewer.addEventListener(ZMAGS.ui.Viewer.CUSTOM_LINK_CLICK, "CustomLinkHandler", self);
-viewer.setWindowMode("opaque");
-viewer.show();
-$(document).ready(function() {
-    $.getScript('http://50.16.105.65/poc/deploy/KirnaTest/config.js', function() {});
-});
+     var viewer = new ZMAGS.ui.Viewer();
+     viewer.setPublicationID("853eee6b");
+     viewer.setParentElementID("myViewerContent");
+     viewer.addEventListener(ZMAGS.ui.Viewer.CUSTOM_LINK_CLICK, "CustomLinkHandler", self);
+     viewer.setWindowMode("opaque");
+     viewer.show();
+     $(document).ready(function() {
+          $.getScript('http://50.16.105.65/poc/deploy/KirnaTest/config.js', function() {});
+     });
+
+
 </script>
-<noscript>
-    Sorry, you don't have javascript enabled
-</noscript>
+
+</html>
+
 
