@@ -3,9 +3,9 @@
 
 var zmagCPO;
 
-initCommerceAssets(jsIncludeFiles, cssIncludeFiles);
+initCommerceAssets_zmag(jsIncludeFiles_zmag, cssIncludeFiles_zmag);
 
-function initCommerceAssets( jsFilesZmags, cssFilesZmags ){
+function initCommerceAssets_zmag( jsFilesZmags, cssFilesZmags ){
 	
 	//load css
 	
@@ -40,26 +40,26 @@ function initCommerceAssets( jsFilesZmags, cssFilesZmags ){
 	commerceprojs.onload = initCommerceObject;
 	document.getElementsByTagName('head')[0].appendChild(commerceprojs);
 */
-	initCommerceObject();
+	initCommerceObject_zmag();
 
 }
 
 
 //initialize CommerceProPS object
 
-function initCommerceObject(){
+function initCommerceObject_zmag(){
 	
-	zmagCPO = new CommerceProPS(pocProjectName);
-	zmagCPO.addToCartURL = addToCartURL;
-	zmagCPO.productDetailHTML = prodDetailHTML;
-	zmagCPO.addToCartConfirmHTML = addToCartConfirmHTML;
-	zmagCPO.postData = postDataString;
-	zmagCPO.addToCartID = addToCartButtonID;
+	zmagCPO = new CommerceProPS_zmag(pocProjectName_zmag);
+	zmagCPO.addToCartURL = addToCartURL_zmag;
+	zmagCPO.productDetailHTML = prodDetailHTML_zmag;
+	zmagCPO.addToCartConfirmHTML = addToCartConfirmHTML_zmag;
+	zmagCPO.postData = postDataString_zmag;
+	zmagCPO.addToCartID = addToCartButtonID_zmag;
 	
 
 }				
 
-function CommerceProPS(project_name){
+function CommerceProPS_zmag(project_name){
 
 	this.projectName = project_name;
 	// create logger and pass it the project_name
@@ -75,7 +75,7 @@ function CommerceProPS(project_name){
 }
 
 
-CommerceProPS.prototype.launchProdDetailBox  = function() {
+CommerceProPS_zmag.prototype.launchProdDetailBox  = function() {
 	
 
 	
@@ -99,7 +99,7 @@ CommerceProPS.prototype.launchProdDetailBox  = function() {
 	
 }
 
-CommerceProPS.prototype.addToCart = function (productId, url, post_data) {
+CommerceProPS_zmag.prototype.addToCart = function (productId, url, post_data) {
 	var self = this;
 
 	//if there are any characters in post data string, must be a POST call
@@ -160,7 +160,7 @@ CommerceProPS.prototype.addToCart = function (productId, url, post_data) {
     
 }
 
-CommerceProPS.prototype.launchCartConfirmBox = function() {
+CommerceProPS_zmag.prototype.launchCartConfirmBox = function() {
 
 	////console.log('launching confirm box with html \n' + this.addToCartConfirmHTML );
 	jQuery.fancybox({content:this.addToCartConfirmHTML}); 
@@ -179,7 +179,7 @@ CommerceProPS.prototype.launchCartConfirmBox = function() {
 function POCLogger(poc_id)
 {
 	this.poc_id = poc_id;
-	this.logger_url = "http://50.16.105.65/poc/corepoc/poc-logs/logger.php";
+	this.logger_url = CORE_SOURCE_zmag + "corepoc/poc-logs/logger.php";
 	//this.logger_url = "http://localhost:8888/Zmags/POCs/corepoc/poc-logs/logger.php";
 }
 
@@ -221,7 +221,7 @@ function jsonpcallback(rtndata) {
 
 
 
-function closeProductWindow(){
+function closeProductWindow_zmag(){
 	jQuery.fancybox.close();	
 }
 
