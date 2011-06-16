@@ -31,7 +31,7 @@ function initCommerceAssets_zmag( jsFilesZmags, cssFilesZmags ){
             "/path/to/my/file.css"
             ];
 	*/
-	console.log(jsFilesZmags);	
+	//console.log(jsFilesZmags);	
 
 	for (var i=0; i < jsFilesZmags.length; i++) {
 		var jsloadpath = jsFilesZmags[i];
