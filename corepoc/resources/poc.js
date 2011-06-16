@@ -9,7 +9,7 @@ function initCommerceAssets_zmag( jsFilesZmags, cssFilesZmags ){
 	
 	//load css
 	for (var i=0; i < cssFilesZmags.length; i++) {
-		var loadpath = includePathZmags + cssFilesZmags[i];
+		var loadpath = cssFilesZmags[i];
 
 		var cssnode = document.createElement('link');
 		cssnode.setAttribute("rel","stylesheet");
@@ -31,13 +31,14 @@ function initCommerceAssets_zmag( jsFilesZmags, cssFilesZmags ){
             "/path/to/my/file.css"
             ];
 	*/
-	
-	for (var i=0; i < jsFilesZmags.length; i++) {
-		var loadpath = jsFilesZmags[i];
+	console.log(jsFilesZmags);	
 
-		console.log(loadpath + "<---- loading");
+	for (var i=0; i < jsFilesZmags.length; i++) {
+		var jsloadpath = jsFilesZmags[i];
+
+		//console.log(jsloadpath + "<---- loading");
 		//attempt to load include files, on success increment file to be loaded
-		jQuery.getScript(loadpath, function(){});
+		jQuery.getScript(jsloadpath, function(){});
 	}
 	
 	//=================================================================================

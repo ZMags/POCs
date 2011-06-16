@@ -4,8 +4,8 @@
     THAT IS WHRE THE POC_CORE is.
 */
 
-var CORE_SOURCE = "http://localhost:8888/Zmags/POCs/";
-//var CORE_SOURCE_zmag = "http://50.16.105.65/poc/"
+//var CORE_SOURCE = "http://localhost:8888/Zmags/POCs/";
+var CORE_SOURCE_zmag = "http://50.16.105.65/poc/"
 
 
 ///////EDIT BELOW/////////////////////////////////////////////////////
@@ -44,10 +44,10 @@ var includePathZmags = CORE_SOURCE_zmag + 'deploy/KirnaTest';
     Arrays with Additional Client assets src = ex:includePathZmags + jsIncludeFiles[i];
 */
 var jsIncludeFiles_zmag =    [
-             CORE_SOURCE_zmag + "libs/fancybox/jquery.fancybox-1.3.4.js"
+             CORE_SOURCE_zmag + "corepoc/libs/fancybox/jquery.fancybox-1.3.4.js"
             ];
 var cssIncludeFiles_zmag =   [
-         	CORE_SOURCE_zmag + "libs/fancybox/jquery.fancybox-1.3.4.css"
+         	CORE_SOURCE_zmag + "corepoc/libs/fancybox/jquery.fancybox-1.3.4.css"
             ];
 /*
 ========================
