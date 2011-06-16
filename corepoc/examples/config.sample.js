@@ -3,9 +3,8 @@
     THAT IS WHRE THE POC_CORE is.
 */
 
-//var CORE_SOURCE = "http://localhost:8888/Zmags/POCs/";
-var CORE_SOURCE_zmag = "http://50.16.105.65/poc/"
 
+var CORE_SOURCE_zmag = "http://ps.zmags.com/poc/";
 
 ///////EDIT BELOW/////////////////////////////////////////////////////
 
