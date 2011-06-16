@@ -33,8 +33,9 @@ function initCommerceAssets_zmag( jsFilesZmags, cssFilesZmags ){
 	*/
 	
 	for (var i=0; i < jsFilesZmags.length; i++) {
-		var loadpath =jsFilesZmags[i];
+		var loadpath = jsFilesZmags[i];
 
+		console.log(loadpath + "<---- loading");
 		//attempt to load include files, on success increment file to be loaded
 		jQuery.getScript(loadpath, function(){});
 	}
