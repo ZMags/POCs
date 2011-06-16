@@ -1,5 +1,4 @@
 
-
 ....
 
 <body>
@@ -26,7 +25,7 @@
      viewer.setWindowMode("opaque");
      viewer.show();
      $(document).ready(function() {
-          $.getScript('http://50.16.105.65/poc/deploy/KirnaTest/config.js', function() {});
+          $.getScript('http://50.16.105.65/poc/deploy/MY_CLIENT/config.js', function() {});
      });
 
 
