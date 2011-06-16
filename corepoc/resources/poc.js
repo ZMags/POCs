@@ -8,7 +8,6 @@ initCommerceAssets_zmag(jsIncludeFiles_zmag, cssIncludeFiles_zmag);
 function initCommerceAssets_zmag( jsFilesZmags, cssFilesZmags ){
 	
 	//load css
-	
 	for (var i=0; i < cssFilesZmags.length; i++) {
 		var loadpath = includePathZmags + cssFilesZmags[i];
 
@@ -21,31 +20,35 @@ function initCommerceAssets_zmag( jsFilesZmags, cssFilesZmags ){
 	};
 	
 
+	//=================================================================================
+	/*
+		LOAD INCLUDED FILES - Declared in config.js
+		EX: 
+		var jsIncludeFiles_zmag =    [
+            	"/path/to/my/file.js"
+            ];
+		var cssIncludeFiles_zmag =   [
+            "/path/to/my/file.css"
+            ];
+	*/
 	
-	//load js includes
 	for (var i=0; i < jsFilesZmags.length; i++) {
-		var loadpath = includePathZmags + jsFilesZmags[i];
+		var loadpath =jsFilesZmags[i];
 
 		//attempt to load include files, on success increment file to be loaded
 		jQuery.getScript(loadpath, function(){});
 	}
 	
+	//=================================================================================
+	
+	
 
-	//load up commerceprojs
-/*
-	var commerceprojs = document.createElement("script");
-	commerceprojs.setAttribute("src", CORE_SOURCE + "corepoc/resources/CommerceProPS.js");
-	commerceprojs.setAttribute("type", "text/javascript");
-
-	commerceprojs.onload = initCommerceObject;
-	document.getElementsByTagName('head')[0].appendChild(commerceprojs);
-*/
 	initCommerceObject_zmag();
 
 }
 
 
-//initialize CommerceProPS object
+//initialize CommerceProPS object===========================================================
 
 function initCommerceObject_zmag(){
 	
@@ -66,6 +69,9 @@ function CommerceProPS_zmag(project_name){
 	this.logger = new POCLogger(project_name);
 
 	this.addToCartURL = "";
+	
+	// this is the location of the html
+	
 	this.productDetailHTML = "";
 	this.addToCartConfirmHTML = "";
 	this.viewCartURL = "";
@@ -79,7 +85,18 @@ CommerceProPS_zmag.prototype.launchProdDetailBox  = function() {
 	
 
 	
-	jQuery.fancybox({content:this.productDetailHTML}); 
+	$.ajax({
+		type	: "POST",
+		cache	: false,
+		url		: this.productDetailHTML,
+		data		: $(this).serializeArray(),
+		success: function(data) {
+			jQuery.fancybox(data);
+		}
+	});
+	
+	
+	//jQuery.fancybox({content:this.productDetailHTML}); 
 
 	//search for id to attach click event too	
 	// we are storing a ref to the CommerecProPS object to grab variables or methods out of later
