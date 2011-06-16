@@ -29,16 +29,16 @@ var addToCartURL_zmag = 'http://dev.kirnazabete.com/checkout/cart/add/uenc/aHR0c
     var addToCartConfirmHTML = '<div>CONFIRMATION MESSAGE HERE</div>';
 */
 
-var postDataString_zmag = 'product=12742&related_product=&super_attribute%5B583%5D=553&qty='; 
-var prodDetailHTML_zmag = '';
-var addToCartButtonID_zmag = 'addToCartBtn';
-var addToCartConfirmHTML_zmag = '<div>CONFIRMATION MESSAGE HERE</div>';
-
-
 /*
     var includePathZmags  = The path to the deploy folder holds client assets etc.
 */
-var includePathZmags = CORE_SOURCE_zmag + 'deploy/KirnaTest';
+var includePathZmags = CORE_SOURCE_zmag + 'deploy/KirnaTest/';
+
+var postDataString_zmag = 'product=12742&related_product=&super_attribute%5B583%5D=553&qty='; 
+var prodDetailHTML_zmag = '<center><div id="prodWindow"><h1>Product X Details</h1><br><button id="addToCartBtn">Add to Cart</div></center>';
+var addToCartButtonID_zmag = 'addToCartBtn';
+var addToCartConfirmHTML_zmag = '<div>CONFIRMATION MESSAGE HERE</div>';
+
 
 /*
     Arrays with Additional Client assets src = ex:includePathZmags + jsIncludeFiles[i];

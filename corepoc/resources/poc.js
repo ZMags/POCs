@@ -86,19 +86,19 @@ function CommerceProPS_zmag(project_name){
 CommerceProPS_zmag.prototype.launchProdDetailBox  = function() {
 	
 
-	
+	/*
 	$.ajax({
 		type	: "POST",
-		cache	: false,
+		cache	: true,
 		url		: this.productDetailHTML,
-		data		: $(this).serializeArray(),
+		//data		: $(this).serializeArray(),
 		success: function(data) {
 			jQuery.fancybox(data);
 		}
 	});
 	
-	
-	//jQuery.fancybox({content:this.productDetailHTML}); 
+	*/
+	jQuery.fancybox({content:this.productDetailHTML}); 
 
 	//search for id to attach click event too	
 	// we are storing a ref to the CommerecProPS object to grab variables or methods out of later
