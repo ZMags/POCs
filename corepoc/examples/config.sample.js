@@ -1,6 +1,5 @@
 /*
     DEV ONLY!!!!!!!!!!!!!!!!!!!!!!
-    CORE_SOURCE = "localhost/poc/corepoc"
     THAT IS WHRE THE POC_CORE is.
 */
 
@@ -13,7 +12,7 @@ var CORE_SOURCE_zmag = "http://50.16.105.65/poc/"
 //for zmag load
 var zmagPubID = '853eee6b';
 var zmagParentElement = 'myViewerContent';
-var pocProjectName_zmag = 'teststs';
+var pocProjectName_zmag = 'MyProject';
 
 
 //full path to client's add to cart script (including parameters if using GET) 
@@ -36,20 +35,27 @@ var addToCartButtonID_zmag = 'addToCartBtn';
 var addToCartConfirmHTML_zmag = '<div>CONFIRMATION MESSAGE HERE</div>';
 
 
-/*
-    var includePathZmags  = The path to the deploy folder holds client assets etc.
+/*=================================================================================
+    var includePathZmags  = The path to the deploy folder holds client assets etc
+	This is just a convinience variable.
+
 */
-var includePathZmags = CORE_SOURCE_zmag + 'deploy/AngelCo/';
+var includePathZmags = CORE_SOURCE_zmag + 'deploy/MYCLIENT/';
+
+//=================================================================================
+
 
 /*
     Arrays with Additional Client assets src = ex:includePathZmags + jsIncludeFiles[i];
+	CORE_SOURCE_zmag + "libs/" to get common libraries
+	
+	Use includePathZmags+"asset/foo.css" to get CLIENT specific items
 */
 var jsIncludeFiles_zmag =    [
-            "jquery.fancybox-1.3.4.js"
+             CORE_SOURCE_zmag + "libs/fancybox/jquery.fancybox-1.3.4.js"
             ];
 var cssIncludeFiles_zmag =   [
-            "jquery.fancybox-1.3.4.css",
-			"angelco-zmags.css"
+         	CORE_SOURCE_zmag + "libs/fancybox/jquery.fancybox-1.3.4.css"
             ];
 
 /*
