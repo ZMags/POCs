@@ -4,8 +4,8 @@
     THAT IS WHRE THE POC_CORE is.
 */
 
-//var CORE_SOURCE = "http://localhost:8888/Zmags/POCs/";
-var CORE_SOURCE_zmag = "http://50.16.105.65/poc/"
+var CORE_SOURCE = "http://localhost:8888/Zmags/POCs/";
+//var CORE_SOURCE_zmag = "http://50.16.105.65/poc/"
 
 
 ///////EDIT BELOW/////////////////////////////////////////////////////
@@ -13,7 +13,7 @@ var CORE_SOURCE_zmag = "http://50.16.105.65/poc/"
 //for zmag load
 var zmagPubID = '853eee6b';
 var zmagParentElement = 'myViewerContent';
-var pocProjectName_zmag = 'teststs';
+var pocProjectName_zmag = 'KirnaTEST';
 
 
 //full path to client's add to cart script (including parameters if using GET) 
@@ -30,7 +30,7 @@ var addToCartURL_zmag = 'http://dev.kirnazabete.com/checkout/cart/add/uenc/aHR0c
 */
 
 var postDataString_zmag = 'product=12742&related_product=&super_attribute%5B583%5D=553&qty='; 
-var prodDetailHTML_zmag = '<center><div id="prodWindow"><h1>Product X Details</h1><br><a href ="#" id="addToCartBtn">Add to Cart</a></div></center>';
+var prodDetailHTML_zmag = '';
 var addToCartButtonID_zmag = 'addToCartBtn';
 var addToCartConfirmHTML_zmag = '<div>CONFIRMATION MESSAGE HERE</div>';
 
@@ -38,19 +38,17 @@ var addToCartConfirmHTML_zmag = '<div>CONFIRMATION MESSAGE HERE</div>';
 /*
     var includePathZmags  = The path to the deploy folder holds client assets etc.
 */
-var includePathZmags = CORE_SOURCE_zmag + 'deploy/AngelCo/';
+var includePathZmags = CORE_SOURCE_zmag + 'deploy/KirnaTest';
 
 /*
     Arrays with Additional Client assets src = ex:includePathZmags + jsIncludeFiles[i];
 */
 var jsIncludeFiles_zmag =    [
-            "jquery.fancybox-1.3.4.js"
+             CORE_SOURCE_zmag + "libs/fancybox/jquery.fancybox-1.3.4.js"
             ];
 var cssIncludeFiles_zmag =   [
-            "jquery.fancybox-1.3.4.css",
-			"angelco-zmags.css"
+         	CORE_SOURCE_zmag + "libs/fancybox/jquery.fancybox-1.3.4.css"
             ];
-
 /*
 ========================
 DO NOT CHANGE ANYTHING UNDER THIS LINE!
