@@ -29,6 +29,7 @@ var addToCartURL_zmag = 'http://dev.kirnazabete.com/checkout/cart/add/uenc/aHR0c
     var addToCartConfirmHTML = '<div>CONFIRMATION MESSAGE HERE</div>';
 */
 
+// postDataString is  not nessasary for POC.
 var postDataString_zmag = 'product=12742&related_product=&super_attribute%5B583%5D=553&qty='; 
 var prodDetailHTML_zmag = '<center><div id="prodWindow"><h1>Product X Details</h1><br><a href ="#" id="addToCartBtn">Add to Cart</a></div></center>';
 var addToCartButtonID_zmag = 'addToCartBtn';
