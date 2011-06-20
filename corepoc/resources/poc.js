@@ -1,4 +1,3 @@
-
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 var zmagCPO;
@@ -42,7 +41,16 @@ function initCommerceAssets_zmag( jsFilesZmags, cssFilesZmags ){
 	}
 	
 	//=================================================================================
-	
+
+	//load fancybox js and css
+	jQuery.getScript(CORE_SOURCE_zmag + "corepoc/resources/lib/fancybox/jquery.fancybox-1.3.4.js", function(){});
+	var cssnode = document.createElement('link');
+	cssnode.setAttribute("rel","stylesheet");
+	cssnode.setAttribute("type","text/css");
+	cssnode.setAttribute("href", CORE_SOURCE_zmag + "corepoc/resources/lib/fancybox/jquery.fancybox-1.3.4.css");
+	document.getElementsByTagName('head')[0].appendChild(cssnode);
+
+
 	
 
 	initCommerceObject_zmag();
