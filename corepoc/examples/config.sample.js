@@ -51,10 +51,10 @@ var includePathZmags = CORE_SOURCE_zmag + 'deploy/MYCLIENT/';
 	Use includePathZmags+"asset/foo.css" to get CLIENT specific items
 */
 var jsIncludeFiles_zmag =    [
-             CORE_SOURCE_zmag + "libs/fancybox/jquery.fancybox-1.3.4.js"
+          
             ];
 var cssIncludeFiles_zmag =   [
-         	CORE_SOURCE_zmag + "libs/fancybox/jquery.fancybox-1.3.4.css"
+         
             ];
 
 /*
