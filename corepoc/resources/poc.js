@@ -50,7 +50,13 @@ function initCommerceAssets_zmag( jsFilesZmags, cssFilesZmags ){
 	cssnode.setAttribute("href", CORE_SOURCE_zmag + "corepoc/resources/lib/fancybox/jquery.fancybox-1.3.4.css");
 	document.getElementsByTagName('head')[0].appendChild(cssnode);
 
-
+	//check browser agent, include flXHR if needed..
+	if (zMagNeedflXHR()){
+		var js = document.createElement("script"); 
+		js.setAttribute("src",CORE_SOURCE_zmag +  "corecommerce/resources/lib/flxhr/flXHR.js"); 
+		js.setAttribute("type","text/javascript");  
+		document.getElementsByTagName('head')[0].appendChild(js);	
+	}
 	
 
 	initCommerceObject_zmag();
@@ -91,40 +97,79 @@ function CommerceProPS_zmag(project_name){
 }
 
 
-CommerceProPS_zmag.prototype.launchProdDetailBox  = function() {
-	
 
-	/*
-	$.ajax({
-		type	: "POST",
-		cache	: true,
-		url		: this.productDetailHTML,
-		//data		: $(this).serializeArray(),
-		success: function(data) {
-			jQuery.fancybox(data);
+CommerceProPS_zmag.prototype.launchProdDetailBox  = function (event) {
+    
+	var self = this;
+	var url = self.productDetailHTML;
+	var queryString = "";
+	var conType_zmag = "GET";
+
+	var currentPage = document.location.href;
+	currentPage = escape(currentPage);
+
+	queryString += '&refer=' + currentPage;
+	
+	if (zMagNeedflXHR()){	
+		var ieAjax = new flensed.flXHR({noCacheHeader:false});
+		ieAjax.onerror = function ( err ){
+			//console.log("error in flxhr");
+		};
+		ieAjax.onreadystatechange = function(loadObj){
+			var html = loadObj.responseText;
+			if(loadObj.readyState == 4){
+				//console.log(html);
+				jQuery.fancybox({content:html}); 
+			}
+			if (zmagsDebug){
+				self.logger.log("AJAX ERROR", (loadObj.responseText + loadObj.readyState));
+			}
+		};
+		ieAjax.open(conType_zmag, url);
+		ieAjax.send(queryString);
+	} else if ((jQuery.browser.msie && jQuery.browser.version >= 8 && window.XDomainRequest)) { //else is ie8
+		var result = "";
+		var xdr = new XDomainRequest();
+		if(conType_zmag == 'get' || conType_zmag == 'GET'){
+			url = url + '?' +  queryString;
 		}
-	});
-	
-	*/
-	jQuery.fancybox({content:this.productDetailHTML}); 
-
-	//search for id to attach click event too	
-	// we are storing a ref to the CommerecProPS object to grab variables or methods out of later
-	this.addToCartButton = jQuery('body').find('#addToCartBtn');
-	
-	var storedcomProObj = this;
-		
-	// this might not work if we use <button>
-	this.addToCartButton.attr('href', this.addToCartURL);
-
-	
-	this.addToCartButton.click( function(e) {
-		e.preventDefault();
-		storedcomProObj.addToCart("1",	storedcomProObj.addToCartURL,storedcomProObj.postData);
-	});
-
-	
+		xdr.open(conType_zmag, url);
+		xdr.onload = function() {
+			// XDomainRequest doesn't provide responseXml, so if you need it:
+			var dom = new ActiveXObject("Microsoft.XMLDOM");
+			dom.async = false;
+			result = xdr.responseText;
+			if (zmagsDebug){
+				self.logger.log("AJAX ERROR", result);
+			}
+			jQuery.fancybox({content:result});
+		};
+		xdr.send(queryString);
+	} else {
+		jQuery.ajax({
+			type: conType_zmag,
+			url: url,
+			data: queryString,
+			success: function(data, textStatus, jqXHR){
+				jQuery.fancybox({content:data}); 
+				if (zmagsDebug){
+					var err = '';
+					err =+ data + jqXHR.textStatus + jqXHR.responseText + jqXHR.statusText + jqXHR.getAllResponseHeaders();
+					self.logger.log("AJAX ERROR", err);
+				}
+			},
+			error:function (xhr, ajaxOptions, thrownError){
+				if (zmagsDebug){
+					var err = '';
+					err =+ xhr.responseText + xhr.statusText + xhr.getAllResponseHeaders() + ajaxOptions + thrownError;
+					self.logger.log("AJAX ERROR", err);
+				}
+			}    
+		});
+	}
 }
+
+
 
 CommerceProPS_zmag.prototype.addToCart = function (productId, url, post_data) {
 	var self = this;
@@ -195,6 +240,20 @@ CommerceProPS_zmag.prototype.launchCartConfirmBox = function() {
 }
 
 
+function zMagNeedflXHR(){
+	var mozilla = "";
+	if(jQuery.browser.mozilla){mozilla = jQuery.browser.version.split('.')};
+	if((jQuery.browser.msie && jQuery.browser.version >= 7 && jQuery.browser.version < 8) || (jQuery.browser.opera) || (jQuery.browser.mozilla && (parseInt(mozilla[0]) < 2 && parseInt(mozilla[1]) <= 9 && parseInt(mozilla[2]) < 1))){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
+
+
+
 //----------------- LOGGING ------------------------/////
 
 /*
@@ -240,10 +299,6 @@ function jsonpcallback(rtndata) {
 }
 	
 
-
-
-
-
 ///////// FANCY BOX/////////////////
 
 
@@ -253,31 +308,7 @@ function closeProductWindow_zmag(){
 }
 
 function CustomLinkHandler(event) {
-/*
-	for (linkvar in event.data) {
-		if (linkvar == "type") {
-			type = event.data[linkvar];
-		} else if (linkvar == "prodID"){
-			prodID = event.data[linkvar];
-		} else if (linkvar == "title"){
-			title = event.data[linkvar];
-		} else if(linkvar == "price"){
-			price = event.data[linkvar];
-		} else if(linkvar == "ref"){
-			ref = event.data[linkvar];
-		} else  if(linkvar == "hrefImg"){
-			hrefImg = event.data[linkvar];
-		} else if(linkvar == "qty"){
-			qty =  event.data[qty];
-		}
-	}
 
-	switch(type) {
-		case 'add':zmagCPO.launchProdDetailBox();
-		break;
-	}*/
-
-	
 	zmagCPO.launchProdDetailBox();
 	
 }
