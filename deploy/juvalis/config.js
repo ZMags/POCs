@@ -3,9 +3,9 @@
 */
 
 
-//var CORE_SOURCE_zmag = "http://ps.zmags.com/poc/";
+var CORE_SOURCE_zmag = "http://ps.zmags.com/poc/";
 
-var CORE_SOURCE_zmag = "http://localhost:8888/Zmags/Development/POCs/";
+//var CORE_SOURCE_zmag = "http://localhost:8888/Zmags/Development/POCs/";
 
 
 ///////EDIT BELOW/////////////////////////////////////////////////////
@@ -24,7 +24,7 @@ var addToCartURL_zmag = '';
 var postDataString_zmag ="";
 
 // location of the html for the fancybox
-var prodDetailHTML_zmag = "http://localhost:8888/Zmags/Development/POCs/deploy/juvalis/productDetail.html";
+var prodDetailHTML_zmag = CORE_SOURCE_zmag + "/deploy/juvalis/productDetail.html";
 var addToCartButtonID_zmag = 'addToCartBtn';
 var addToCartConfirmHTML_zmag = '<div>CONFIRMATION MESSAGE HERE</div>';
 
