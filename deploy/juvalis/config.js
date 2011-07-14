@@ -5,7 +5,7 @@
 
 var CORE_SOURCE_zmag = "http://ps.zmags.com/commerce/"
 
-//var CORE_SOURCE_zmag = "http://localhost:8888/Zmags/Development/POCs/";
+
 
 
 ///////EDIT BELOW/////////////////////////////////////////////////////
@@ -27,6 +27,8 @@ var getProdDetailBaseURL_zmag = "http://psdev.zmags.com/poc/deploy/juvalis/produ
 var addToCartButtonID_zmag = 'addToCartBtn';
 var addToCartConfirmHTML_zmag = '<div>CONFIRMATION MESSAGE HERE</div>';
 
+var conType_zmag = "GET";
+
 
 /*=================================================================================
     var includePathZmags  = The path to the deploy folder holds client assets etc
@@ -44,10 +46,10 @@ var includePathZmags ='http://psdev.zmags.com/poc/deploy/juvalis/';
 	
 	Use includePathZmags+"asset/foo.css" to get CLIENT specific items
 */
-var jsIncludeFiles_zmag =    [includePathZmags + "js/juvalis.js"
+var jsIncludeFiles_zmag =    ["js/juvalis.js"
           
             ];
-var cssIncludeFiles_zmag =   [includePathZmags + "css/cybershop.css"
+var cssIncludeFiles_zmag =   ["css/cybershop.css"
          
             ];
 
