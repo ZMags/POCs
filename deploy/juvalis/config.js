@@ -20,7 +20,7 @@ var zmagsDebug = false;
 //EXAMPLE: addToCartURL = http://dev.kirnazabete.com/checkout/cart/add/uenc/aHR0cDovL2Rldi5raXJuYXphYmV0ZS5jb20vY2xvdGhlcy9jb2F0cy9zcGFydGEtY29hdA,,/product/12742/
 var addToCartURL_zmag = '';
 
-var postDataString_zmag ="";
+var getProdDetailPostVars_zmag = ["programproductid"];
 
 // location of the html for the fancybox
 var getProdDetailBaseURL_zmag = "http://psdev.zmags.com/poc/deploy/juvalis/productDetail.php";
@@ -44,10 +44,10 @@ var includePathZmags ='http://psdev.zmags.com/poc/deploy/juvalis/';
 	
 	Use includePathZmags+"asset/foo.css" to get CLIENT specific items
 */
-var jsIncludeFiles_zmag =    [includePathZmags+"js/juvalis.js"
+var jsIncludeFiles_zmag =    [includePathZmags + "js/juvalis.js"
           
             ];
-var cssIncludeFiles_zmag =   ["http://www.juvalis.de/cybershop.css"
+var cssIncludeFiles_zmag =   [includePathZmags + "css/cybershop.css"
          
             ];
 
