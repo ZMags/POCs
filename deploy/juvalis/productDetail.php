@@ -6,16 +6,6 @@
 	header("Content-Type: text/plain");
 ?>
 
-<!DOCTYPE html >
-
-<html lang="en">
-<head>
-
-	<title>untitled</title>
-
-</head>
-<body>
-	
 	<div id="close_btn" style ="width:590px; position:relative;">
 		
 		<a href ="javascript:closeProductWindow_zmag();" style ="position:absolute; right:-15px;top:10px; color:#999;">Close X</a>
@@ -40,13 +30,11 @@
     <br>
    
     <script language="JavaScript">
-	<!--
 	function changeArtikelBild(URL)
 	{
 		document.jsArtikelBild.src = URL;
 		return;
 	}
-	-->
 	</script></td><td><img src="http://www.juvalis.de/pics/leer.gif" width="8" height="1" border="0" alt=""></td><td valign="top" align="right" width="100%"><table name="tbcs_i_inhalt_10" width="100%" border="0" bordercolor="lime" cellpadding="0" cellspacing="0"><tbody><tr>
         <td colspan="2" valign="top&quot;"><img src="http://www.juvalis.de/pics/leer.gif" border="0" width="1" height="1"><br></td></tr><tr><td colspan="2" valign="top"><img src="http://www.juvalis.de/pics/leer.gif" width="1" height="3" border="0"></td>
       </tr>
@@ -167,6 +155,3 @@
 
 
 </tbody></table>
-
-</body>
-</html>
