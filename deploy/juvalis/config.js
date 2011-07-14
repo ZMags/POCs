@@ -3,7 +3,7 @@
 */
 
 
-var CORE_SOURCE_zmag = "http://psdev.zmags.com/poc/";
+var CORE_SOURCE_zmag = "http://ps.zmags.com/commerce/"
 
 //var CORE_SOURCE_zmag = "http://localhost:8888/Zmags/Development/POCs/";
 
@@ -11,9 +11,8 @@ var CORE_SOURCE_zmag = "http://psdev.zmags.com/poc/";
 ///////EDIT BELOW/////////////////////////////////////////////////////
 
 //for zmag load
-var zmagPubID = '853eee6b';
-var zmagParentElement = 'myViewerContent';
-var pocProjectName_zmag = 'JuvalisPOC';
+
+var commerceProjectName_zmag = 'JuvalisPOC';
 var zmagsDebug = false;
 
 
@@ -24,7 +23,7 @@ var addToCartURL_zmag = '';
 var postDataString_zmag ="";
 
 // location of the html for the fancybox
-var prodDetailHTML_zmag = CORE_SOURCE_zmag + "/deploy/juvalis/productDetail.php";
+var getProdDetailBaseURL_zmag = "http://psdev.zmags.com/poc/deploy/juvalis/productDetail.php";
 var addToCartButtonID_zmag = 'addToCartBtn';
 var addToCartConfirmHTML_zmag = '<div>CONFIRMATION MESSAGE HERE</div>';
 
@@ -34,7 +33,7 @@ var addToCartConfirmHTML_zmag = '<div>CONFIRMATION MESSAGE HERE</div>';
 	This is just a convinience variable.
 
 */
-var includePathZmags = CORE_SOURCE_zmag + 'deploy/juvalis/';
+var includePathZmags ='http://psdev.zmags.com/poc/deploy/juvalis/';
 
 //=================================================================================
 
@@ -58,13 +57,13 @@ DO NOT CHANGE ANYTHING UNDER THIS LINE!
 ========================
 */
  
-//--- GET poc.js //
-var pocjs_zmag = document.createElement("script");
+//--- GET zmagsCommerce.js //
+var commercejs_zmag = document.createElement("script");
 
 // currently pointed to the dev environment maybe it should be a var?///
-pocjs_zmag.setAttribute("src", CORE_SOURCE_zmag +"corepoc/resources/poc.js");
-pocjs_zmag.setAttribute("type", "text/javascript");
-document.getElementsByTagName('head')[0].appendChild(pocjs_zmag);
+commercejs_zmag.setAttribute("src", CORE_SOURCE_zmag +"corecommerce/resources/zmagsCommerce.js");
+commercejs_zmag.setAttribute("type", "text/javascript");
+document.getElementsByTagName('head')[0].appendChild(commercejs_zmag);
 
 
 
