@@ -23,9 +23,9 @@ var addToCartURL_zmag = '';
 var getProdDetailPostVars_zmag = ["programproductid"];
 
 // location of the html for the fancybox
-var getProdDetailBaseURL_zmag = "http://psdev.zmags.com/poc/deploy/juvalis/productDetail.php";
+var getProdDetailBaseURL_zmag = "/poc/deploy/juvalis/productDetail.php";
 var addToCartButtonID_zmag = 'addToCartBtn';
-var addToCartConfirmHTML_zmag = '<div>CONFIRMATION MESSAGE HERE</div>';
+var addToCartConfirmHTML_zmag = '<div align="center" id="cartConfirm">Sie haben diese Artikel zu Ihrem Warenkorb.<br><button onclick="zmags_redirectToCart(\'http://www.juvalis.de/index.php?auswahl=warenkorb&filter=&tmp_rubrik2=&Portoland=&usernummer=10970885-575564645&spezial_rx_flag=\')">Zur Kasse gehen</button><button onclick="closeProductWindow_zmag()">Weiter Warenkorb</button></div>';
 
 var conType_zmag = "GET";
 
@@ -49,7 +49,7 @@ var includePathZmags ='http://psdev.zmags.com/poc/deploy/juvalis/';
 var jsIncludeFiles_zmag =    ["js/juvalis.js"
           
             ];
-var cssIncludeFiles_zmag =   ["css/cybershop.css"
+var cssIncludeFiles_zmag =   ["css/cybershop.css", "css/dpw.css"
          
             ];
 

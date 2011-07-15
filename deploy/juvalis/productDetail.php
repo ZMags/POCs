@@ -40,7 +40,7 @@
       </tr>
 				<tr><td class="txthellgrau" style="white-space: nowrap;">Kundenmeinungen (1)</td>
 				<td align="right">
-					<a href="index.php?auswahl=kundenmeinungen&amp;prod=ASPIRIN+COMPLEX+Granulat+Btl.&amp;pzn=4114918">
+					<a href="http://www.juvalis.de/index.php?auswahl=kundenmeinungen&amp;prod=ASPIRIN+COMPLEX+Granulat+Btl.&amp;pzn=4114918">
 						<img src="http://www.juvalis.de/pics/bewertung5.jpg" alt="">
 					</a>
 				</td>
@@ -60,7 +60,7 @@
       </tr><tr>
       <td align="left" height="18" valign="top"><span class="txthellgrau">Darr.:</span></td>
       <td align="right" valign="top">Granulat</td>
-      </tr><form name="bestellung" action="index.php" method="post"></form><tr>
+      </tr><form name="bestellung" action="http://www.juvalis.de/index.php" method="post"></form><tr>
       <td align="left" height="18" valign="top"><span class="uvp1">UVP*:</span></td>
       <td style="background-image:url('http://www.juvalis.de/pics/durchstrich.gif');background-repeat:no-repeat;background-position:right;" align="right" valign="top"><span class="uvp2">14,41</span></td>
       </tr><tr><td align="left" height="18" valign="top"><span class="uvp5"></span><span class="uvp9">Sie sparen:</span></td><td align="right" valign="top"><span class="uvp6">6,53</span></td></tr><tr>
@@ -145,13 +145,13 @@
         </tr>
 	<tr><td colspan="2">&nbsp;</td></tr>
 <tr><td align="right" valign="middle" colspan="2" height="25">
-            <table name="tbcs_i_inhalt_14" border="0" bordercolor="#ff0099" cellpadding="0" cellspacing="0"><tbody><tr><td><img src="http://www.juvalis.de/pics/bt_cs1_l.gif" width="4" height="21" alt="" border="0"></td><td background="http://www.juvalis.de/pics/bt_cs1_m.gif"><a href="javascript:document.bestellung.submit();"><span class="button"><font color="#162A47"><nobr>&nbsp;In den Warenkorb&nbsp;</nobr></font></span></a></td><td><img src="http://www.juvalis.de/pics/bt_cs1_r.gif" width="4" height="21" alt="" border="0"></td></tr></tbody></table><br>
+            <table name="tbcs_i_inhalt_14" border="0" bordercolor="#ff0099" cellpadding="0" cellspacing="0"><tbody><tr><td><img src="http://www.juvalis.de/pics/bt_cs1_l.gif" width="4" height="21" alt="" border="0"></td><td background="http://www.juvalis.de/pics/bt_cs1_m.gif"><a href="javascript:zmagCPO.launchCartConfirmBox();"><span class="button"><font color="#162A47"><nobr>&nbsp;In den Warenkorb&nbsp;</nobr></font></span></a></td><td><img src="http://www.juvalis.de/pics/bt_cs1_r.gif" width="4" height="21" alt="" border="0"></td></tr></tbody></table><br>
             </td></tr>
         <tr>
                 <td colspan="5" valign="top" align="right"><span class="txthellgrauk">(Alle Preise inkl. MwSt und zzgl. <a href="javascript:winopen('versandpopup.php', 500, 600)">Versandkosten</a>) </span></td>
         </tr>
 <tr>
-          <td align="right" colspan="2"><span class="txthellgrauk">(Preis pro&nbsp;1&nbsp;St:&nbsp;0,39 <img src="http://www.juvalis.de/pics/euro_hellgrau_8px.gif" width="7" height="8" border="0" alt="">)</span></td></tr><tr><td colspan="5" valign="top" align="right"><br><table border="0" bordercolor="#ff0099" cellpadding="0" cellspacing="0" width="273"><tbody><tr><td><img src="http://www.juvalis.de/pics/bt_cs1_l.gif" width="4" height="21" alt="" border="0"></td><td background="http://www.juvalis.de/pics/bt_cs1_m.gif"><span class="button"><font color="#162A47"><a href="index.php?rubrik2=ASPIRIN+COMPLEX+BEUTEL&amp;abdaDarreichung=Granulat&amp;filter=andereDarreichung&amp;aktion=Suche&amp;auswahl=shopseite&amp;rubrik1=Suche&amp;Sprachzeile=deutsch&amp;ue=&amp;up=&amp;agb=&amp;usernummer=10951863-666166528&amp;rubrik4=Bayer Vital GmbH&amp;suchart=" ""=""><font color="#162A47"><nobr>&nbsp;&nbsp;&nbsp;&nbsp;Dieser Artikel in anderen Packungsgrößen&nbsp;&nbsp;&nbsp;&nbsp;</nobr></font></a></font></span></td><td><img src="http://www.juvalis.de/pics/bt_cs1_r.gif" width="4" height="21" alt="" border="0"></td></tr></tbody></table></td></tr>
+          <td align="right" colspan="2"><span class="txthellgrauk">(Preis pro&nbsp;1&nbsp;St:&nbsp;0,39 <img src="http://www.juvalis.de/pics/euro_hellgrau_8px.gif" width="7" height="8" border="0" alt="">)</span></td></tr><tr><td colspan="5" valign="top" align="right"><br><table border="0" bordercolor="#ff0099" cellpadding="0" cellspacing="0" width="273"><tbody><tr><td><img src="http://www.juvalis.de/pics/bt_cs1_l.gif" width="4" height="21" alt="" border="0"></td><td background="http://www.juvalis.de/pics/bt_cs1_m.gif"><span class="button"><font color="#162A47"><a href="http://www.juvalis.de/index.php?rubrik2=ASPIRIN+COMPLEX+BEUTEL&amp;abdaDarreichung=Granulat&amp;filter=andereDarreichung&amp;aktion=Suche&amp;auswahl=shopseite&amp;rubrik1=Suche&amp;Sprachzeile=deutsch&amp;ue=&amp;up=&amp;agb=&amp;usernummer=10951863-666166528&amp;rubrik4=Bayer Vital GmbH&amp;suchart=" ""=""><font color="#162A47"><nobr>&nbsp;&nbsp;&nbsp;&nbsp;Dieser Artikel in anderen Packungsgrößen&nbsp;&nbsp;&nbsp;&nbsp;</nobr></font></a></font></span></td><td><img src="http://www.juvalis.de/pics/bt_cs1_r.gif" width="4" height="21" alt="" border="0"></td></tr></tbody></table></td></tr>
 
 
 </tbody></table>
