@@ -12,7 +12,7 @@ var CORE_SOURCE_zmag = "http://ps.zmags.com/commerce/"
 
 //for zmag load
 
-var commerceProjectName_zmag = 'JuvalisPOC';
+var commerceProjectName_zmag = 'POC_Coalesee010711PO';
 var zmagsDebug = false;
 
 
@@ -35,7 +35,7 @@ var conType_zmag = "GET";
 	This is just a convinience variable.
 
 */
-var includePathZmags ='http://psdev.zmags.com/poc/deploy/juvalis/';
+var includePathZmags ='http://psdev.zmags.com/poc/deploy/coalesse/010711/';
 
 //=================================================================================
 
@@ -46,10 +46,10 @@ var includePathZmags ='http://psdev.zmags.com/poc/deploy/juvalis/';
 	
 	Use includePathZmags+"asset/foo.css" to get CLIENT specific items
 */
-var jsIncludeFiles_zmag =    ["js/juvalis.js"
+var jsIncludeFiles_zmag =    [
           
             ];
-var cssIncludeFiles_zmag =   ["css/cybershop.css", "css/dpw.css"
+var cssIncludeFiles_zmag =   [
          
             ];
 
