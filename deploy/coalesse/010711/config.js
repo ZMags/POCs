@@ -3,7 +3,8 @@
 */
 
 
-var CORE_SOURCE_zmag = "http://ps.zmags.com/commerce/"
+//var CORE_SOURCE_zmag = "http://ps.zmags.com/commerce/"
+var CORE_SOURCE_zmag = "http://localhost:8888/Zmags/Production/CommercePro/"
 
 
 
@@ -46,10 +47,10 @@ var includePathZmags ='http://psdev.zmags.com/poc/deploy/coalesse/010711/';
 	
 	Use includePathZmags+"asset/foo.css" to get CLIENT specific items
 */
-var jsIncludeFiles_zmag =    [
+var jsIncludeFiles_zmag =    ["",
           
             ];
-var cssIncludeFiles_zmag =   [
+var cssIncludeFiles_zmag =   [""
          
             ];
 
