@@ -4,7 +4,7 @@
 
 
 //var CORE_SOURCE_zmag = "http://ps.zmags.com/commerce/"
-var CORE_SOURCE_zmag = "http://localhost:8888/Zmags/Production/CommercePro/"
+var CORE_SOURCE_zmag = "http://localhost/CommercePro/"
 
 
 
@@ -24,7 +24,7 @@ var addToCartURL_zmag = '';
 var getProdDetailPostVars_zmag = ["programproductid"];
 
 // location of the html for the fancybox
-var getProdDetailBaseURL_zmag = "/poc/deploy/juvalis/productDetail.php";
+var getProdDetailBaseURL_zmag = "/poc/deploy/coalesse/010711/productDetail.php";
 var addToCartButtonID_zmag = 'addToCartBtn';
 var addToCartConfirmHTML_zmag = '<div align="center" id="cartConfirm">Sie haben diese Artikel zu Ihrem Warenkorb.<br><button onclick="zmags_redirectToCart(\'http://www.juvalis.de/index.php?auswahl=warenkorb&filter=&tmp_rubrik2=&Portoland=&usernummer=10970885-575564645&spezial_rx_flag=\')">Zur Kasse gehen</button><button onclick="closeProductWindow_zmag()">Weiter Warenkorb</button></div>';
 
