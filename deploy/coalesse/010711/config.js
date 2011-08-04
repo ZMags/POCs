@@ -4,7 +4,7 @@
 
 
 //var CORE_SOURCE_zmag = "http://ps.zmags.com/commerce/"
-var CORE_SOURCE_zmag = "http://localhost/CommercePro/"
+var CORE_SOURCE_zmag = "http://ps.zmags.com/commerce/"
 
 
 
@@ -19,14 +19,14 @@ var zmagsDebug = false;
 
 //full path to client's add to cart script (including parameters if using GET) 
 //EXAMPLE: addToCartURL = http://dev.kirnazabete.com/checkout/cart/add/uenc/aHR0cDovL2Rldi5raXJuYXphYmV0ZS5jb20vY2xvdGhlcy9jb2F0cy9zcGFydGEtY29hdA,,/product/12742/
-var addToCartURL_zmag = '';
+var addToCartURL_zmag = 'http://store.coalesse.com/products/cart/';
 
 var getProdDetailPostVars_zmag = ["programproductid"];
 
 // location of the html for the fancybox
-var getProdDetailBaseURL_zmag = "/poc/deploy/coalesse/010711/productDetail.php";
+var getProdDetailBaseURL_zmag = "http://psdev.zmags.com/poc/deploy/coalesse/010711/productDetail.php";
 var addToCartButtonID_zmag = 'addToCartBtn';
-var addToCartConfirmHTML_zmag = '<div align="center" id="cartConfirm">Sie haben diese Artikel zu Ihrem Warenkorb.<br><button onclick="zmags_redirectToCart(\'http://www.juvalis.de/index.php?auswahl=warenkorb&filter=&tmp_rubrik2=&Portoland=&usernummer=10970885-575564645&spezial_rx_flag=\')">Zur Kasse gehen</button><button onclick="closeProductWindow_zmag()">Weiter Warenkorb</button></div>';
+var addToCartConfirmHTML_zmag = '<div align="center" id="cartConfirm"><br><button class="checkout" onclick="zmags_redirectToCart(\'http://store.coalesse.com/products/cart/\')"></button><button class="continue" onclick="closeProductWindow_zmag()"></button></div>';
 
 var conType_zmag = "GET";
 
@@ -47,10 +47,10 @@ var includePathZmags ='http://psdev.zmags.com/poc/deploy/coalesse/010711/';
 	
 	Use includePathZmags+"asset/foo.css" to get CLIENT specific items
 */
-var jsIncludeFiles_zmag =    ["",
+var jsIncludeFiles_zmag =    ["js/coalesse.js","js/cloud-zoom.1.0.2.js","js/jquery.dd.js"
           
             ];
-var cssIncludeFiles_zmag =   [""
+var cssIncludeFiles_zmag =   ["css/dpw.css","css/cloud-zoom.css","js/dd.css"
          
             ];
 
