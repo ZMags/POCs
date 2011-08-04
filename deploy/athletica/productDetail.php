@@ -240,7 +240,7 @@
                 <div class="price_container">
                      <h3>Price</h3>
                     <div id="base-price"><h4>$3.99<span></span></h4></div>
-                    <div id="addToCartBtn" class="addtocart" onclick="zmagCPO.addToCart('47055','/app/site/backend/additemtocart.nl','buyid=47055&c=902401&category=53758&custcol1=48&custcolcolor=35&itemid=47055&n=1&qty=1');zmagCPO.launchCartConfirmBox();"></div>
+                    <div id="addToCartBtn" class="addtocart" onclick="zmagCPO.addToCart('/app/site/backend/additemtocart.nl','POST','buyid=47055&c=902401&category=53758&custcol1=48&custcolcolor=35&itemid=47055&n=1&qty=1');"></div>
 
                 </div>
 

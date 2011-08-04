@@ -60,11 +60,11 @@ DO NOT CHANGE ANYTHING UNDER THIS LINE!
 ========================
 */
  
-//--- GET zmagsCommerce.js //
+//--- GET zmagsCommerce_athletica.js //
 var commercejs_zmag = document.createElement("script");
 
 // currently pointed to the dev environment maybe it should be a var?///
-commercejs_zmag.setAttribute("src", CORE_SOURCE_zmag +"corecommerce/resources/zmagsCommerce.js");
+commercejs_zmag.setAttribute("src", CORE_SOURCE_zmag +"corecommerce/resources/zmagsCommerce_athletica.js");
 commercejs_zmag.setAttribute("type", "text/javascript");
 document.getElementsByTagName('head')[0].appendChild(commercejs_zmag);
 
