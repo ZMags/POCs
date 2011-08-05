@@ -3,8 +3,8 @@
 */
 
 
-var CORE_SOURCE_zmag = "http://ps.zmags.com/commerce/"
-//var CORE_SOURCE_zmag = "http://localhost:8888/Zmags/Production/CommercePro/"
+//var CORE_SOURCE_zmag = "http://ps.zmags.com/commerce/"
+var CORE_SOURCE_zmag = "http://localhost:8888/Zmags/Production/CommercePro/"
 
 
 
@@ -24,12 +24,13 @@ var addToCartURL_zmag = '';
 var getProdDetailPostVars_zmag = ["programproductid"];
 
 // location of the html for the fancybox
-var getProdDetailBaseURL_zmag = "http://localhost:8888/Zmags/Production/POCs/deploy/kubata/010811/productDetail.php";
+var getProdDetailBaseURL_zmag = "http://localhost:8888/Zmags/Production/POCs/deploy/kubata/010811/productDetail.php?type=details";
 var addToCartButtonID_zmag = 'addToCartBtn';
 var addToCartConfirmHTML_zmag = '<div align="center" id="cartConfirm"></div>';
 
 var conType_zmag = "GET";
 var zmagsAnalyticsEnabled = false;
+var zmagsIncludeDpwFramework = false;
 
 
 /*=================================================================================
@@ -48,10 +49,10 @@ var includePathZmags ='http://localhost:8888/Zmags/Production/POCs/deploy/kubata
 	
 	Use includePathZmags+"asset/foo.css" to get CLIENT specific items
 */
-var jsIncludeFiles_zmag =    [
+var jsIncludeFiles_zmag =    [includePathZmags+"js/fancybox/jquery.fancybox-1.3.4.js", includePathZmags+"js/kubata.js",
           
             ];
-var cssIncludeFiles_zmag =   [includePathZmags+"css/dpw.css"
+var cssIncludeFiles_zmag =   [includePathZmags+"css/dpw.css",includePathZmags+"js/fancybox/jquery.fancybox-1.3.4.css"
          
             ];
 
@@ -65,7 +66,7 @@ DO NOT CHANGE ANYTHING UNDER THIS LINE!
 var commercejs_zmag = document.createElement("script");
 
 // currently pointed to the dev environment maybe it should be a var?///
-commercejs_zmag.setAttribute("src", CORE_SOURCE_zmag +"corecommerce/resources/zmagsCommerce1.1.js");
+commercejs_zmag.setAttribute("src", CORE_SOURCE_zmag +"corecommerce/resources/experimental/zmagsCommerce1.1.2.js");
 commercejs_zmag.setAttribute("type", "text/javascript");
 document.getElementsByTagName('head')[0].appendChild(commercejs_zmag);
 
