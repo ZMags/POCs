@@ -1,17 +1,14 @@
 body {
-    color: #555555;
+    color: #00528C;
     font-family: Arial,Helvetica;
     font-size: 12px;
     letter-spacing: 0.01em;
     line-height: 1.667;
 }
 .main .top h1 {
-    color: #A2A2A2;
-    font-family: Times,'Times New Roman',Georgia,serif;
-    font-size: 35px;
-    font-weight: normal;
-    line-height: 1.1;
-    margin-left: 22px;
+    color: #00528C;
+    font: bold 19px Arial,sans-serif;
+    text-decoration: none;
 }
 .main_left{
     position: relative;
@@ -23,8 +20,8 @@ body {
     float: left;
     height: 450px;
     position: relative;
-    width: 600px;
-
+    width: 576px;
+    overflow: hidden;
 }
 .section-a {
     border-top: 1px solid #E3E3E3;
@@ -44,7 +41,8 @@ h4 {
     margin-bottom: 10px;
 }
 .section-a h4 {
-    font-size: 12px;
+    color: #444444;
+    font: 11px Tahoma,Arial,helvetica,sans-serif;
 }
 del, ins, a {
     text-decoration: none;
@@ -59,7 +57,7 @@ del, ins, a {
     overflow:hidden;
 }
 .description_buttons .button {
-    background: none no-repeat scroll 0 0 #cbcbcb;
+    background: none no-repeat scroll 0 0 #459AD4;
     border-radius: 0 0 2px 2px;
     color: #FFFFFF;
     font-size: 10px;
@@ -87,14 +85,14 @@ del, ins, a {
    display:none;
 }
 .customize_add{
-    background: none no-repeat scroll 0 0 #E8E8DA;
+    background: none no-repeat scroll 0 0 #F3F3F3;
     height: 70px;
     margin-bottom: 10px;
     margin-right: 10px;
     width: 280px;
 }
 .customize_quantity{
-    background:none no-repeat scroll 0 0 #e8e8da;
+    background:none no-repeat scroll 0 0 #F3F3F3;
     width: 280px;
     height: 30px;
     content: ".";
@@ -103,8 +101,8 @@ del, ins, a {
      padding-top: 10px;
 }
 .price_container{
-    background: none no-repeat scroll 0 0 #E8E8DA;
-    height: 120px;
+    background: none no-repeat scroll 0 0 #F3F3F3;
+    height: 188px;
     overflow: hidden;
     position: relative;
     width: 280px;
@@ -124,7 +122,7 @@ del, ins, a {
     font-weight: bold;
 }
 #base-price h4{
-    color: #3B3B3B;
+    color: #00528C;
     font-size: 30px;
     font-weight: bold;
     letter-spacing: 0;
@@ -186,16 +184,16 @@ del, ins, a {
     width: 80px;
 }
 .product_name h4{
-    color: #a5a5a5;
+    color: #459AD4;
     line-height: 1.5em;
     text-align: center;
     top: 290px;
     width: 100%;
 }
 .addtocart{
-    background: url("../images/addToCart.png") no-repeat scroll 0 0 transparent;
+    background: url("http://www.teamcheer.com//site/tcl-images-site/btn_add2cart.jpg") no-repeat scroll 0 0 transparent;
     cursor: pointer;
-    height: 25px;
+    height: 50px;
     margin: 0 auto 0 82px;
     width: 125px;
 }
@@ -283,4 +281,24 @@ del, ins, a {
 }
 .coda-nav{
     display: none;
+}
+.bglt {
+    background-color: #FFFFFF;
+}
+.smalltext {
+    font-size: 8pt;
+    color: #444444;
+}
+.listheadernosort {
+    background-color: #DDDDDD;
+    color: #666666;
+    height: 100%;
+    padding: 2px 5px;
+    vertical-align: top;
+}
+.tabs_container{
+    width: 570px;
+}
+.description{
+    width: 560px;
 }
