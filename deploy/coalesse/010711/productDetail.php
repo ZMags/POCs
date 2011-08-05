@@ -13,7 +13,7 @@
     <link href="http://ps.zmags.com/poc/deploy/coalesse/010711/js/dd.css" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript">
-//     jQuery('#imagen').fancybox();
+     jQuery('#imagen').fancybox();
     function zoomCloud(){
 
                     $('.cloud-zoom').CloudZoom();
