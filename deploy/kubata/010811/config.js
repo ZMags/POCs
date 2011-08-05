@@ -3,8 +3,8 @@
 */
 
 
-//var CORE_SOURCE_zmag = "http://ps.zmags.com/commerce/"
-var CORE_SOURCE_zmag = "http://localhost:8888/Zmags/Production/CommercePro/"
+var CORE_SOURCE_zmag = "http://ps.zmags.com/commerce/"
+
 
 
 
@@ -24,7 +24,7 @@ var addToCartURL_zmag = '';
 var getProdDetailPostVars_zmag = ["programproductid"];
 
 // location of the html for the fancybox
-var getProdDetailBaseURL_zmag = "http://localhost:8888/Zmags/Production/POCs/deploy/kubata/010811/productDetail.php?type=details";
+var getProdDetailBaseURL_zmag = "http://ps.zmags.com/poc/deploy/kubata/010811/productDetail.php?type=details";
 var addToCartButtonID_zmag = 'addToCartBtn';
 var addToCartConfirmHTML_zmag = '<div align="center" id="cartConfirm"></div>';
 
@@ -38,8 +38,8 @@ var zmagsIncludeDpwFramework = false;
 	This is just a convinience variable.
 
 */
-//var includePathZmags ='http://psdev.zmags.com/poc/deploy/kubata/010711/';
-var includePathZmags ='http://localhost:8888/Zmags/Production/POCs/deploy/kubata/010811/';
+
+var includePathZmags ='http://ps.zmags.com/poc/deploy/kubata/010811/';
 //=================================================================================
 
 
