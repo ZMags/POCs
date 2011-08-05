@@ -5,15 +5,15 @@
 	header("Access-Control-Max-Age: 1500000");
 	header("Content-Type: text/plain");
 ?>
-    <script type="text/javascript" src="http://psdev.zmags.com/poc/deploy/coalesse/010711/js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="http://psdev.zmags.com/poc/deploy/coalesse/010711/js/jquery.coda-slider-2.0.js"></script>
+    <script type="text/javascript" src="http://ps.zmags.com/poc/deploy/coalesse/010711/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="http://ps.zmags.com/poc/deploy/coalesse/010711/js/jquery.coda-slider-2.0.js"></script>
 
 
-    <script type="text/javascript" src="http://psdev.zmags.com/poc/deploy/coalesse/010711/js/jquery.dd.js"></script>
-    <link href="http://psdev.zmags.com/poc/deploy/coalesse/010711/js/dd.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ps.zmags.com/poc/deploy/coalesse/010711/js/jquery.dd.js"></script>
+    <link href="http://ps.zmags.com/poc/deploy/coalesse/010711/js/dd.css" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript">
-     jQuery('#imagen').fancybox();
+//     jQuery('#imagen').fancybox();
     function zoomCloud(){
 
                     $('.cloud-zoom').CloudZoom();
@@ -35,8 +35,8 @@
 </script>
 
 
-    <link href="http://psdev.zmags.com/poc/deploy/coalesse/010711/css/cloud-zoom.css" rel="stylesheet" type="text/css" />
-    <script src="http://psdev.zmags.com/poc/deploy/coalesse/010711/js/cloud-zoom.1.0.2.js" type="text/javascript"></script>
+    <link href="http://ps.zmags.com/poc/deploy/coalesse/010711/css/cloud-zoom.css" rel="stylesheet" type="text/css" />
+    <script src="http://ps.zmags.com/poc/deploy/coalesse/010711/js/cloud-zoom.1.0.2.js" type="text/javascript"></script>
 
 <style>
 .coda-slider-no-js .coda-slider { height: 200px; overflow: auto !important; padding-right: 20px ;}

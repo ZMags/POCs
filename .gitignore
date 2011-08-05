@@ -1,5 +1,11 @@
-##directories to ignore
-tests/*
+.DS_Store
+*.DS_Store
+*/.DS_Store
+*.psd
+*.pdf
 
-#files
-corepoc/poc-logs/*.txt
+#directories to ignore
+
+*design/*
+tests/*
+corecommerce/commerce-logs/*.txt
