@@ -16,7 +16,7 @@ var CORE_SOURCE_zmag = "http://ps.zmags.com/commerce/"
 var commerceProjectName_zmag = 'POC_Coalesee010711PO';
 var zmagsDebug = false;
 var zmagsAnalyticsEnabled = false;
-var zmagsIncludeDpwFramework = false;
+var zmagsIncludeDpwFramework = true;
 
 //full path to client's add to cart script (including parameters if using GET) 
 //EXAMPLE: addToCartURL = http://dev.kirnazabete.com/checkout/cart/add/uenc/aHR0cDovL2Rldi5raXJuYXphYmV0ZS5jb20vY2xvdGhlcy9jb2F0cy9zcGFydGEtY29hdA,,/product/12742/
@@ -48,7 +48,7 @@ var includePathZmags ='http://ps.zmags.com/poc/deploy/coalesse/010711/';
 	
 	Use includePathZmags+"asset/foo.css" to get CLIENT specific items
 */
-var jsIncludeFiles_zmag =    [includePathZmags+"js/fancyfix.js",includePathZmags+"js/coalesse.js",includePathZmags+"js/cloud-zoom.1.0.2.js",includePathZmags+"js/jquery.dd.js"
+var jsIncludeFiles_zmag =    [includePathZmags+"js/coalesse.js",includePathZmags+"js/cloud-zoom.1.0.2.js",includePathZmags+"js/jquery.dd.js"
           
             ];
 var cssIncludeFiles_zmag =   [includePathZmags+"css/dpw.css",includePathZmags+"css/cloud-zoom.css",includePathZmags+"js/dd.css"
