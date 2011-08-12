@@ -171,7 +171,7 @@ CommerceProPS_zmag.prototype.launchProdDetailBox  = function (event) {
 
 
 CommerceProPS_zmag.prototype.addToCart = function (productId, url, post_data) {
-    alert("alert");
+
 	var self = this;
 
 	//if there are any characters in post data string, must be a POST call

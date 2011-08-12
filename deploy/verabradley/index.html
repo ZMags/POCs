@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head> 
+  <title>verabradley</title>
+
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/> 
+
+
+</head>
+
+<body>
+	 <a id="fstoogle">Exit Fullscreen</a>
+	<div id ="wrapper" style="width:1000px; height:750px; margin:0 auto">
+		<div id="myViewerContent" style="width:1000px; height:750px;"></div>
+    	<noscript>
+        	Sorry, you don't have javascript enabled
+    	</noscript>
+		
+
+<script src="http://viewer.zmags.com/js/viewer.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+
+		<script>
+     var viewer = new ZMAGS.ui.Viewer();
+     viewer.setPublicationID("8d7b817d");
+     viewer.setParentElementID("myViewerContent");
+     viewer.addEventListener(ZMAGS.ui.Viewer.CUSTOM_LINK_CLICK, "CustomLinkHandler", self);
+     viewer.setWindowMode("opaque");
+     viewer.show();
+     $(document).ready(function() {
+        $.getScript('http://psdev.zmags.com/poc/deploy/verabradley/100811/config.js', function() {});
+  		//$.getScript('http://localhost:8888/Zmags/Production/POCs/deploy/athletica/010711/config.js', function() {});
+     });
+
+
+</script>
+
+
+
+	</div>
+	
+</body>
+
+
+
+
+
+
+</html>
+
+
