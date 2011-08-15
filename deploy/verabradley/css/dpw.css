@@ -59,7 +59,7 @@ body {
     float: left;
     height: 342px;
     position: relative;
-    width: 290px;
+    width: 320px;
 }
 .bottom{
     height: 142px;
@@ -81,6 +81,7 @@ body {
     position: relative;
 }
 .main_image img{
+    border: medium none;
     height: 351px;
     width: 300px;
 }
@@ -203,8 +204,9 @@ del, ins, a {
 
 }
 .custom_left{
-    position: relative;
     float: left;
+    padding-top: 21px;
+    position: relative;
 }
 .custom_right{
     float: right;
@@ -307,8 +309,8 @@ del, ins, a {
     text-transform: uppercase;
 }
 .add_wish{
-        border-bottom: medium dotted;
-    border-top: medium dotted;
+    border-bottom: 2px dotted;
+    border-top: 2px dotted;;
 }
 .customize_image{
     float: left;
@@ -362,6 +364,10 @@ del, ins, a {
     margin-left: 0px;
     overflow: hidden;
     width: 239px !important;
+}
+.thumbs_container ul li a img{
+    border: none;
+
 }
 .thumbs_container_colors{
     float: left;
@@ -489,7 +495,7 @@ del, ins, a {
     font-weight: bold;
     height: 33px;
     margin-left: 19px;
-    margin-top: -26px;
+    margin-top: -5px;
     overflow: hidden;
     position: relative;
     width: 250px;
@@ -549,9 +555,9 @@ del, ins, a {
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
+    padding-left: 5px;
     position: relative;
     text-transform: uppercase;
-    top: 1px;
 }
 .quantity_content{
     float: left;
@@ -563,7 +569,8 @@ del, ins, a {
 
 }
 .coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel {
-    width: 280px!important;
+    background: none repeat scroll 0 0 transparent;
+    width: 290px !important;
 }
 .coda-nav-left a, .coda-nav-right a {
     display: block;
@@ -583,8 +590,15 @@ del, ins, a {
     display: none;
 }
 .coda-nav-right {
-    float: right!important;
+   float: right !important;
+    overflow: hidden;
+    padding-top: 18px;
+    position: relative;
+    right: 29px;
 }
 #coda-slider-1{
     height: 152px!important;
+}
+.coda-slider-wrapper {
+        padding: 0 0 0 12px!important;
 }

@@ -47,7 +47,7 @@ var includePathZmags ='http://psdev.zmags.com/poc/deploy/verabradley/100811/';
 	
 	Use includePathZmags+"asset/foo.css" to get CLIENT specific items
 */
-var jsIncludeFiles_zmag =    ["js/verabradley.js","js/cloud-zoom.1.0.2.js","js/jquery.coda-slider-2.0.js","js/toogle_hide.js"
+var jsIncludeFiles_zmag =    ["js/verabradley.js","js/cloud-zoom.1.0.2.js","js/jquery.coda-slider-2.0.js"
           
             ];
 var cssIncludeFiles_zmag =   ["css/dpw.css","css/cloud-zoom.css","css/coda-slider-2.0.css"
