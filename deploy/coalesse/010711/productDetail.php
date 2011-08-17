@@ -17,7 +17,28 @@
         setTimeout("codeSlider()",1000);
 
 
-     jQuery('#imagen').fancybox();
+
+    $('#webmenu').change(function() {
+        var var_select=jQuery('#webmenu option:selected').val();
+              if(var_select=='Ebony'){
+                    $('.customize_image a img').attr('src',"http://store3.steelcase.com/store/controls/i/is.aspx?path=/shared/images/product/COHDLX_VAR_340_71_Ebony+%28L112%29_TH.jpg&amp;lr=t&amp;bw=50&amp;w=50");
+              }else{
+                  if(var_select=='White'){
+                        $('.customize_image a img').attr('src',"http://store3.steelcase.com/store/controls/i/is.aspx?path=/shared/images/product/COHDLX_VAR_342_71_White+%28L151%29_TH.jpg&amp;lr=t&amp;bw=50&amp;w=50");
+                     }else{
+                           if(var_select=='Espresso'){
+                              $('.customize_image a img').attr('src',"http://store3.steelcase.com/store/controls/i/is.aspx?path=/shared/images/product/COHDLX_VAR_341_71_Espresso+%28L133%29_TH.jpg&amp;lr=t&amp;bw=50&amp;w=50");
+                           }
+                  }
+              }
+        });
+                jQuery('#coda-slider-1 .panel ul li a img').click(function(){
+
+            jQuery('#coda-slider-1 .panel ul li').removeClass('Thumbnail_select');
+
+            jQuery(this).parent().parent().addClass('Thumbnail_select');
+        });
+
     function zoomCloud(){
 
                     $('.cloud-zoom').CloudZoom();
@@ -52,7 +73,7 @@
     height: 64px !important;
     overflow: hidden;
     position: relative;
-    width: 180px !important; }
+    width: 194px !important; }
 	.coda-slider .panel { display: block; float: left }
 	.coda-slider .panel-container { position: relative }
 	.coda-nav-left, .coda-nav-right { float: left }
@@ -80,7 +101,7 @@
      <div class="main_left">
         <div class="main_image">
              <a href='http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_01.jpg&lr=t&bw=600&w=600' class = 'cloud-zoom' id='zoom1'
-                            rel="adjustX: 10, adjustY:-4">
+                            rel="adjustX: 10, adjustY:-4,position: 'inside',showTitle: false">
                             <img src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_01.jpg&lr=t&bw=280&w=280" alt='item' title="Optional title display"/>
              </a>
         </div>
@@ -96,19 +117,24 @@
             	<div class="coda-slider preload" id="coda-slider-1">
             		<div class="panel">
             		  <ul class="other_images">
-                        <li>
-                           <a href='http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_01.jpg&lr=t&bw=600&w=600' class='cloud-zoom-gallery' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: 'http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_01.jpg&lr=t&bw=280&w=280' ">
-                           <img  title="Phone title" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_01.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
+                        <li class="Thumbnail_select">
+                           <a href='http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_01.jpg&lr=t&bw=600&w=600' class='cloud-zoom-gallery' title='' rel="useZoom: 'zoom1', smallImage: 'http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_01.jpg&lr=t&bw=280&w=280' ">
+                           <img  title="" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_01.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
                            </a>
                         </li>
                         <li>
-                           <a href='http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_02.jpg&lr=t&bw=600&w=600' class='cloud-zoom-gallery' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: 'http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_02.jpg&lr=t&bw=280&w=280' ">
-                           <img  title="Phone title" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_02.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
+                           <a href='http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_02.jpg&lr=t&bw=600&w=600' class='cloud-zoom-gallery' title='' rel="useZoom: 'zoom1', smallImage: 'http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_02.jpg&lr=t&bw=280&w=280' ">
+                           <img  title="" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_02.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
                            </a>
                         </li>
                         <li>
-                           <a href='http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_03.jpg&lr=t&bw=600&w=600' class='cloud-zoom-gallery' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: 'http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_03.jpg&lr=t&bw=280&w=280' ">
-                           <img  title="Phone title" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_03.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
+                           <a href='http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_03.jpg&lr=t&bw=600&w=600' class='cloud-zoom-gallery' title='' rel="useZoom: 'zoom1', smallImage: 'http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_03.jpg&lr=t&bw=280&w=280' ">
+                           <img  title="" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_03.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
+                           </a>
+                        </li>
+                        <li>
+                           <a href='http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_04.jpg&lr=t&bw=600&w=600' class='cloud-zoom-gallery' title='' rel="useZoom: 'zoom1', smallImage: 'http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_04.jpg&lr=t&bw=280&w=280' ">
+                           <img  title="" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_04.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
                            </a>
                         </li>
                         </ul>
@@ -116,18 +142,13 @@
             		<div class="panel">
                      <ul class="other_images">
                         <li>
-                           <a href='http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_04.jpg&lr=t&bw=600&w=600' class='cloud-zoom-gallery' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: 'http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_04.jpg&lr=t&bw=280&w=280' ">
-                           <img  title="Phone title" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_04.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
-                           </a>
-                        </li>
-                        <li>
-                           <a href='http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_04.jpg&lr=t&bw=600&w=600' class='cloud-zoom-gallery' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: 'http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_D01.jpg&lr=t&bw=280&w=280' ">
-                           <img  title="Phone title" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_D01.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
+                           <a href='http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_04.jpg&lr=t&bw=600&w=600' class='cloud-zoom-gallery' title='' rel="useZoom: 'zoom1', smallImage: 'http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_D01.jpg&lr=t&bw=280&w=280' ">
+                           <img  title="" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_D01.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
                            </a>
                         </li>
                          <li>
-                           <a href='http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_D02.jpg&lr=t&bw=600&w=600' class='cloud-zoom-gallery' title='Thumbnail 1' rel="useZoom: 'zoom1', smallImage: 'http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_D02.jpg&lr=t&bw=280&w=280' ">
-                           <img  title="Phone title" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_D02.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
+                           <a href='http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_D02.jpg&lr=t&bw=600&w=600' class='cloud-zoom-gallery' title='' rel="useZoom: 'zoom1', smallImage: 'http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_D02.jpg&lr=t&bw=280&w=280' ">
+                           <img  title="" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_D02.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
                            </a>
                         </li>
             		</div>
@@ -230,8 +251,8 @@
 
                     <div class="customize_image">
 
-                           <a id="imagen" href="http://store3.steelcase.com/store/controls/i/is.aspx?path=/shared/images/product/COHDLX_VAR_340_71_Ebony+%28L112%29_FULL.jpg">
-                           <img  title="Phone title" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_01.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
+                           <a id="imagen" href="javascript:void(0);" >
+                           <img  title="" src="http://store3.steelcase.com/store/controls/i/is.aspx?path=/images/coalesse/Holy-Day-Lounge/Holy_Day_Lounge_hi_01.jpg&lr=t&bw=40&w=40" alt = "Thumbnail 1"/>
                            </a>
 
                     </div>
@@ -244,9 +265,10 @@
                             <!--<option><img alt="" src="images/icons/spain.png" /></option>-->
                         <select name="webmenu" id="webmenu">
 
-                            <option value="Ebony"  selected="selected" title="http://store3.steelcase.com/store/controls/i/is.aspx?path=/shared/images/product/COHDLX_VAR_340_71_Ebony+%28L112%29_TH.jpg&amp;lr=t&amp;bw=20&amp;w=20">Ebony (L112)</option>
+                            <option value="Espresso" selected="selected" title="http://store3.steelcase.com/store/controls/i/is.aspx?path=/shared/images/product/COHDLX_VAR_341_71_Espresso+%28L133%29_TH.jpg&amp;lr=t&amp;bw=20&amp;w=20">Espresso (L133)</option>
+                            <option value="Ebony"   title="http://store3.steelcase.com/store/controls/i/is.aspx?path=/shared/images/product/COHDLX_VAR_340_71_Ebony+%28L112%29_TH.jpg&amp;lr=t&amp;bw=20&amp;w=20">Ebony (L112)</option>
                             <option value="White" title="http://store3.steelcase.com/store/controls/i/is.aspx?path=/shared/images/product/COHDLX_VAR_342_71_White+%28L151%29_TH.jpg&amp;lr=t&amp;bw=20&amp;w=20">White (L151)</option>
-                            <option value="Espresso" title="http://store3.steelcase.com/store/controls/i/is.aspx?path=/shared/images/product/COHDLX_VAR_341_71_Espresso+%28L133%29_TH.jpg&amp;lr=t&amp;bw=20&amp;w=20">Espresso (L133)</option>
+
 
                         </select>
                         </div>

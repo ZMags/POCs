@@ -119,7 +119,7 @@ del, ins, a {
 }
 .custom_left{
     float: left;
-    margin-top: 15px;
+    margin-top: 12px;
     position: relative;
 }
 .custom_right{
@@ -149,12 +149,16 @@ del, ins, a {
     font-style: italic;
     font-weight: normal;
     letter-spacing: 0.01em;
-    margin-left: -0.1em;
+    margin-left: 0.5em;
 }
 .customize_input{
-    background: none repeat scroll 0 0 white;
+    background: -moz-linear-gradient(center top , white 0%, #EDEDED 100%) repeat scroll 0 0 transparent;
+    border-color: #CCCCCC #CCCCCC #A8A8A8;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     float: right;
-    margin-right: 18px;
+    margin-right: 1px;
     text-align: right;
     width: 2em;
 }
@@ -192,6 +196,12 @@ del, ins, a {
     background: none;
     padding-left: 0;
 }
+.other_images li:hover{
+    border: 2px solid #333333;
+}
+.Thumbnail_select{
+    border: 2px solid #333333!important;
+}
 .other_images li a{
     color: #E8E8DA;
     display: block;
@@ -199,10 +209,14 @@ del, ins, a {
     width: 80px;
 }
 .product_name h4{
-    color: #a5a5a5;
+    color: #A5A5A5;
+    font-size: 10px;
     line-height: 1.5em;
+
+    position: relative;
+    right: 36px;
     text-align: center;
-    top: 290px;
+
     width: 100%;
 }
 .addtocart{
@@ -233,6 +247,7 @@ del, ins, a {
     overflow: hidden;
     position: relative;
     width: 570px;
+    padding-bottom: 10px;
 }
 .customize_container h2{
         color: #3B3B3B;
@@ -275,6 +290,7 @@ del, ins, a {
     width: 235px!important;
 }
 .other_images{
+    padding-left: 0!important;
     list-style: none;
     height: 40px;
 }
@@ -314,18 +330,21 @@ del, ins, a {
 
 }
 .specifications{
+    border-bottom: 1px solid #CBCBCB;
     float: left;
     overflow: hidden;
     position: relative;
     width: 570px;
 }
 .features{
+    border-bottom: 1px solid #CBCBCB;
     float: left;
     overflow: hidden;
     position: relative;
     width: 570px;
 }
 .description{
+    border-bottom: 1px solid #CBCBCB;
     float: left;
     overflow: hidden;
     position: relative;
@@ -341,4 +360,18 @@ del, ins, a {
 }
 .coda-slider .panel{
     display:block!important;
+}
+.top{
+   border-bottom: 1px solid #CBCBCB;
+}
+.gallery_container{
+
+}
+.product_name{
+    margin-top: 30px;
+}
+.cloud-zoom-big{
+    top:0!important;
+    border: none!important;
+
 }
