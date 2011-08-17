@@ -5,15 +5,19 @@
 	header("Access-Control-Max-Age: 1500000");
 	header("Content-Type: text/plain");
 ?>
-    <script type="text/javascript" src="http://ps.zmags.com/poc/deploy/coalesse/010711/js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="http://ps.zmags.com/poc/deploy/coalesse/010711/js/jquery.coda-slider-2.0.js"></script>
+    <script type="text/javascript" src="http://psdev.zmags.com/poc/deploy/coalesse/010711/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="http://psdev.zmags.com/poc/deploy/coalesse/010711/js/jquery.coda-slider-2.0.js"></script>
 
 
-    <script type="text/javascript" src="http://ps.zmags.com/poc/deploy/coalesse/010711/js/jquery.dd.js"></script>
-    <link href="http://ps.zmags.com/poc/deploy/coalesse/010711/js/dd.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://psdev.zmags.com/poc/deploy/coalesse/010711/js/jquery.dd.js"></script>
+    <link href="http://psdev.zmags.com/poc/deploy/coalesse/010711/js/dd.css" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript">
-//     jQuery('#imagen').fancybox();
+
+        setTimeout("codeSlider()",1000);
+
+
+     jQuery('#imagen').fancybox();
     function zoomCloud(){
 
                     $('.cloud-zoom').CloudZoom();
@@ -26,17 +30,17 @@
 
                });
 
-            $(function() {
-                $().ready(function() {
-                            $('#coda-slider-1').codaSlider();
-                        });
-            });
+       function codeSlider(){
+            $('#coda-slider-1').codaSlider();
+        }
+
+
 
 </script>
 
 
-    <link href="http://ps.zmags.com/poc/deploy/coalesse/010711/css/cloud-zoom.css" rel="stylesheet" type="text/css" />
-    <script src="http://ps.zmags.com/poc/deploy/coalesse/010711/js/cloud-zoom.1.0.2.js" type="text/javascript"></script>
+    <link href="http://psdev.zmags.com/poc/deploy/coalesse/010711/css/cloud-zoom.css" rel="stylesheet" type="text/css" />
+    <script src="http://psdev.zmags.com/poc/deploy/coalesse/010711/js/cloud-zoom.1.0.2.js" type="text/javascript"></script>
 
 <style>
 .coda-slider-no-js .coda-slider { height: 200px; overflow: auto !important; padding-right: 20px ;}
@@ -48,7 +52,7 @@
     height: 64px !important;
     overflow: hidden;
     position: relative;
-    width: 240px !important; }
+    width: 180px !important; }
 	.coda-slider .panel { display: block; float: left }
 	.coda-slider .panel-container { position: relative }
 	.coda-nav-left, .coda-nav-right { float: left }
@@ -265,7 +269,7 @@
                 <div class="price_container">
 
                     <div id="base-price"><h4>$2,798<span>(ea.)</span></h4></div>
-                    <div id="addToCartBtn" class="addtocart" onclick="zmagCPO.launchCartConfirmBox();zmagCPO.addToCart('520','http://store.coalesse.com/products/cart/','variantID=6994&formType=add&itemID=520&variantGroup=6994&quantity=1')"></div>
+                    <div id="addToCartBtn" class="addtocart" onclick="zmagCPO.addToCart('/products/cart/','POST','variantID=6994&formType=add&itemID=520&variantGroup=6994&quantity=1');"></div>
 
                 </div>
 

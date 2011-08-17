@@ -10,8 +10,10 @@ body {
     font-family: Times,'Times New Roman',Georgia,serif;
     font-size: 35px;
     font-weight: normal;
+    letter-spacing: 0;
     line-height: 1.1;
     margin-left: 22px;
+    margin-top: 14px;
 }
 .main_left{
     position: relative;
@@ -21,7 +23,10 @@ body {
 }
 .main_right{
     float: left;
-    height: 450px;
+    height: auto;
+    margin-left: 11px;
+    margin-top: 32px;
+    overflow: hidden;
     position: relative;
     width: 600px;
 
@@ -53,10 +58,13 @@ del, ins, a {
     color: #54B502;
 }
 .description_buttons{
-    width: auto;
-    position: relative;
+    float: right;
     height: 30px;
-    overflow:hidden;
+    margin-right: 20px;
+    margin-top: 47px;
+    overflow: hidden;
+    position: relative;
+    width: auto;
 }
 .description_buttons .button {
     background: none no-repeat scroll 0 0 #cbcbcb;
@@ -110,12 +118,14 @@ del, ins, a {
     width: 280px;
 }
 .custom_left{
-    position: relative;
     float: left;
+    margin-top: 15px;
+    position: relative;
 }
 .custom_right{
-    position: relative;
     float: left;
+    margin-top: 12px;
+    position: relative;
 }
 .customize_title{
     color: #352A2A;
@@ -142,9 +152,11 @@ del, ins, a {
     margin-left: -0.1em;
 }
 .customize_input{
+    background: none repeat scroll 0 0 white;
+    float: right;
+    margin-right: 18px;
     text-align: right;
     width: 2em;
-    float: right;
 }
 .text input, .text textarea, .textarea input, .textarea textarea {
     -moz-border-bottom-colors: none;
@@ -167,7 +179,7 @@ del, ins, a {
     float: left;
     font-size: 13px;
     font-weight: bold;
-    padding-left: 20px;
+    padding-left: 10px;
     width: 150px;
 }
 .other_images li{
@@ -177,7 +189,8 @@ del, ins, a {
     list-style: none outside none;
     margin-right: 5px;
     width: 40px;
-
+    background: none;
+    padding-left: 0;
 }
 .other_images li a{
     color: #E8E8DA;
@@ -213,12 +226,21 @@ del, ins, a {
     float: left;
 }
 .customize_container{
+    float: left;
     height: auto;
-    margin-left: 9px;
-    margin-top: -7px;
+    margin-left: 0;
+    margin-top: 13px;
     overflow: hidden;
     position: relative;
     width: 570px;
+}
+.customize_container h2{
+        color: #3B3B3B;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    margin-bottom: 10px;
 }
 .continue{
     background: url("../images/continue.png") no-repeat scroll 0 0 transparent;
@@ -283,4 +305,40 @@ del, ins, a {
 }
 .coda-nav{
     display: none;
+}
+.tabs_container{
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 583px;
+
+}
+.specifications{
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 570px;
+}
+.features{
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 570px;
+}
+.description{
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 570px;
+}
+.center{
+        overflow: hidden;
+    position: relative;
+    width: 965px;
+}
+.loading{
+    display: none;
+}
+.coda-slider .panel{
+    display:block!important;
 }
